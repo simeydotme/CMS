@@ -13,11 +13,10 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/vendor/normalize/1.0.1/normalize.min.css">
-        <link rel="stylesheet" href="css/vendor/bootstrap/2.2.1/bootstrap.min.css">
+        <link rel="stylesheet" href="css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">
         
 		
-		
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet/less" type="text/css" href="css/main.less">
 		
         <script src="js/fonts.js"></script>
         <script src="js/vendor/less/1.3.1/less.js"></script>
@@ -28,18 +27,22 @@
     <body>
 
 		
-		<div id="container" class="container-fluid">
+		<div id="container">
 		
-			<header>
+			<header class="container-fluid">
 				<h1>Dot Label CMS</h1>
 			</header>
 			
-			<section class="account-bar">
-				
-			</section>
+			<?php include('html-includes/account-bar.html'); ?>
 			
-			<section id="content" role="main">
-				<h1>blah</h1>
+			
+			<section class="body" role="main">
+			
+				<?php include('html-includes/navigation.html'); ?>
+			
+				<?php include('html-includes/content.html'); ?>
+				
+				
 			</section>
 			
 			<footer></footer>
@@ -48,6 +51,9 @@
 		
 		
         <script src="js/vendor/jquery/1.8.2/jquery.min.js"></script>
+        <script src="js/vendor/jqueryui/1.9.1/jqueryui.custom.min.js"></script>
+		
+        <script src="js/vendor/bootstrap/2.2.1/bootstrap.min.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
