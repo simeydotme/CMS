@@ -1,0 +1,77 @@
+
+
+	/* ==========================================================================
+	   Tabs Variables
+	   ========================================================================== */
+		
+		@tabPadding: 					4px 15px 4px;
+		@tabBorderColor:				#738393;
+		@tabHighlightColor:				@purpleColor;
+		@tabInactiveColor:				fade( @tabBorderColor, 15% );
+
+
+	/* ==========================================================================
+	   Tabs Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Tabs Styles
+	   ========================================================================== */
+
+		
+		.nav-tabs { padding: 0 10px; border-bottom: 1px solid @tabBorderColor; }
+		
+		.nav-tabs > li > a {
+		
+			padding: @tabPadding;
+			border-top-width: 3px;
+			
+		}
+		
+		.nav-tabs > li > a:hover {
+		
+			border-color: transparent transparent @tabBorderColor;
+			background-color: @tabInactiveColor;
+			box-shadow: 0 -13px 14px -11px fade(@tabBorderColor, 30%) inset;
+			
+		}
+		
+		.nav-tabs > li.disabled > a:hover {
+			
+			border-color: transparent; 
+			box-shadow: none;
+			
+		}
+		
+		.nav-tabs > .active > a,
+		.nav-tabs > .active > a:hover {
+			
+			border: 1px solid @tabBorderColor;
+			border-bottom-color: transparent;
+			border-top: 3px solid @tabHighlightColor;
+			box-shadow: -6px -5px 15px -5px fade( @tabBorderColor, 20% ), 4px -5px 15px -5px fade( @tabBorderColor, 20% );
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

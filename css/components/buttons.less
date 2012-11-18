@@ -7,8 +7,8 @@
 		@btnColor2:					#DCE2E5;
 		@btnBorder:					#BECCD3;
 		
-		@btnBlueColor1:			lighten( @blueColor, 5% );
-		@btnBlueColor2:			darken( @blueColor, 20% );
+		@btnBlueColor1:			lighten( @blueColor, 10% );
+		@btnBlueColor2:			darken( @blueColor, 5% );
 		@btnBlueBorder:			#118cbd;
 		
 		@btnRedColor1:			lighten( @redColor , 10% );
@@ -32,8 +32,8 @@
 		@btnYellowColorBorder:		darken( @yellowColor , 15% );
 		
 		@btnGreenColor1:			lighten( @greenColor , 15% );
-		@btnGreenColor2:			darken( @greenColor , 5% );
-		@btnGreenColorBorder:		darken( @greenColor , 10% );
+		@btnGreenColor2:			darken( @greenColor , 0% );
+		@btnGreenColorBorder:		darken( @greenColor , 3% );
 		
 		@btnDarkColor1:			lighten( @darkColor , 15% );
 		@btnDarkColor2:			darken( @darkColor , 5% );
@@ -70,7 +70,6 @@
 			
 			.btnGradient( @color1, @color2 );
 			
-			&:active { background-color: @color1; }
 			&:hover {
 			
 				.btnGradient( darken( @color1, 3% ), darken( @color2, 3% ) );
@@ -78,6 +77,24 @@
 				background-position: 0 0;
 				
 			}
+			
+			&:active,
+			&.active { 
+				background-color: @color2; 
+				background-image: none;
+				box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05); 
+			}
+			
+			&.disabled,
+			&[disabled] {
+			  cursor: default;
+			  background-color: @color2;
+			  background-image: none;
+			  opacity: 0.65;
+			  filter: alpha(opacity=65);
+			  box-shadow: none;
+			}
+
 		}
 
 	/* ==========================================================================

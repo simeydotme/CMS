@@ -1,0 +1,71 @@
+
+
+	/* ==========================================================================
+	   Alert Variables
+	   ========================================================================== */
+
+			@alertColor: 				@yellowColor;
+			@redAlertColor: 			@redColor;
+			@blueAlertColor: 			@blueColor;
+			@greenAlertColor: 			@greenColor;
+			
+			@purpleAlertColor: 			@purpleColor;
+			@orangeAlertColor: 			@orangeColor;
+			@darkAlertColor: 			@darkColor;
+
+	/* ==========================================================================
+	   Alert Mixins
+	   ========================================================================== */
+
+			
+			.makeAlert( @color ) {
+				
+				border: 1px dashed @color;
+				color: 			darken( @color , 20% );
+				
+				background:  	fade( @color, 20% );
+				box-shadow: 0 2px 2px fade( darken( @color, 30% ), 20% );
+				
+				button.close { color: darken( @color , 40% ); }
+								
+			}
+
+			.makeAlert2( @color ) {
+				
+				border: 		1px solid @color;
+				color: 			white;
+
+				.gradient( darken(@color,5%), darken(@color,10%) ); 
+				box-shadow: 0 1px 2px fade( darken( @color, 60% ), 40% );
+				text-shadow: 0 1px rgba(0,0,0,0.6);
+				
+				button.close { color: darken( @color , 40% ); }
+								
+			}
+
+
+
+	/* ==========================================================================
+	   Alert Styles
+	   ========================================================================== */
+
+		
+		.alert {		.makeAlert( @alertColor ); }
+		.alert.red {	.makeAlert( @redAlertColor ); }
+		.alert.blue {	.makeAlert( @blueAlertColor ); }
+		.alert.green {	.makeAlert( @greenAlertColor ); }
+		
+		.alert.purple {	.makeAlert( @purpleAlertColor ); }
+		.alert.orange {	.makeAlert( @orangeAlertColor ); }
+		.alert.dark {	.makeAlert( @darkAlertColor ); }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

@@ -12,3 +12,46 @@ if (!(window.console && console.log)) {
 }
 
 // Place any jQuery/helper plugins in here.
+
+
+
+
+	/* ==========================================================================
+	   Disabled / Enable Tabs
+	   ========================================================================== */
+		
+		$(function() {
+			
+			$.fn.disableTab = function() {
+								
+				return $(this).each( function() {
+					
+					var $_this = $(this);
+					$_this.attr('data-toggle','').parents('li').addClass('disabled');
+					
+				});
+				
+			}
+			
+			$.fn.enableTab = function() {
+								
+				return $(this).each( function() {
+					
+					var $_this = $(this);
+					$_this.attr('data-toggle','tab').parents('li').removeClass('disabled');
+					
+				});
+				
+			}
+			
+								
+		});
+
+
+
+
+
+
+
+
+

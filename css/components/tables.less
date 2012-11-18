@@ -6,11 +6,10 @@
 		
 		@tableColor: 			@secondaryColor;
 		
+		@tableStripeColor:		#f3f3f3;
+		@tableHoverColor:		fade( @blueColor, 6% );
 		
 		@tableHeadPadding:		8px;
-		
-		
-		
 		@tableBodyPadding:		4px 8px;
 
 
@@ -32,11 +31,14 @@
 		.table-bordered th:first-child,
 		.table-bordered td:first-child { border-left: none;  }
 		
-		
 		.table thead { .gradient( @tableColor, darken(@tableColor,5%) ); color: white; }
 		.table thead th,
 		.table thead td {  padding: @tableHeadPadding; }
-
+		
+		.table thead th:first-child,
+		.table thead td:first-child { border-radius: 4px 0 0 0; }
+		.table thead th:last-child,
+		.table thead td:last-child { border-radius: 0 4px 0 0;}
 		
 		.table tbody td ,
 		.table tbody th { font-weight: normal; border-bottom-color: #BBB; border-top-color: #BBB; border-left-color: #BBB; padding: @tableBodyPadding; }
@@ -48,7 +50,13 @@
 		
 		.table tbody tr td.icon		{ border-left-style: dotted; border-left-width: 1px; background-color: #F4F4F4; width: 24px; }
 		.table tbody tr td.icon a	{ display: block; text-align: center; }
+		
+		
+		.table-striped tbody tr:nth-child(odd) td, 
+		.table-striped tbody tr:nth-child(odd) th { background-color: @tableStripeColor; }
 
+		.table-hover tbody tr:hover td, 
+		.table-hover tbody tr:hover th { background-color: @tableHoverColor; }
 		
 		.table img { max-width: none; }
 		
