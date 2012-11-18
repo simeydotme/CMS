@@ -1,0 +1,57 @@
+
+
+	/* ==========================================================================
+	   Gallery Variables
+	   ========================================================================== */
+		
+		@thumbnailWidth:		130px;
+		@thumbnailHeight:		@thumbnailWidth * 0.75;
+		@thumbnailPadding:		4px;
+		@thumbnailBorder:		1px;
+		@thumbnailMargin:		5px;
+		@thumbnailColor:		@orangeColor;
+		
+	/* ==========================================================================
+	   Gallery Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Gallery Styles
+	   ========================================================================== */
+		
+		
+		.gallery-wrapper {
+			
+			.thumbnail,
+			.placeholder { 
+			
+				display: 		inline-block; *display: inline; *zoom:1;
+				border-radius: 	5px;
+				
+				padding: 		@thumbnailPadding;
+				border: 		@thumbnailBorder solid fade( @thumbnailColor, 50% );
+				margin: 		0 @thumbnailMargin @thumbnailMargin*2 0;
+				
+				vertical-align: top; text-align: center;
+				
+				position: relative;
+				
+				.transition( border 1s )
+				
+			}
+			
+			.placeholder {
+				
+				border-color: @greenColor;
+				
+			}
+			
+			.thumbnail img { max-height: @thumbnailHeight; max-width: @thumbnailWidth; }
+			.thumbnail button { position: absolute; top: 8px; right: 8px; padding: 2px; }
+			
+			
+			
+			
+		}

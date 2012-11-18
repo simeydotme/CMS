@@ -64,7 +64,7 @@
 		
 		.makeBtn( @color1 , @color2, @color3 ) { 
 		
-			font-weight: 600; font-size: 12px;
+			font-weight: 600; font-size: 12px; font-family: @sans;
 			border-radius: 4px;
 			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
 			
@@ -111,6 +111,8 @@
 		.btn .caret 			{ margin-left: 5px; }
 		.btn img:first-child 	{ margin-right: 5px; }
 		.btn img:last-child 	{ margin-left: 5px; }
+		
+.lt-ie9 .btn img { max-width: none; }
 		
 		
 		

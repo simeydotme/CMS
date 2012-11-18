@@ -41,7 +41,12 @@
 				<?php include('html-includes/navigation.html'); ?>
 			
 				<section class="content">
-					<?php include('html-includes/news.html'); ?>
+					<?php 
+						
+						$page = ( $_SERVER['QUERY_STRING'] == "" ? 'dashboard' : $_SERVER['QUERY_STRING']  );
+						include('html-includes/' . $page . '.html'); 
+					
+					?>
 				</section>
 				
 			</section>
@@ -58,6 +63,11 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+		
+		
+		
+		<script src="js/pages/gallery.js"></script>
+
     </body>
 	
 	

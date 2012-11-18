@@ -22,6 +22,8 @@ if (!(window.console && console.log)) {
 		
 		$(function() {
 			
+			$('[data-toggle]').parent('.disabled').find('a').on('click', function(e) { e.preventDefault(); });
+			
 			$.fn.disableTab = function() {
 								
 				return $(this).each( function() {
@@ -46,6 +48,40 @@ if (!(window.console && console.log)) {
 			
 								
 		});
+
+
+
+
+	/* ==========================================================================
+	   Trigger a tab if it's in the hash
+	   ========================================================================== */
+		
+		$(function() {
+			
+
+			if( $('[data-toggle=tab]').length > 0 && window.location.hash != "" ) {
+			
+				var hash = window.location.hash;
+				$('[href='+ hash +']').trigger('click').parents('[data-toggle=tab]').trigger('click');
+			
+			}			
+
+		});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
