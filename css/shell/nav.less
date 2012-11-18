@@ -4,7 +4,12 @@
 	   Navigation Shell Variables
 	   ========================================================================== */
 		
-		@navWidth:							200px;
+		@navWidth:							230px;
+		@navCollapsedWidth:					38px;
+		
+		@navPrimaryColor:					@primaryColor;
+		@navActiveColor:					#525B5E;
+		@navBackground:						#ECF5FF;
 
 
 	/* ==========================================================================
@@ -20,20 +25,116 @@
 		nav {
 		
 			width: @navWidth; 
-			position: absolute; top: 0; bottom: 0; left: 0;
+			position: absolute; top: 0; left: 0;
+			
+			font-size: 12px;
+			border-right: 1px solid #444; border-bottom: 1px solid #444;
+			border-radius: 0 0 5px 0;
+									
+		}
+		
+		nav .logo { margin: 10px 20px; }
+		
+		
+		nav ul { margin: 0; background: @navBackground; box-shadow: -26px 0 21px -26px darken( @navBackground, 15% ) inset;  }
+		nav ul .item { display: block; } 
+		nav ul .item > a .text { text-shadow: 0 1px 1px black; }
+		nav ul .item .icon { position: relative; top: -1px; }
+		
+		nav .divider { height: 1px; padding: 8px 1px; overflow: hidden; }
+		
+		nav .item > a {
+			
+			color: white; text-decoration: none;
+			
+			display: block;
+			padding: 4px 5px 4px 20px;
+			
+			.gradient( @navPrimaryColor, darken(@navPrimaryColor,5%) );
+			box-shadow: 0 -17px 12px -19px darken(@navPrimaryColor, 10%) inset, -20px 0 28px -19px darken(@navPrimaryColor, 15%) inset;
+			
+			border-top: 	1px solid lighten(@navPrimaryColor, 20%);
+			border-bottom: 	1px solid darken(@navPrimaryColor, 25%);
+			
+			.transition( padding 150ms cubic-bezier(0.420, 0.000, 0.580, 1.000) );
+			
+			/* ========================================================================== */
+			
+			&:hover { 
+				
+				padding-left: 26px;
+				
+				background: darken(@navPrimaryColor,8%); 
+				border-bottom-color: transparent;
+				border-top-color: transparent;
+
+			}
+		
+		}
+		
+		nav .item.active > a {
+			
+			.gradient( @navActiveColor, darken(@navActiveColor,10%) );
+			box-shadow: 0 -17px 12px -19px darken(@navActiveColor, 10%) inset, -20px 0 28px -19px darken(@navActiveColor, 15%) inset;
+			
+			border-top: 	1px solid lighten(@navActiveColor, 20%);
+			border-bottom: 	1px solid darken(@navActiveColor, 25%);
+			
+			/* ========================================================================== */
+			
+			&:hover { 
+								
+				background: darken(@navActiveColor,8%); 
+
+			}
+
+		
+		}
+		
+		
+		
+		
+		nav .item .subitem > a {
+			
+			color: #444; text-decoration: none;
+			
+			display: block;
+			padding: 4px 5px 4px 20px;
+						
+			.transition( padding 250ms cubic-bezier(0.420, 0.000, 0.580, 1.000) );
+			
+			/* ========================================================================== */
+			
+			&:hover { 
+								
+				color: white; 
+				background: lighten( @navPrimaryColor, 5% ); 
+				padding-left: 20px;
+				box-shadow: -26px 0 21px -26px darken( @navPrimaryColor, 15% ) inset;
+
+			}
 			
 		}
 		
-		nav ul { margin: 0; }
-	
-	
+		
+		
 		
 		
 		
 @media (max-width: 767px) {
 
-
-		nav .logo 		{ display: none; }
+		
+		nav { width: @navCollapsedWidth; padding: 10px 0; }
+		
+		nav, nav ul { height: 100%; }
+		
+		nav .logo { display: none; }
+		
+		
+		nav .item .text { display: none; }
+		nav .item a 		{ padding: 4px 10px; }
+		nav .item a:hover 	{ padding: 4px 10px; }
+		nav .subitem  	{ display: none; }
 		
 
 }		

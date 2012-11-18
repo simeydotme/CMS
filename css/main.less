@@ -9,8 +9,17 @@
 		@import "shell/header.less";
 		@import "shell/footer.less";
 		@import "shell/body.less";
+		@import "shell/account-bar.less";
 
-
+		
+		@import "components/headings.less";
+		@import "components/tables.less";
+		@import "components/buttons.less";
+		@import "components/forms.less";
+		
+		
+		
+		@import "blocks/jump.less";
 
 
 
@@ -22,9 +31,81 @@
 	   Universal Variables 
 	   ========================================================================== */
 
-		@primaryColor: white;
+		@primaryColor: 			#12A1DA;
+		@secondaryColor: 		#7A8999;
+		
+		@blueColor:				#49c0f0;
+		@redColor:				#E0362D;
+		@orangeColor:			#FF7B00;
+		@yellowColor:			#E5CE19;
+		@greenColor:			#31C11D;
+		@purpleColor:			#9B3AC1;
+		@pinkColor:				#F062B2;
+		@darkColor:				#0B1D26;
+		
+		
+		@sans:	 	'Open Sans',Helvetica,Arial,sans-serif;
+		@serif: 	'Droid Serif',Georgia,serif;
 		
 		
 		
 		
 		
+		
+		
+		
+	/* ==========================================================================
+	   Universal Mixins 
+	   ========================================================================== */
+
+		
+		
+		.gradient( @color1, @color2 ) {
+			
+			@middle: mix( @color1, @color2 );
+			
+			background: @middle; /* Old browsers */
+			background: -moz-linear-gradient(top,  @color1 0%, @color2 100%); /* FF3.6+ */
+			    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2)); /* Chrome,Safari4+ */
+	     background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%); /* Chrome10+,Safari5.1+ */
+			  background: -o-linear-gradient(top,  @color1 0%,@color2 100%); /* Opera 11.10+ */
+			 background: -ms-linear-gradient(top,  @color1 0%,@color2 100%); /* IE10+ */
+			     background: linear-gradient(to bottom,  @color1 0%,@color2 100%); /* W3C */
+
+		}
+		
+		
+		.transition (@transition) {
+			-webkit-transition: @transition;  
+			-moz-transition:    @transition;
+			-ms-transition:     @transition; 
+			-o-transition:      @transition;  
+			transition:     	@transition;  
+		}
+
+
+
+	/* ==========================================================================
+	   Universal Styles 
+	   ========================================================================== */
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

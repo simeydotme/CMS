@@ -1,0 +1,87 @@
+
+
+	/* ==========================================================================
+	   Form Variables
+	   ========================================================================== */
+		
+		@questionWidth: 			200px;
+		@answerWidth:				300px;
+
+
+	/* ==========================================================================
+	   Form Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Form Styles
+	   ========================================================================== */
+
+		.formRow 				{ clear: both; margin-bottom: 5px; }
+		.formRow.buttonRow 		{ clear: both; padding: 10px 0; background: #eee; border-radius: 4px; }
+		
+		.formRow .formQuestion,
+		.formRow .formAnswer 	{ display: inline-block; *display: inline; *zoom: 1; vertical-align: top; }
+		
+		.formRow .formQuestion 	{ max-width: 200px; width: 30%; text-align: right; margin: 5px 10px 0 0; }
+		.formRow .formAnswer 	{ width: 60%; }
+
+
+
+		
+		
+
+
+
+
+
+		.ui-datepicker-trigger { position: relative; left: -24px; top: -6px; cursor: pointer; }
+		
+		
+		
+		
+		
+		
+		
+	@media (min-width: 1200px) {
+		
+		
+		input, textarea, .uneditable-input 	{ width: 306px; }
+		select								{ width: 320px; }
+		
+	}
+	
+	@media (max-width: 767px) {
+		
+		.formRow.buttonRow 		{ padding: 10px; }
+
+		.formRow .formQuestion,
+		.formRow .formAnswer 	{ display: block; }
+		
+		.formRow .formQuestion 	{ width: auto; text-align: left; margin: 0 0 2px; }
+		.formRow .formAnswer 	{ width: auto; }
+
+
+
+	}
+	
+	@media (max-width: 480px) {
+		
+		
+		input, textarea, .uneditable-input 	{ width: 97%; }
+		select								{ width: 99%; }
+
+		.ui-datepicker-trigger { display: none; }
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

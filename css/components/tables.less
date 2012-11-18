@@ -1,0 +1,60 @@
+
+
+	/* ==========================================================================
+	   Table Variables
+	   ========================================================================== */
+		
+		@tableColor: 			@secondaryColor;
+		
+		
+		@tableHeadPadding:		8px;
+		
+		
+		
+		@tableBodyPadding:		4px 8px;
+
+
+	/* ==========================================================================
+	   Table Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Table Styles
+	   ========================================================================== */
+		
+		.table { font-size: 0.9em; }
+		.table-bordered { font-size: 0.9em; border: 1px solid @tableColor; }
+		
+		.table-bordered th, 
+		.table-bordered td { border-color: @tableColor; }
+		.table-bordered th:first-child,
+		.table-bordered td:first-child { border-left: none;  }
+		
+		
+		.table thead { .gradient( @tableColor, darken(@tableColor,5%) ); color: white; }
+		.table thead th,
+		.table thead td {  padding: @tableHeadPadding; }
+
+		
+		.table tbody td ,
+		.table tbody th { font-weight: normal; border-bottom-color: #BBB; border-top-color: #BBB; border-left-color: #BBB; padding: @tableBodyPadding; }
+		.table tbody td:first-child, 
+		.table tbody th:first-child { font-weight: normal;  }
+		
+		.table tbody tr:first-child th,
+		.table tbody tr:first-child td { box-shadow: 0 11px 12px -10px #bbb inset; border-top: 1px solid darken(@tableColor,15%); }
+		
+		.table tbody tr td.icon		{ border-left-style: dotted; border-left-width: 1px; background-color: #F4F4F4; width: 24px; }
+		.table tbody tr td.icon a	{ display: block; text-align: center; }
+
+		
+		.table img { max-width: none; }
+		
+		
+		
+		
+		
+		
+		

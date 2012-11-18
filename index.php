@@ -40,8 +40,9 @@
 			
 				<?php include('html-includes/navigation.html'); ?>
 			
-				<?php include('html-includes/content.html'); ?>
-				
+				<section class="content">
+					<?php include('html-includes/news.html'); ?>
+				</section>
 				
 			</section>
 			
