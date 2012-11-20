@@ -28,6 +28,8 @@
 			padding: @tabPadding;
 			border-top-width: 3px;
 			
+			img { opacity: 0.5; }
+			
 		}
 		
 		.nav-tabs > li > a:hover {
@@ -36,12 +38,16 @@
 			background-color: @tabInactiveColor;
 			box-shadow: 0 -13px 14px -11px fade(@tabBorderColor, 30%) inset;
 			
+			img { opacity: 1; }
+			
 		}
 		
 		.nav-tabs > li.disabled > a:hover {
 			
 			border-color: transparent; 
 			box-shadow: none;
+			
+			img { opacity: 0.5; }
 			
 		}
 		
@@ -52,6 +58,8 @@
 			border-bottom-color: transparent;
 			border-top: 3px solid @tabHighlightColor;
 			box-shadow: -6px -5px 15px -5px fade( @tabBorderColor, 20% ), 4px -5px 15px -5px fade( @tabBorderColor, 20% );
+			
+			img { opacity: 1; }
 			
 		}
 		

@@ -11,13 +11,13 @@
 		
 		<ul class="nav nav-tabs">
 			<li id="tab-gallery-list" class="active">
-				<a href="#gallery-list" data-toggle="tab">Galleries</a>
-			</li>
-			<li id="tab-gallery-edit" class="">
-				<a href="#gallery-edit" data-toggle="tab">Edit</a>
+				<a href="#gallery-list" data-toggle="tab"><img src="img/vendor/fugue/icons/ui-list-box-blue.png" class="icon"> Galleries</a>
 			</li>
 			<li id="tab-gallery-upload">
-				<a href="#gallery-upload" data-toggle="tab">Upload Image</a>
+				<a href="#gallery-upload" data-toggle="tab"><img src="img/vendor/fugue/icons/picture--plus.png" class="icon"> Upload Image</a>
+			</li>
+			<li id="tab-gallery-edit" class="disabled">
+				<a href="#gallery-edit" data-toggle=""><img src="img/vendor/fugue/icons/photo-album--pencil.png" class="icon"> Edit</a>
 			</li>
 		</ul>
 		
@@ -35,7 +35,14 @@
 					
 				</div>
 				
-				<table class="table table-striped table-hover">
+				
+					<div id="dialog-deletegallery" style="display:none;">
+						Really delete this gallery?<br>
+						<span class="red text">This action cannot be undone.</span>
+					</div>
+					
+
+				<table class="table table-striped table-hover" id="gallery-table">
 				
 					<thead>
 						<tr>
@@ -50,7 +57,7 @@
 					<tbody>
 						<tr>
 							<td>Home</td>
-							<th scope="row"><a href="#">Landing Page Gallery</a></th>
+							<th scope="row"><a href="#" class="edit">Landing Page Gallery</a></th>
 							<td>12</td>
 							<td>Last Week</td>
 							<td class="icon"><a href="#" class="edit" title="edit this"><img src="img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
@@ -58,7 +65,7 @@
 						</tr>
 						<tr>
 							<td>About Us</td>
-							<th scope="row"><a href="#">About Us Gallery</a></th>
+							<th scope="row"><a href="#" class="edit">About Us Gallery</a></th>
 							<td>4</td>
 							<td>Yesterday</td>
 							<td class="icon"><a href="#" class="edit" title="edit this"><img src="img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
@@ -128,25 +135,29 @@
 				
 				<h3>
 				
-					Organise Gallery
+					Landing Page Gallery
 				
 					<button id="button-saveorder" href="#" class="new btn blue" disabled>
 						<span>Save Changes</span>
 						<img src="img/vendor/fugue/icons/disk-black.png" class="icon">
 					</button>
 					
+					<button id="button-resetorder" href="#" class="new btn" disabled>
+						<span>Reset Changes</span>
+						<img src="img/vendor/fugue/icons/arrow-circle-double.png" class="icon">
+					</button>
+										
+				</h3>
+				
+				
 					<div id="dialog-saveorder" style="display:none;">
 						Are you sure you wish to save the state of gallery?<br>
 						<span class="red text">This action cannot be undone.</span>
 					</div>
 					
-					<button id="button-resetorder" href="#" class="new btn" disabled>
-						<span>Reset Changes</span>
-						<img src="img/vendor/fugue/icons/arrow-circle-double.png" class="icon">
-					</button>
+				
+				
 					
-				</h3>
-								
 				<div class="gallery-wrapper">
 				
 					<a class="thumbnail" href="#" data-id="1">

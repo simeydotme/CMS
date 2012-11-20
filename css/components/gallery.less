@@ -34,23 +34,26 @@
 				border: 		@thumbnailBorder solid fade( @thumbnailColor, 50% );
 				margin: 		0 @thumbnailMargin @thumbnailMargin*2 0;
 				
-				vertical-align: top; text-align: center;
+				vertical-align: top; text-align: center; position: relative;
+				.transition( border 1s );
 				
-				position: relative;
+				border-color: #DDD;
+				background-color: #FCFCFC;
 				
-				.transition( border 1s )
+				&:hover { border-color: @purpleColor; }
 				
 			}
 			
 			.placeholder {
 				
-				border-color: @blueColor;
+				border-color: @greenColor;
+				background-color: lighten( @greenColor, 50% );
 				
 			}
 			
-			.ui-sortable-helper {
+			.ui-sortable-helper:hover {
 				
-				border-color: @redColor;	
+				border-color: @greenColor;	
 				
 			}
 			

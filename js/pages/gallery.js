@@ -2,9 +2,14 @@
 
 	$(function() {
 		
-		var gallery = {};
+		window.gallery = {};
 		
 		
+		$('#gallery-table .edit').on('click',function() {
+			
+			$('#tab-gallery-edit a').enableTab().trigger('click');
+			
+		});
 		
 		
 		$('#button-upload').on('click', function(e) {
@@ -13,6 +18,42 @@
 			e.preventDefault();
 		
 		});
+		
+		
+		
+		
+		
+		
+		$('#gallery-table .delete').on('click', function() {
+			
+			var $confirm = $('#dialog-deletegallery');
+			var $galleryRow = $(this).parents('tr');
+			
+			$confirm.dialog({
+				
+				modal: true,
+				buttons: {
+					
+					"ok": {
+					  text:'Ok', class:'btn red',
+					  click: function() { $(this).dialog('close'); $galleryRow.fadeOut().attr('data-destroy','_destroy'); }
+					},
+					"cancel": {
+					  text:'Cancel', class:'btn',
+					  click: function() { $(this).dialog('close'); }
+					}
+				}
+				
+			});
+			
+			
+		});
+		
+		
+		
+		
+		
+		
 		
 		
 		$('#button-saveorder').on('click', function() {
@@ -25,7 +66,7 @@
 				buttons: {
 					
 					"ok": {
-					  text:'Ok', class:'btn blue',
+					  text:'Ok', class:'btn red',
 					  click: function() { gallery.sendGalleryState(); $(this).dialog('close'); }
 					},
 					"cancel": {
@@ -56,20 +97,24 @@
 		
 
 		// make the gallery sortable
-
-		$('.gallery-wrapper').sortable({ 
-		
-			items: 			'.thumbnail',
-			placeholder: 	'placeholder',
-			forcePlaceholderSize: true,
+		gallery.makeSortable = function() {
 			
-			stop: function() {
+			$('.gallery-wrapper').sortable({ 
 			
-				$('#button-saveorder, #button-resetorder').attr('disabled',false);
+				items: 			'.thumbnail',
+				placeholder: 	'placeholder',
+				forcePlaceholderSize: true,
 				
-			}
-			
-		});
+				stop: function() {
+				
+					$('#button-saveorder, #button-resetorder').attr('disabled',false);
+					
+				}
+				
+			});
+		
+		};
+		gallery.makeSortable();
 
 		// this returns the order of the gallery items.
 

@@ -5,16 +5,13 @@
 		
 		$(function() {
 			
-			
+			// set defaults for jquery ui widgets
 			$.extend( $.ui.dialog.prototype.options, { width: 400, height: 160 });
-			//$.extend( $.ui.datepicker.prototype.options, { dateFormat: "yy-mm-dd", showOn: 'both', buttonImage: "img/vendor/fugue/icons/calendar-month.png", buttonImageOnly: true });
 			$.datepicker.setDefaults({ dateFormat: "yy-mm-dd", showOn: 'both', buttonImage: "img/vendor/fugue/icons/calendar-month.png", buttonImageOnly: true });
 			
-			if( !Modernizr.touch ) {
-			
-				$('input[type=date]').datepicker();
-				
-			}
+			// only apply datepicker to desktop devices.
+			// not fool-proof, but pretty close.
+			if( !Modernizr.touch || screen.width > 680 ) { $('input[type=date]').datepicker(); }
 			
 			
 			
