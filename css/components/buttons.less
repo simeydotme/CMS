@@ -69,6 +69,7 @@
 			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
 			
 			.btnGradient( @color1, @color2 );
+			text-shadow: 0 -1px 1px darken( @color3, 8% );
 			
 			&:hover {
 			
@@ -119,7 +120,6 @@
 		.btn.blue 	{ 
 						.makeBtn( @btnBlueColor1, @btnBlueColor2, @btnBlueBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnBlueBorder;
 						
 						.caret 	{ border-top-color: white; }
 					}
@@ -127,49 +127,42 @@
 		.btn.red 	{ 
 						.makeBtn( @btnRedColor1, @btnRedColor2, @btnRedBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnRedBorder;
 						
 						.caret 	{ border-top-color: white; }
 					}
 		.btn.pink 	{ 
 						.makeBtn( @btnPinkColor1, @btnPinkColor2, @btnPinkColorBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnPinkColorBorder; 
 						
 						.caret 	{ border-top-color: white; }
 					}
 		.btn.purple { 
 						.makeBtn( @btnPurpleColor1, @btnPurpleColor2, @btnPurpleColorBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnPurpleColorBorder; 
 						
 						.caret 	{ border-top-color: white; }
 					}
 		.btn.orange { 
 						.makeBtn( @btnOrangeColor1, @btnOrangeColor2, @btnOrangeColorBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnOrangeColorBorder; 
 						
 						.caret 	{ border-top-color: white; }
 					}
 		.btn.yellow { 
 						.makeBtn( @btnYellowColor1, @btnYellowColor2, @btnYellowColorBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnYellowColorBorder; 
 						
 						.caret 	{ border-top-color: white; }
 					}
 		.btn.green { 
 						.makeBtn( @btnGreenColor1, @btnGreenColor2, @btnGreenColorBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnGreenColorBorder; 
 						
 						.caret 	{ border-top-color: white; }
 					}
 		.btn.dark { 
 						.makeBtn( @btnDarkColor1, @btnDarkColor2, @btnDarkColorBorder ); 
 						color: white; 
-						text-shadow: 0 1px 1px @btnDarkColorBorder; 
 						
 						.caret 	{ border-top-color: white; }
 					}
