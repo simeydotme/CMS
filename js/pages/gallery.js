@@ -24,6 +24,8 @@
 		
 		
 		
+		
+		
 		$('#gallery-table .delete').on('click', function() {
 			
 			var $confirm = $('#dialog-deletegallery');
@@ -31,7 +33,6 @@
 			
 			$confirm.dialog({
 				
-				modal: true,
 				buttons: {
 					
 					"ok": {
@@ -44,18 +45,12 @@
 					}
 				}
 				
-			});
+			}).dialog('widget').appendTo('.ui-dialog-perspective-wrapper');
 			
 			
 		});
 		
-		
-		
-		
-		
-		
-		
-		
+
 		$('#button-saveorder').on('click', function() {
 			
 			var $confirm = $('#dialog-saveorder');
@@ -75,10 +70,23 @@
 					}
 				}
 				
-			});
+			}).dialog('widget').appendTo('.ui-dialog-perspective-wrapper');;
 			
 			
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		$('#button-resetorder').on('click', function() {
 			gallery.galleryReset();
@@ -159,10 +167,12 @@
 		
 		gallery.sendGalleryState = function() {
 			
-			$.ajax( '#' , {
+			$.ajax( 'html-includes/fakejax.php' , {
 				
 				type: 'POST',
-				data: gallery.galleryState()
+				data: gallery.galleryState(),
+				
+				success: function( response ) { console.log( response ); }
 				
 			});
 			

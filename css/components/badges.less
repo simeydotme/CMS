@@ -1,0 +1,29 @@
+
+
+	/* ==========================================================================
+	   Labels / Badges Variables
+	   ========================================================================== */
+
+	/* ==========================================================================
+	   Labels / Badges Mixins
+	   ========================================================================== */
+
+
+	/* ==========================================================================
+	   Labels / Badges Styles
+	   ========================================================================== */
+
+		
+		.label, .badge {
+			
+			.gradient( lighten( @hintColor, 5% ), darken( @hintColor, 5% ) );
+						
+			&.red 		{ .gradient( lighten( @redColor, 5% ), darken( @redColor, 5% ) ); }
+			&.blue 		{ .gradient( lighten( @blueColor, 5% ), darken( @blueColor, 5% ) ); }
+			&.green 	{ .gradient( lighten( @greenColor, 5% ), darken( @greenColor, 5% ) ); }
+			&.purple 	{ .gradient( lighten( @purpleColor, 5% ), darken( @purpleColor, 5% ) ); }
+			&.orange 	{ .gradient( lighten( @orangeColor, 5% ), darken( @orangeColor, 5% ) ); }
+			&.yellow 	{ .gradient( lighten( @yellowColor, 5% ), darken( @yellowColor, 5% ) ); }
+			&.dark 		{ .gradient( lighten( @darkColor, 15% ), lighten( @darkColor, 5% ) ); }
+			
+		}

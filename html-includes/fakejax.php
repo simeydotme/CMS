@@ -2,9 +2,9 @@
 
 
 
-	if( isset($_POST['action']) && !empty($_POST['action'])) {
+	if( isset($_POST['data']) && !empty($_POST['data'])) {
 
-		echo( 'win' );
+		echo( data );
 	
 	} else {
 		

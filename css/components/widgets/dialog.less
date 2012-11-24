@@ -7,6 +7,7 @@
 		@dialogPadding:				10px 15px;
 		@dialogBackground:			#FDFDFD;
 		@dialogBorder:				1px solid @secondaryColor;
+		@dialogBorderBottom:		3px solid @hintColor;
 
 
 	/* ==========================================================================
@@ -21,17 +22,29 @@
 
 		.ui-dialog { 
 		
-			position: absolute; width: 400px; height: 160px; overflow: hidden;
+			position: fixed; min-width: 400px; height: auto; overflow: hidden; top: 0px!important;
 			.widget;
-		
+			border-radius: 0 0 @widgetBorderRadius @widgetBorderRadius;
+			border-top: 0; border-bottom: @dialogBorderBottom;
+			
+					
+			&.in {
+				-webkit-animation: dialogAnimIn 500ms ease-out;
+			}
+			&.out {
+				-webkit-animation: dialogAnimOut 500ms ease-out;	
+			}
+			
 		}
 		
 		.ui-dialog .ui-dialog-titlebar {
 			 
 			.widgetHeader;
+			background: none;
 			 
 		}
 		
+		.ui-dialog-perspective-wrapper { -webkit-perspective: 800; position: absolute; width: 100%; z-index:1003; }
 		
 		
 		.ui-dialog .ui-dialog-title { 
@@ -54,6 +67,7 @@
 			position: relative; border: 0; 
 			padding: @dialogPadding; 
 			background: none; overflow: hidden; zoom: 1; 
+			min-width: 400px;
 		}
 		
 		
@@ -71,3 +85,72 @@
 		
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		@-webkit-keyframes dialogAnimIn {
+			
+			0% {
+				-webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px);
+				opacity: 0;
+			}
+			
+			15% {
+				-webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px);
+			}
+			
+			100% {
+				-webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px);
+				opacity: 1;
+			}
+			
+		}
+		
+		@-webkit-keyframes dialogAnimOut {
+			
+			0% {
+				-webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px);
+				opacity: 1;
+			}
+			
+			75% {
+				-webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px);
+			}
+			
+			100% {
+				-webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px);
+				opacity: 0;
+				
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

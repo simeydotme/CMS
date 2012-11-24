@@ -6,49 +6,76 @@
 		
 		@questionWidth: 			200px;
 		@answerWidth:				300px;
+		
+		@row:						formRow;
+		@question:					formQuestion;
+		@answer:					formAnswer;
 
 
 	/* ==========================================================================
 	   Form Mixins
 	   ========================================================================== */
 
-
+		.formSize( @MaxWidth: 306px ) {
+			
+			input, 
+			textarea, 
+			.uneditable-input { 
+				width: @MaxWidth; margin-right: 5px; 
+				
+			}
+			select { width: @MaxWidth + 14; margin-right: 5px; }
+	
+			input, 
+			textarea, 
+			.uneditable-input,
+			select {
+				
+				&.medium { width: @MaxWidth - 100; }
+				&.small { width: @MaxWidth - 180; }
+				&.mini { width: @MaxWidth - 250; }
+					
+			}
+		
+		}
 
 	/* ==========================================================================
 	   Form Styles
 	   ========================================================================== */
 
-		.formRow 				{ clear: both; margin-bottom: 5px; }
-		.formRow.buttonRow 		{ clear: both; padding: 10px 0; background: #eee; border-radius: 4px; }
+		.@{row} 				{ clear: both; margin-bottom: 5px; }
+		.@{row}.buttonRow 		{ clear: both; padding: 10px 0; background: #eee; border-radius: 4px; margin-top: 20px; }
 		
-		.formRow .formQuestion,
-		.formRow .formAnswer 	{ display: inline-block; *display: inline; *zoom: 1; vertical-align: top; }
+		.@{row} .@{question},
+		.@{row} .@{answer} 		{ display: inline-block; *display: inline; *zoom: 1; vertical-align: top; }
 		
-		.formRow .formQuestion 	{ max-width: 200px; width: 30%; text-align: right; margin: 5px 10px 0 0; }
-		.formRow .formAnswer 	{ width: 60%; }
-
-
+		.@{row} .@{question} 	{ max-width: 200px; width: 30%; text-align: right; margin: 5px 10px 0 0; }
+		.@{row} .@{answer} 		{ width: 60%; }
 
 		
 		
+		.formSize();
+		
 
 
-
-
-
-		.ui-datepicker-trigger { position: relative; left: -24px; top: -6px; cursor: pointer; }
+		.ui-datepicker-trigger { 
+			position: absolute;
+			margin-left: -34px;
+			margin-top: 2px;
+			width: 16px;
+			padding: 5px;
+			cursor: pointer; 
+		}
+		
+		.form-actions.above-table { padding: 5px; margin: 5px 0; background: transparent; border: 0; min-height: 30px; }
 		
 		
 		
 		
 		
+	@media (max-width: 979px) {
 		
-		
-	@media (min-width: 1200px) {
-		
-		
-		input, textarea, .uneditable-input 	{ width: 306px; }
-		select								{ width: 320px; }
+		.formSize( 256px );
 		
 	}
 	
@@ -69,8 +96,8 @@
 	@media (max-width: 480px) {
 		
 		
-		input, textarea, .uneditable-input 	{ width: 95%; }
-		select								{ width: 98%; }
+		input, textarea, .uneditable-input 	{ width: 95%!important; }
+		select								{ width: 98%!important; }
 
 		.ui-datepicker-trigger { display: none; }
 

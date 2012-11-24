@@ -1,0 +1,311 @@
+
+
+		<h2>
+			Users
+			<small>Manage Users and Permissions</small>
+		</h2>
+		<hr>
+		
+		
+		
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#user-list" data-toggle="tab"><img src="img/vendor/fugue/icons/ui-list-box-blue.png" class="icon"> Users List</a>
+			</li>
+			<li>
+				<a href="#user-new" data-toggle="tab"><img src="img/vendor/fugue/icons/user-silhouette.png" class="icon"> Add User</a>
+			</li>
+			<li class="disabled">
+				<a href="#user-edit" data-toggle=""><img src="img/vendor/fugue/icons/user-worker.png" class="icon"> Edit User</a>
+			</li>
+		</ul>
+		
+		<div class="tab-content">
+		
+			<div class="tab-pane active" id="user-list">
+		
+		
+				<div class="form-actions above-table">
+					
+					<a href="#user-new" class="new btn orange pull-right">
+						<span>New User</span>
+						<img src="img/vendor/fugue/icons/user-silhouette.png" class="icon">
+					</a>
+					
+				</div>
+				
+				
+				
+				<table class="table table-striped table-hover">
+				
+					<thead>
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Username</th>
+							<th scope="col">Email</th>
+							<th scope="col">Last Login</th>
+							<th scope="col" colspan="3"></th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<th scope="row">Jim Podolski</th>
+							<td><a href="#">Jimbob</a></td>
+							<td><a href="#">jimbob@hotmail.com</a></td>
+							<td>3 minutes ago</td>
+							<td class="icon"><a href="#" class="state active" title="deactivate this">active</a></td>
+							<td class="icon"><a href="#" class="edit" title="edit this"><img src="img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
+							<td class="icon"><a href="#" class="delete" title="delete this"><img src="img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
+						</tr>
+						<tr>
+							<th scope="row">Jefferey McDougall</th>
+							<td><a href="#">Jefferey</a></td>
+							<td><a href="#">jeffers@mcjeffjeff.uk</a></td>
+							<td>2 days ago</td>
+							<td class="icon"><a href="#" class="state active" title="deactivate this">active</a></td>
+							<td class="icon"><a href="#" class="edit" title="edit this"><img src="img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
+							<td class="icon"><a href="#" class="delete" title="delete this"><img src="img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
+						</tr>
+						<tr>
+							<th scope="row">Jenny Plank</th>
+							<td><a href="#">Jenx</a></td>
+							<td><a href="#">jenxxx85@yahoomail.com</a></td>
+							<td>last week</td>
+							<td class="icon"><a href="#" class="state active" title="deactivate this">active</a></td>
+							<td class="icon"><a href="#" class="edit" title="edit this"><img src="img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
+							<td class="icon"><a href="#" class="delete" title="delete this"><img src="img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
+						</tr>
+						<tr>
+							<th scope="row">James Stephenson</th>
+							<td><a href="#">Usurper</a></td>
+							<td><a href="#">js@mail.com</a></td>
+							<td>last year</td>
+							<td class="icon"><a href="#" class="state inactive" title="activate this">inactive</a></td>
+							<td class="icon"><a href="#" class="edit" title="edit this"><img src="img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
+							<td class="icon"><a href="#" class="delete" title="delete this"><img src="img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
+						</tr>
+						<tr>
+							<th scope="row">Jordy Laforge</th>
+							<td><a href="#">J-Dawg</a></td>
+							<td><a href="#">j@enterprise.gov</a></td>
+							<td>last month</td>
+							<td class="icon"><a href="#" class="state inactive" title="activate this">inactive</a></td>
+							<td class="icon"><a href="#" class="edit" title="edit this"><img src="img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
+							<td class="icon"><a href="#" class="delete" title="delete this"><img src="img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
+						</tr>
+					</tbody>
+				
+				</table>
+				
+									
+
+			
+			</div>
+			
+			<div class="tab-pane" id="user-new">
+		
+				<form novalidate>
+				
+					<h3>New User</h3>
+					
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Name</label>
+						</div>
+						<div class="formAnswer">
+							<input type="text" class="small firstname" placeholder="name"><input type="text" class="medium surname" placeholder="surname">
+						</div>
+					</div>
+				
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Username</label>
+						</div>
+						<div class="formAnswer">
+							<input type="text" class="medium username">
+						</div>
+					</div>
+				
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Email</label>
+						</div>
+						<div class="formAnswer">
+							<input type="email" required="required">
+						</div>
+					</div>
+				
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Mobile</label>
+						</div>
+						<div class="formAnswer">
+							<input type="text" class="medium">
+						</div>
+					</div>
+					
+					<hr>
+				
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Password</label>
+						</div>
+						<div class="formAnswer">
+							<input type="password" class="medium">
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Confirm</label>
+						</div>
+						<div class="formAnswer">
+							<input type="password" class="medium">
+						</div>
+					</div>
+					
+					
+					<hr>
+				
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> <strong>Super Admin</strong></label>
+						</div>
+					</div>
+
+
+
+
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> <strong>Site Admin</strong></label>
+						</div>
+					</div>
+
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Website Settings</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Users</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Logs</label>
+						</div>
+					</div>
+					
+					
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> <strong>Content Admin</strong></label>
+						</div>
+					</div>
+
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Page Content</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage News</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Blog</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Twitter</label>
+						</div>
+					</div>
+					
+					
+
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> <strong>Modules Admin</strong></label>
+						</div>
+					</div>
+
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Expressions</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Rare Crafts</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Comments</label>
+						</div>
+					</div>
+					
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<label><input type="checkbox"> Manage Quicklinks</label>
+						</div>
+					</div>
+					
+					
+
+
+
+
+
+
+					<div class="formRow buttonRow">
+						
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<button type="submit" href="#" class="new btn green">
+								<span>Save</span>
+								<img src="img/vendor/fugue/icons/disk-black.png" class="icon" alt="edit">
+							</button>
+						</div>
+		
+					</div>
+					
+				</form>
+			
+			</div>
+				
+			<div class="tab-pane" id="user-edit">
+				black
+			</div>		
+		
+		
+		

@@ -5,13 +5,25 @@
 		
 		$(function() {
 			
-			// set defaults for jquery ui widgets
-			$.extend( $.ui.dialog.prototype.options, { width: 400, height: 160, show: { effect: 'drop', direction: 'up', distance: 20, duration: 300 },  hide: { effect: 'drop', direction: 'down', distance: 20, duration: 550 } });
-			$.datepicker.setDefaults({ dateFormat: "yy-mm-dd", showOn: 'both', buttonImage: "img/vendor/fugue/icons/calendar-month.png", buttonImageOnly: true });
+			// Dialog needs a wrapper to run perspective CSS animations from.
+			$('body').prepend('<div class="ui-dialog-perspective-wrapper"></div>');
+			$.extend( $.ui.dialog.prototype.options, { 
+				modal: true, draggable: false,
+				open: 			function() { $(this).parents('.ui-dialog').removeClass('out').addClass('in') },
+				beforeClose: 	function(event, ui) { $('.ui-dialog').removeClass('in').addClass('out'); } 
+			});
 			
-			// only apply datepicker to desktop devices.
+					
+			$.datepicker.setDefaults({ dateFormat: "yy-mm-dd", defaultDate: new Date(), showOn: 'both', buttonImage: "img/vendor/fugue/icons/calendar-month.png", buttonImageOnly: true });
+			
+			// only apply datepicker to desktop devices. Why? Mobiles have good datepickers.
 			// not fool-proof, but pretty close.
-			if( !Modernizr.touch || screen.width > 680 ) { $('input[type=date]').datepicker(); }
+			if( !Modernizr.touch || screen.width > 680 ) { 
+				$('input[type=date]').datepicker(); $('[type=date]').each( function() {
+					if ( $(this).val() == "" )
+						$(this).datepicker('setDate', new Date());
+				});
+			}
 			
 			
 			

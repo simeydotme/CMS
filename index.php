@@ -27,8 +27,7 @@
     </head>
 	
     <body>
-
-		
+				
 		<div id="container">
 		
 			<header class="container-fluid">
@@ -62,13 +61,18 @@
         <script src="js/vendor/jqueryui/1.9.1/jqueryui.custom.min.js"></script>
 		
         <script src="js/vendor/bootstrap/2.2.1/bootstrap.min.js"></script>
+        <script src="js/vendor/qtip/2.0.0/qtip.min.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 		
 		
+		<?php 
+			
+			echo('<script src="js/pages/' . $page . '.js"></script>'); 
 		
-		<script src="js/pages/gallery.js"></script>
+		?>
+		
 
     </body>
 	

@@ -11,6 +11,10 @@
 		
 		@tableHeadPadding:		8px;
 		@tableBodyPadding:		4px 8px;
+		
+		@activeIcon:			"@{imgPath}/@{iconPath}/eye.png";
+		@inactiveIcon:			"@{imgPath}/@{iconPath}/eye-close.png";
+		@hoverIcon:				"@{imgPath}/@{iconPath}/eye-half.png";
 
 
 	/* ==========================================================================
@@ -48,8 +52,19 @@
 		.table tbody tr:first-child th,
 		.table tbody tr:first-child td { box-shadow: 0 11px 12px -10px #bbb inset; border-top: 1px solid darken(@tableColor,15%); }
 		
-		.table tbody tr td.icon		{ border-left-style: dotted; border-left-width: 1px; background-color: #F4F4F4; width: 24px; }
+		.table tbody tr td.icon		{ border-left-style: dotted; border-left-width: 1px; width: 24px; }
 		.table tbody tr td.icon a	{ display: block; text-align: center; }
+		
+		
+		.table tbody tr td a.state {
+			
+			text-indent: -999em; width: 24px; height: 20px; display: block; background-repeat: no-repeat; background-position: center 4px;
+			
+			&.active { background-image: url('@{activeIcon}'); }
+			&.inactive { background-image: url('@{inactiveIcon}'); }
+			&:hover { background-image: url('@{hoverIcon}'); }
+
+		}
 		
 		
 		.table-striped tbody tr:nth-child(odd) td, 
