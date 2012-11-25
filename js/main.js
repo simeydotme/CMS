@@ -26,6 +26,15 @@
 			}
 			
 			
+			$('.tooltip').qtip({
+				
+				attr: 'title',
+				position: { viewport: true, my: 'top center', at: 'bottom center', adjust: { y: 5, x: 5 } },
+				style: { tip: { corner: true, width: 10 } }
+			
+			});
+			
+			
 			
 			
 		

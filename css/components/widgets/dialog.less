@@ -6,9 +6,6 @@
 
 		@dialogPadding:				10px 15px;
 		@dialogBackground:			#FDFDFD;
-		@dialogBorder:				1px solid @secondaryColor;
-		@dialogBorderBottom:		3px solid @hintColor;
-
 
 	/* ==========================================================================
 	   Dialog Mixins
@@ -25,7 +22,7 @@
 			position: fixed; min-width: 400px; height: auto; overflow: hidden; top: 0px!important;
 			.widget;
 			border-radius: 0 0 @widgetBorderRadius @widgetBorderRadius;
-			border-top: 0; border-bottom: @dialogBorderBottom;
+			border-top: 0; border-bottom: @widgetBorderHint;
 			
 					
 			&.in {
@@ -44,7 +41,7 @@
 			 
 		}
 		
-		.ui-dialog-perspective-wrapper { -webkit-perspective: 800; position: absolute; width: 100%; z-index:1003; }
+		.ui-dialog-perspective-wrapper { -webkit-perspective: 800; position: absolute; width: 100%; z-index:9999; }
 		
 		
 		.ui-dialog .ui-dialog-title { 

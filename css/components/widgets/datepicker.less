@@ -5,10 +5,8 @@
 	   ========================================================================== */
 
 		@datepickerPadding: 		10px;
-		@datepickerBorder: 			1px solid @primaryColor;
-		@datepickerBackground:		#FDFDFD;
 		
-		@datepickerWidth: 			262px;
+		@datepickerWidth: 			270px;
 		
 		@datepickerDayHover:		lighten( @primaryColor, 30% );
 		@datepickerDayHighlight:	#e8e8e8;
@@ -30,6 +28,7 @@
 		
 			display: none; width: @datepickerWidth;
 			.widget;
+			border-bottom: @widgetBorderHint;
 			
 		}
 		
@@ -87,7 +86,7 @@
 		.ui-datepicker td a.ui-state-active 	{ background-color: @datepickerDayActive; box-shadow: 0 0 8px -1px @datepickerDayActive; color: white; text-shadow: 0 0 1px white; }
 		
 		.ui-datepicker td span.ui-state-hover, 
-		.ui-datepicker td a.ui-state-hover 	{ background-color: @datepickerDayHover; color: @darkColor; }
+		.ui-datepicker td a.ui-state-hover 	{ background-color: @datepickerDayHover; box-shadow: 0 0 8px -1px @datepickerDayHover; color: @darkColor; }
 		
 		 
 		
