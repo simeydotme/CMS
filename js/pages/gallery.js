@@ -37,11 +37,11 @@
 					
 					"ok": {
 					  text:'Ok', class:'btn red',
-					  click: function() { $(this).dialog('close'); $galleryRow.fadeOut().attr('data-destroy','_destroy'); }
+					  click: function() { $galleryRow.fadeOut().attr('data-destroy','_destroy'); $(this).animateDialogClose(); }
 					},
 					"cancel": {
 					  text:'Cancel', class:'btn',
-					  click: function() { $(this).dialog('close'); }
+					  click: function() { $(this).animateDialogClose(); }
 					}
 				}
 				
@@ -62,11 +62,11 @@
 					
 					"ok": {
 					  text:'Ok', class:'btn red',
-					  click: function() { gallery.sendGalleryState(); $(this).dialog('close'); }
+					  click: function() { gallery.sendGalleryState(); $(this).animateDialogClose(); }
 					},
 					"cancel": {
 					  text:'Cancel', class:'btn',
-					  click: function() { $(this).dialog('close'); }
+					  click: function() { $(this).animateDialogClose(); }
 					}
 				}
 				

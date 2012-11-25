@@ -9,9 +9,15 @@
 			$('body').prepend('<div class="ui-dialog-perspective-wrapper"></div>');
 			$.extend( $.ui.dialog.prototype.options, { 
 				modal: true, draggable: false,
-				open: 			function() { $(this).parents('.ui-dialog').removeClass('out').addClass('in') },
-				beforeClose: 	function(event, ui) { $('.ui-dialog').removeClass('in').addClass('out'); } 
-			});
+				open: function() { $(this).parents('.ui-dialog').removeClass('out').addClass('in') }
+			}); 
+			
+			// function to close dialog using css animations.
+			$.fn.animateDialogClose = function() {
+				var $dialog = $(this);
+					$dialog.parents('.ui-dialog').removeClass('in').addClass('out');
+					setTimeout( function() { $dialog.dialog('close'); }, 500);
+			};
 			
 					
 			$.datepicker.setDefaults({ dateFormat: "yy-mm-dd", defaultDate: new Date(), showOn: 'both', buttonImage: "img/vendor/fugue/icons/calendar-month.png", buttonImageOnly: true });

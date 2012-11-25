@@ -45,14 +45,15 @@
 			
 			.placeholder {
 				
-				border-color: @greenColor;
-				background-color: lighten( @greenColor, 50% );
+				border: 1px dotted @greenColor;
+				background-color: fade( @greenColor, 5% );
 				
 			}
 			
 			.ui-sortable-helper:hover {
 				
-				border-color: @greenColor;	
+				border-color: 	@greenColor;
+				box-shadow: 	0 8px 30px -5px rgba(0,0,0,0.4);
 				
 			}
 			
