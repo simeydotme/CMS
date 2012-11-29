@@ -90,8 +90,28 @@ if (!(window.console && console.log)) {
 
 
 
-
-
+	/* ==========================================================================
+	  	Collapse / Expand sections of tables
+	   ========================================================================== */
+		
+		$(function() {
+			
+			var $section = $('tbody .section');
+			//$section.nextAll('tr').hide();
+			
+			$section.toggle( function() {
+			
+				$(this).nextAll('tr').hide();
+				$(this).find('td.collapse a').addClass('expand');
+			
+			}, function() {
+			
+				$(this).nextAll('tr').show();
+				$(this).find('td.collapse a').removeClass('expand');
+			
+			});
+		
+		});
 
 
 
