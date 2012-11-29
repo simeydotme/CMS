@@ -26,10 +26,14 @@
 			
 					
 			&.in {
-				-webkit-animation: dialogAnimIn 500ms ease-out;
+				-webkit-animation: dialogAnimIn 600ms ease-out;
+				-ms-animation: dialogAnimIn 600ms ease-out;
+				animation: dialogAnimIn 600ms ease-out;
 			}
 			&.out {
-				-webkit-animation: dialogAnimOut 500ms ease-out;	
+				-webkit-animation: dialogAnimOut 600ms ease-out;	
+				-ms-animation: dialogAnimOut 600ms ease-out;	
+				animation: dialogAnimOut 600ms ease-out;
 			}
 			
 		}
@@ -41,7 +45,10 @@
 			 
 		}
 		
-		.ui-dialog-perspective-wrapper { -webkit-perspective: 800; position: absolute; width: 100%; z-index:9999; }
+		.ui-dialog-perspective-wrapper { 
+			-webkit-perspective: 500px; -moz-perspective: 500px; -ms-perspective: 500px; perspective: 500px;
+			position: absolute; width: 100%; z-index:9999; 
+		}
 		
 		
 		.ui-dialog .ui-dialog-title { 
@@ -94,38 +101,54 @@
 	
 		@-webkit-keyframes dialogAnimIn {
 			
-			0% {
-				-webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px);
-				opacity: 0;
-			}
-			
-			15% {
-				-webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px);
-			}
-			
-			100% {
-				-webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px);
-				opacity: 1;
-			}
+			0% { -webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px); opacity: 0; }
+			15% { -webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px); }
+			100% {-webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
 			
 		}
 		
 		@-webkit-keyframes dialogAnimOut {
 			
-			0% {
-				-webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px);
-				opacity: 1;
-			}
+			0% { -webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			75% { -webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px); }
+			100% { -webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px); opacity: 0; }
 			
-			75% {
-				-webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px);
-			}
+		}
+		
+		
+		
+		
+		@-ms-keyframes dialogAnimIn {
 			
-			100% {
-				-webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px);
-				opacity: 0;
-				
-			}
+			0% { -ms-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px); opacity: 0; }
+			15% { -ms-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px); }
+			100% { -ms-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			
+		}
+		
+		@-ms-keyframes dialogAnimOut {
+			
+			0% { -ms-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			75% { -ms-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px); }
+			100% { -ms-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px); opacity: 0; }
+			
+		}
+		
+			
+		
+		@keyframes dialogAnimIn {
+			
+			0% { -moz-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px); opacity: 0; }
+			15% { -moz-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px); }
+			100% {-moz-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			
+		}
+		
+		@keyframes dialogAnimOut {
+			
+			0% { -moz-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			75% { -moz-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px); }
+			100% { -moz-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px); opacity: 0;}
 			
 		}
 		
