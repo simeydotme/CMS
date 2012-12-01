@@ -18,23 +18,32 @@
 
 		.formSize( @MaxWidth: 306px ) {
 			
-			input, 
 			textarea, 
+			input[type="text"], input[type="password"], 
+			input[type="datetime"], input[type="datetime-local"], input[type="date"], 
+			input[type="month"], input[type="time"], input[type="week"], 
+			input[type="number"], 
+			input[type="email"], input[type="url"], 
+			input[type="search"], input[type="tel"], 
+			input[type="color"], 
 			.uneditable-input { 
+			
 				width: @MaxWidth; margin-right: 5px; 
 				
-			}
-			select { width: @MaxWidth + 14; margin-right: 5px; }
-	
-			input, 
-			textarea, 
-			.uneditable-input,
-			select {
+				&.medium 	{ width: @MaxWidth - 100; }
+				&.small 	{ width: @MaxWidth - 180; }
+				&.mini 		{ width: @MaxWidth - 250; }
 				
-				&.medium { width: @MaxWidth - 100; }
-				&.small { width: @MaxWidth - 180; }
-				&.mini { width: @MaxWidth - 250; }
-					
+			}
+			
+			select { 
+			
+				width: @MaxWidth + 14; margin-right: 5px;
+				
+				&.medium 	{ width: @MaxWidth - 100 + 14; }
+				&.small 	{ width: @MaxWidth - 180 + 14; }
+				&.mini 		{ width: @MaxWidth - 250 + 14; }
+				
 			}
 		
 		}
@@ -96,8 +105,20 @@
 	@media (max-width: 480px) {
 		
 		
-		input, textarea, .uneditable-input 	{ width: 95%!important; }
-		select								{ width: 98%!important; }
+		textarea, 
+		input[type="text"], input[type="password"], 
+		input[type="datetime"], input[type="datetime-local"], input[type="date"], 
+		input[type="month"], input[type="time"], input[type="week"], 
+		input[type="number"], 
+		input[type="email"], input[type="url"], 
+		input[type="search"], input[type="tel"], 
+		input[type="color"], 
+		.uneditable-input { 
+			 width: 95%!important; 
+		}
+		select	{ 
+			width: 98%!important; 
+		}
 
 		.ui-datepicker-trigger { display: none; }
 

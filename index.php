@@ -6,7 +6,7 @@
    
    
     <head>
-		<title></title>
+		<title>Super Dooper CMS</title>
 		
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -65,6 +65,11 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+		
+        <script src="js/components/alerts.js"></script>
+        <script src="js/components/widgets.js"></script>
+		
+        <script src="js/shell/nav.js"></script>
 		
 		
 		<?php 
