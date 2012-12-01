@@ -10,6 +10,10 @@
 		@navPrimaryColor:					@primaryColor;
 		@navActiveColor:					#525B5E;
 		@navBackground:						lighten( @primaryColor, 46% );
+		
+		@dividerHeight:						4px;
+		
+		@navSecondaryPadding:				10px;
 
 
 	/* ==========================================================================
@@ -41,7 +45,7 @@
 		nav ul .item > a .text { text-shadow: 0 1px 1px black; }
 		nav ul .item .icon { position: relative; top: -1px; }
 		
-		nav .divider { height: 1px; padding: 8px 1px; overflow: hidden; }
+		nav .divider { height: 1px; padding: @dividerHeight/2 1px; overflow: hidden; }
 		
 		nav .item > a {
 			
@@ -109,12 +113,15 @@
 								
 				color: white; 
 				background: lighten( @navPrimaryColor, 5% ); 
-				padding-left: 20px;
-				box-shadow: -26px 0 21px -26px darken( @navPrimaryColor, 15% ) inset;
+				padding-left: 20px; border-radius: 3px;
+				
+				//box-shadow: -26px 0 21px -26px darken( @navPrimaryColor, 15% ) inset;
 
 			}
 			
 		}
+		
+		nav .sub { padding: @navSecondaryPadding; }
 		
 		
 		
@@ -134,7 +141,7 @@
 		nav .item .text { display: none; }
 		nav .item a 		{ padding: 4px 10px; }
 		nav .item a:hover 	{ padding: 4px 10px; }
-		nav .subitem  	{ display: none; }
+		nav .sub  			{ display: none!important; }
 		
 
 }		

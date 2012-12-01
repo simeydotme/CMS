@@ -7,16 +7,17 @@
 		@tableColor: 			@secondaryColor;
 		
 		@tableStripeColor:		#f3f3f3;
-		@tableHoverColor:		fade( @blueColor, 6% );
+		@tableHoverColor:		fade( @hintColor, 4% );
 		@tableSectionColor:		lighten(@tableColor, 35%);
 
+		@tableCellBorderColor:	#bbb;
 		
 		@tableHeadPadding:		8px;
 		@tableBodyPadding:		4px 8px;
 		
 		@activeIcon:			"@{imgPath}/@{iconPath}/eye.png";
 		@inactiveIcon:			"@{imgPath}/@{iconPath}/eye-close.png";
-		@activeHoverIcon:			"@{imgPath}/@{iconPath}/eye-half.png";
+		@activeHoverIcon:		"@{imgPath}/@{iconPath}/eye-half.png";
 
 		@expandIcon:			"@{imgPath}/@{iconPath}/control.png";
 		@collapseIcon:			"@{imgPath}/@{iconPath}/control-270.png";
@@ -36,7 +37,7 @@
 		.table-bordered { font-size: 0.9em; border: 1px solid @tableColor; }
 		
 		.table-bordered th, 
-		.table-bordered td { border-color: @tableColor; }
+		.table-bordered td { border-color: @tableColor;  }
 		.table-bordered th:first-child,
 		.table-bordered td:first-child { border-left: none;  }
 		
@@ -49,8 +50,20 @@
 		.table thead th:last-child,
 		.table thead td:last-child { border-radius: 0 4px 0 0;}
 		
-		.table tbody td ,
-		.table tbody th { font-weight: normal; border-bottom-color: #BBB; border-top-color: #BBB; border-left-color: #BBB; padding: @tableBodyPadding; }
+		.table tbody tr td ,
+		.table tbody tr th { 
+			font-weight: normal; padding: @tableBodyPadding; border:none; 
+			border-bottom-color: @tableCellBorderColor; 
+			border-top-color: @tableCellBorderColor; 
+			border-left-color: @tableCellBorderColor; 
+			border-bottom: 1px solid @tableCellBorderColor; 
+		
+		}
+		.table tbody tr:last-child td ,
+		.table tbody tr:last-child th {
+			border-bottom: none;	
+		}
+		
 		.table tbody td:first-child, 
 		.table tbody th:first-child { font-weight: normal;  }
 		
@@ -62,7 +75,11 @@
 		
 		
 		.table tbody tr.section td,
-		.table tbody tr.section th { cursor: pointer; font-size: 14px; font-weight: 600; }
+		.table tbody tr.section th { cursor: pointer; font-size: 14px; font-weight: 600;  background-color: @tableSectionColor; }
+		.table tbody tr.section td,
+		.table tbody tr.section th,
+		.table tbody tr.section:hover td,
+		.table tbody tr.section:hover th { background-color: @tableSectionColor; border-bottom-color: darken( @tableSectionColor, 20%);  }
 		
 		.table tbody tr td.collapse		{ width: 24px; }
 		.table tbody tr td.collapse a	{ 
@@ -92,8 +109,6 @@
 		.table-striped tbody tr:nth-child(odd) td, 
 		.table-striped tbody tr:nth-child(odd) th { background-color: @tableStripeColor; }
 		
-		.table tbody tr.section td, 
-		.table tbody tr.section th,
 		.table-striped tbody tr.section td, 
 		.table-striped tbody tr.section th {  background-color: @tableSectionColor; }
 		
@@ -101,7 +116,7 @@
 		
 
 		.table-hover tbody tr:hover td, 
-		.table-hover tbody tr:hover th { background-color: @tableHoverColor; }
+		.table-hover tbody tr:hover th { background-color: @tableHoverColor; border-bottom-color: @hintColor; }
 		
 		.table img { max-width: none; }
 		

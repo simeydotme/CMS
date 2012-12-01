@@ -46,8 +46,9 @@
 				
 				attr: 'title',
 				position: { viewport: true, my: 'top center', at: 'bottom center', adjust: { y: 5, x: 5 } },
-				style: { tip: { corner: true, width: 10 } }
-			
+				style: { tip: { corner: true, width: 10 } },
+				show: { event: 'mouseenter focus' },
+				hide: { event: 'blur unfocus mouseleave' }
 			});
 			
 			
@@ -55,3 +56,13 @@
 			
 		
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
