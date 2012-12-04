@@ -25,6 +25,9 @@
 			
 			
 			
+			
+			
+			
 			// defaults for datepicker
 			$.datepicker.setDefaults({ dateFormat: "yy-mm-dd", defaultDate: new Date(), showOn: 'both', buttonImage: "img/vendor/fugue/icons/calendar-month.png", buttonImageOnly: true });
 			
@@ -41,15 +44,40 @@
 			
 			
 			
+			
+			
+			
+			
+			// create sliders
+			$('.ui-slider').slider({ 
+				animate: true,
+				create: function( event, ui ) {
+					$(this).find('a').addClass('tooltip').attr('title', 'Move Me');
+				}
+			});
+
+
+
+
+
+
+
 			// apply tooltips to any element with 'class=tooltip'
-			$('.tooltip').qtip({
-				
+			$.fn.qtip.defaults = $.extend(true, {}, $.fn.qtip.defaults, {
 				attr: 'title',
 				position: { viewport: true, my: 'top center', at: 'bottom center', adjust: { y: 5, x: 5 } },
 				style: { tip: { corner: true, width: 10 } },
 				show: { event: 'mouseenter focus' },
 				hide: { event: 'blur unfocus mouseleave' }
 			});
+			
+			$('.tooltip').qtip();
+			
+			
+			
+			
+			
+			
 			
 			
 			
