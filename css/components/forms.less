@@ -10,6 +10,8 @@
 		@row:						formRow;
 		@question:					formQuestion;
 		@answer:					formAnswer;
+		
+		@inputBorder:				#BFBDB9;
 
 
 	/* ==========================================================================
@@ -28,11 +30,22 @@
 			input[type="color"], 
 			.uneditable-input { 
 			
-				width: @MaxWidth; margin-right: 5px; 
+				width: @MaxWidth; margin-right: 5px; border: 1px solid @inputBorder;
 				
 				&.medium 	{ width: @MaxWidth - 100; }
 				&.small 	{ width: @MaxWidth - 180; }
 				&.mini 		{ width: @MaxWidth - 250; }
+				
+				
+				background: -webkit-radial-gradient(50% 140%, 85% 40px, #eee 0%, white 100%);
+				background-position: 0 50px;
+				background-repeat: no-repeat;
+				.transition( background-position 1s );
+				
+				&:hover		{ 
+					border-color: darken( @inputBorder, 15%); 
+					background-position: 0 10px;
+				}
 				
 			}
 			
@@ -57,7 +70,9 @@
 	/* ==========================================================================
 	   Form Styles
 	   ========================================================================== */
-
+		
+		form h3 { padding-bottom: 5px; border-bottom: 1px solid #DDD; }
+		
 		.@{row} 				{ clear: both; margin-bottom: 5px; }
 		.@{row}.buttonRow 		{ clear: both; padding: 10px 0; background: #eee; border-radius: 4px; margin-top: 20px; }
 		

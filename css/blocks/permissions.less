@@ -1,0 +1,97 @@
+
+
+	/* ==========================================================================
+	   Permissions Variables
+	   ========================================================================== */
+		
+		@permissionPerspective: 	500px;
+		@permissionOrigin:			18% 20px;
+
+
+	/* ==========================================================================
+	   Permissions Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Permissions Styles
+	   ========================================================================== */
+
+		
+		.permissionLevel { 
+			
+			height: 100px;
+			
+			-webkit-perspective: @permissionPerspective; 	-webkit-perspective-origin: @permissionOrigin;
+					perspective: @permissionPerspective; 			perspective-origin: @permissionOrigin;
+
+		}
+		
+		.permissionLevel > div { position: absolute; opacity: 0; }
+		
+		.permissionLevel .out 	{ -webkit-animation: puffOut 0.8s; animation: puffOut 0.8s; opacity: 0; visibility: hidden; }
+		.permissionLevel .in 	{ -webkit-animation: puffIn 0.8s; animation: puffIn 0.8s; opacity: 1; visibility: visible; }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		@-webkit-keyframes puffOut {
+		
+			0% { -webkit-transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			99% { -webkit-transform: translate3d(0,-10px,-100px); opacity: 0; visibility: visible; }
+			100% { visibility: hidden; }
+			
+		}
+		
+		@-webkit-keyframes puffIn {
+		
+			0% { visibility: hidden; }
+			1% { -webkit-transform: translate3d(0,10px,100px); opacity: 1; visibility: visible; }
+			100% { -webkit-transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			
+		}
+		
+		@keyframes puffOut {
+		
+			0% { transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			99% { transform: translate3d(0,-10px,-100px); opacity: 0; visibility: visible; }
+			100% { visibility: hidden; }
+			
+		}
+		
+		@keyframes puffIn {
+		
+			0% { visibility: hidden; }
+			1% { transform: translate3d(0,10px,100px); opacity: 1; visibility: visible; }
+			100% { transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

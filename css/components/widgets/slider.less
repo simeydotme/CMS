@@ -8,17 +8,18 @@
 	   ========================================================================== */
 		
 		@sliderMargin: 				10px auto;
-		@sliderHeight: 				7px;
+		@sliderHeight: 				6px;
 		@sliderBackground:			#f4f4f4;
 		@sliderBorder:				1px solid darken(@sliderBackground, 5%);
+		@sliderRadius:				5px; 
 		
 		@sliderHoverBorder:			1px solid darken(@sliderBackground, 25%);
 		@sliderHoverBackground:		darken(@sliderBackground, 2%);
 		
 		@sliderHandleColor:			#ddd;
 		@sliderBorderColor:			darken( @sliderHandleColor, 20% );
-		@sliderHandleHeight:		@sliderHeight*2.2;
-		@sliderHandleWidth:			@sliderHeight*2;
+		@sliderHandleHeight:		14px;
+		@sliderHandleWidth:			28px;
 
 
 	/* ==========================================================================
@@ -34,21 +35,17 @@
 
 		.ui-slider { 
 		
-			position: relative; text-align: left; //overflow: hidden; 
+			position: relative; text-align: left; 
 			margin: @sliderMargin; width: 95%; 
 			
-			background: @sliderBackground;
-			box-shadow: 0 2px 2px darken( @sliderBackground, 10%) inset;
-			border: @sliderBorder; border-radius: 5px;
+			box-shadow: 0 2px 0px rgba(0,0,0,0.1) inset;
+			border: @sliderBorder; border-radius: @sliderRadius;
 			
-			-webkit-transition: border 1s, background 1s;
-			-moz-transition: 	border 1s, background 1s;
-			-ms-transition: 	border 1s, background 1s;
-			-o-transition: 		border 1s, background 1s;
-			-transition: 		border 1s, background 1s;
-			
-			&:hover { border: @sliderHoverBorder; background: @sliderHoverBackground; }
-		
+			background-color: @sliderBackground;
+			background-image: -webkit-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
+			background-image: 	 -moz-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
+			background-image: 	  -ms-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
+			background-image: 	 	  repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
 		}
 		
 		
@@ -56,33 +53,47 @@
 		
 			position: absolute; z-index: 2;
 			width: @sliderHandleWidth; height: @sliderHandleHeight; 
-			cursor: grab; border-radius: @sliderHeight;
+			cursor: grab; border-radius: 2px;
 			
-			.gradient( @sliderHandleColor, darken(@sliderHandleColor,10%) );
+			.gradient( @sliderHandleColor, darken(@sliderHandleColor,15%) );
 			box-shadow: white 0px 0px 30px 10px;
 			
 			.transition( border 1s );
-			border-width: 2px 0 2px 0; border-style: solid; border-color: transparent;
+			border-width: 0px 2px; border-style: solid; border-color: darken(@sliderHandleColor,25%);
 			
-			&:hover, &:focus, &:active { border-color: @hintColor transparent @hintColor transparent; }
+			&:hover, &:focus, &:active { border-color: @hintColor; }
+			&:focus { outline: 1px dotted #333; }
+			&:focus:hover { outline: none; }
 			
 			
 			&:before,
 			&:after {
-				content: "   "; width: 1px; height: 40%; position: absolute; background: #999; border-radius: 2px;
-				box-shadow: -1px 0px 0px white; opacity: 0.6;
+				
+				content: "   "; width: 2px; height: 40%; position: absolute; background: transparent; border-radius: 0px;
+				box-shadow: -1px 0px 0px rgba(255,255,255,0.8), 1px 0px 0px rgba(255,255,255,0.8), 2px 0 0 rgba(0, 0, 0, 0.3), 1px 0 0 rgba(0, 0, 0, 0.3) inset;
 			}
-			&:before { left: 5px; top: 30%; }
-			&:after { right: 5px; top: 30%; }
+			&:before { left: 10px; top: 30%; }
+			&:after { right: 10px; top: 30%; }
+			
+		}
+		
+		.ui-slider .ui-slider-range { 
+			
+			position: absolute; z-index: 1; display: block; border: 0; border-radius: @sliderRadius;
+			box-shadow: 0 2px 2px rgba(255, 255, 255, 0.7) inset, 0 -1px 1px rgba(0, 0, 0, 0.4) inset;
+			
+			background-color: @hintColor;
+			background-image: -webkit-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
+			background-image: 	 -moz-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
+			background-image: 	  -ms-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
+			background-image: 	 	  repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
 			
 		}
 		
 		
 		
-		.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
-		
 		.ui-slider-horizontal { height: @sliderHeight; }
-		.ui-slider-horizontal .ui-slider-handle { top: -(@sliderHandleHeight*0.25+2); margin-left: -@sliderHandleWidth*0.5; }
+		.ui-slider-horizontal .ui-slider-handle { top: -(@sliderHandleHeight*0.25+1); margin-left: -@sliderHandleWidth*0.5; }
 		.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
 		.ui-slider-horizontal .ui-slider-range-min { left: 0; }
 		.ui-slider-horizontal .ui-slider-range-max { right: 0; }

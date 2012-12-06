@@ -47,14 +47,12 @@
 			
 			
 			
+			$.extend( $.ui.slider.prototype.options, {
+				 animate: true
+			});
 			
 			// create sliders
-			$('.ui-slider').slider({ 
-				animate: true,
-				create: function( event, ui ) {
-					$(this).find('a').addClass('tooltip').attr('title', 'Move Me');
-				}
-			});
+			//$('.ui-slider').slider();
 
 
 

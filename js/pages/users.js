@@ -7,8 +7,12 @@
 
 	$(function() {
 
-			
-			// generate a username based off user's first and last names.
+
+
+		/* ==========================================================================
+		 	Generate a username based off user's first and last names.
+		   ========================================================================== */
+
 			var generateUsername = function() {
 				
 				$fname = $('input.firstname');
@@ -49,8 +53,49 @@
 			
 			
 			
+		/* ==========================================================================
+		 	Change the labels via CSS depending on slider value.
+		   ========================================================================== */
+
+			function sliderLabel( val ) { 
+					
+				switch( val ) {
+						
+					case 4: $('.permissionLevel .super').removeClass('out').addClass('in'); break;
+					case 3: $('.permissionLevel .admin').removeClass('out').addClass('in'); break;
+					case 2: $('.permissionLevel .creator').removeClass('out').addClass('in'); break;
+					case 1: $('.permissionLevel .editor').removeClass('out').addClass('in'); break;
+					
+				}
+			
+			};
 			
 			
+			$('.ui-slider').slider({
+				
+				value: 1, min: 1, max: 4, step: 1, range: 'min',
+				slide: function( event, ui ) { 
+					
+					$('.permissionLevel').find('.super, .admin, .creator, .editor').not('.out').removeClass('in').addClass('out');
+					
+					sliderLabel( ui.value );
+				
+				}
+				
+			});
+			
+			sliderLabel( $('.ui-slider').slider('value') );
+			
+			
+			
+			
+			
+			
+			
+		/* ==========================================================================
+		 	Tik box priviledge assignments
+		   ========================================================================== */
+
 			// grant all priviledges to super admin.
 			$('.super').on('click', function() {
 				if( $(this).is(':checked') ) {
@@ -72,6 +117,19 @@
 			
 			});
 
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 	});
