@@ -58,13 +58,36 @@
 		   ========================================================================== */
 
 			function sliderLabel( val ) { 
-					
+				
+				var $slider = $('.ui-slider');
+				var colors = 'red blue green purple dark';
+				
 				switch( val ) {
 						
-					case 4: $('.permissionLevel .super').removeClass('out').addClass('in'); break;
-					case 3: $('.permissionLevel .admin').removeClass('out').addClass('in'); break;
-					case 2: $('.permissionLevel .creator').removeClass('out').addClass('in'); break;
-					case 1: $('.permissionLevel .editor').removeClass('out').addClass('in'); break;
+					case 4: 
+						$('.permissionLevel .super').removeClass('out').addClass('in'); 
+						$slider.removeClass(colors).addClass('red'); 
+						break;
+						
+					case 3: 
+						$('.permissionLevel .admin').removeClass('out').addClass('in'); 
+						$slider.removeClass(colors).addClass('purple'); 
+						break;
+					
+					case 2: 
+						$('.permissionLevel .creator').removeClass('out').addClass('in'); 
+						$slider.removeClass(colors).addClass('blue'); 
+						break;
+					
+					case 1: 
+						$('.permissionLevel .editor').removeClass('out').addClass('in'); 
+						$slider.removeClass(colors).addClass('green'); 
+						break;
+					
+					case 0: 
+						$('.permissionLevel .peon').removeClass('out').addClass('in'); 
+						$slider.removeClass(colors).addClass('dark'); 
+						break;
 					
 				}
 			
@@ -73,10 +96,10 @@
 			
 			$('.ui-slider').slider({
 				
-				value: 1, min: 1, max: 4, step: 1, range: 'min',
+				value: 1, min: 0, max: 4, range: 'min',
 				slide: function( event, ui ) { 
 					
-					$('.permissionLevel').find('.super, .admin, .creator, .editor').not('.out').removeClass('in').addClass('out');
+					$('.permissionLevel').find('.super, .admin, .creator, .editor, .peon').not('.out').removeClass('in').addClass('out');
 					
 					sliderLabel( ui.value );
 				
@@ -89,7 +112,18 @@
 			
 			
 			
-			
+		/* ==========================================================================
+		 	Show more permissions
+		   ========================================================================== */
+
+			$('.show-more-permissions').on('click', function(e) {
+				
+				$('.more-permissions').slideDown();
+				e.preventDefault();
+				
+			});
+
+
 			
 			
 		/* ==========================================================================

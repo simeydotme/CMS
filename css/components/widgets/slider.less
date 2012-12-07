@@ -26,7 +26,15 @@
 	   Slider Mixins
 	   ========================================================================== */
 
-
+		.ui-slider-pattern( @color ) { 
+			
+			background-color: @color;
+			background-image: -webkit-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
+			background-image: 	 -moz-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
+			background-image: 	  -ms-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
+			background-image: 	 	  repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
+			
+		}
 
 	/* ==========================================================================
 	   Slider Styles
@@ -41,11 +49,7 @@
 			box-shadow: 0 2px 0px rgba(0,0,0,0.1) inset;
 			border: @sliderBorder; border-radius: @sliderRadius;
 			
-			background-color: @sliderBackground;
-			background-image: -webkit-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
-			background-image: 	 -moz-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
-			background-image: 	  -ms-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
-			background-image: 	 	  repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @sliderBackground, 5%) 20px, darken(@sliderBackground, 5%) 72px);
+			.ui-slider-pattern( @sliderBackground );
 		}
 		
 		
@@ -56,7 +60,7 @@
 			cursor: grab; border-radius: 2px;
 			
 			.gradient( @sliderHandleColor, darken(@sliderHandleColor,15%) );
-			box-shadow: white 0px 0px 30px 10px;
+			box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.3) , white 0px 0px 30px 10px;
 			
 			.transition( border 1s );
 			border-width: 0px 2px; border-style: solid; border-color: darken(@sliderHandleColor,25%);
@@ -77,20 +81,30 @@
 			
 		}
 		
-		.ui-slider .ui-slider-range { 
+		.ui-slider {
 			
-			position: absolute; z-index: 1; display: block; border: 0; border-radius: @sliderRadius;
-			box-shadow: 0 2px 2px rgba(255, 255, 255, 0.7) inset, 0 -1px 1px rgba(0, 0, 0, 0.4) inset;
+			.ui-slider-range { 
 			
-			background-color: @hintColor;
-			background-image: -webkit-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
-			background-image: 	 -moz-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
-			background-image: 	  -ms-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
-			background-image: 	 	  repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @hintColor, 10%) 20px, darken(@hintColor, 10%) 72px);
+				position: absolute; z-index: 1; display: block; border: 0; border-radius: @sliderRadius;
+				box-shadow: 0 2px 2px rgba(255, 255, 255, 0.7) inset, 0 -1px 1px rgba(0, 0, 0, 0.4) inset;
+				
+				.ui-slider-pattern( @hintColor );
+			
+			}
+			
+			&.red .ui-slider-range 		{ .ui-slider-pattern( @redColor ); }
+			&.blue .ui-slider-range 	{ .ui-slider-pattern( @blueColor ); }
+			&.orange .ui-slider-range 	{ .ui-slider-pattern( @orangeColor ); }
+			&.yellow .ui-slider-range 	{ .ui-slider-pattern( @yellowColor ); }
+			&.purple .ui-slider-range 	{ .ui-slider-pattern( @purpleColor ); }
+			&.green .ui-slider-range 	{ .ui-slider-pattern( @greenColor ); }
+			&.dark .ui-slider-range 	{ .ui-slider-pattern( @darkColor ); }
 			
 		}
 		
 		
+
+
 		
 		.ui-slider-horizontal { height: @sliderHeight; }
 		.ui-slider-horizontal .ui-slider-handle { top: -(@sliderHandleHeight*0.25+1); margin-left: -@sliderHandleWidth*0.5; }
