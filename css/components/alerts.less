@@ -23,11 +23,28 @@
 				border: 		1px solid rgba(0,0,0,0.2);
 				border-bottom: 	3px solid @color;
 				color: 			darken( @color , 20% );
+				position:		relative;
 				
 				background:  	#f7f7f7;
 				box-shadow: 	1px 2px 3px rgba(0,0,0,0.1) inset;
 				
-				button.close { color: darken( @color , 40% ); }
+				button.close {
+				
+					display: block; width: 25px; height: 25px;
+					position: absolute; right: -1px; top: -1px;
+					opacity: 1;
+					
+					border: 1px solid rgba(0, 0, 0, 0.2);
+					background: white; color: #bbb;
+					
+					border-radius: 0 5px;
+					box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1) inset;
+					
+					.transition( all 1s );
+					
+					&:hover, &:focus { color: #444; border-color: #444; }
+					
+				}
 								
 			}
 
