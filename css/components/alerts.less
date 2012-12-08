@@ -3,7 +3,7 @@
 	/* ==========================================================================
 	   Alert Variables
 	   ========================================================================== */
-
+			
 			@alertColor: 				@yellowColor;
 			@redAlertColor: 			@redColor;
 			@blueAlertColor: 			@blueColor;
@@ -20,24 +20,12 @@
 			
 			.makeAlert( @color ) {
 				
-				border: 1px dashed @color;
+				border: 		1px solid rgba(0,0,0,0.2);
+				border-bottom: 	3px solid @color;
 				color: 			darken( @color , 20% );
 				
-				background:  	fade( @color, 20% );
-				box-shadow: 0 2px 2px fade( darken( @color, 30% ), 20% );
-				
-				button.close { color: darken( @color , 40% ); }
-								
-			}
-
-			.makeAlert2( @color ) {
-				
-				border: 		1px solid @color;
-				color: 			white;
-
-				.gradient( darken(@color,5%), darken(@color,10%) ); 
-				box-shadow: 0 1px 2px fade( darken( @color, 60% ), 40% );
-				text-shadow: 0 1px rgba(0,0,0,0.6);
+				background:  	#f7f7f7;
+				box-shadow: 	1px 2px 3px rgba(0,0,0,0.1) inset;
 				
 				button.close { color: darken( @color , 40% ); }
 								
