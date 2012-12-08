@@ -62,15 +62,15 @@
 		
         <script src="js/vendor/bootstrap/2.2.1/bootstrap.min.js"></script>
         <script src="js/vendor/qtip/2.0.0/qtip.min.js"></script>
+        <script src="js/vendor/ckeditor/4.0.0/ckeditor.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 		
+		<script src="js/shell/nav.js"></script>
+		
         <script src="js/components/alerts.js"></script>
-        <script src="js/components/widgets.js"></script>
-		
-        <script src="js/shell/nav.js"></script>
-		
+        <script src="js/components/widgets.js"></script>		
 		
 		<?php 
 			
