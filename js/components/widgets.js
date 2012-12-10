@@ -19,6 +19,9 @@
 				var $dialog = $(this);
 					$dialog.parents('.ui-dialog').removeClass('in').addClass('out');
 					setTimeout( function() { $dialog.dialog('close'); }, 500);
+					
+				return $dialog;
+					
 			};
 			
 			
