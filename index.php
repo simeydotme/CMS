@@ -71,6 +71,7 @@
 		
         <script src="js/components/alerts.js"></script>
         <script src="js/components/widgets.js"></script>		
+        <script src="js/components/progress.js"></script>		
 		
 		<?php 
 			

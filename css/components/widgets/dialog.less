@@ -38,6 +38,10 @@
 			
 		}
 		
+		
+		.ui-dialog.ui-action .ui-dialog-titlebar-close { display: none; }
+		
+		
 		.ui-dialog .ui-dialog-titlebar {
 			 
 			.widgetHeader;
@@ -47,12 +51,12 @@
 		
 		.ui-dialog-perspective-wrapper { 
 			-webkit-perspective: 500px; -moz-perspective: 500px; -ms-perspective: 500px; perspective: 500px;
-			position: absolute; width: 100%; z-index:9999; 
+			position: fixed;  top: 0; width: 100%; z-index:9999; 
 		}
 		
 		
 		.ui-dialog .ui-dialog-title { 
-			font-size: 16px; font-family: @serif; line-height: 20px;
+			font-size: 16px; font-family: @serif; line-height: 20px; color: #333;
 		}
 		
 		.ui-dialog .ui-dialog-titlebar-close { 
@@ -68,10 +72,12 @@
 		.ui-dialog .ui-dialog-titlebar-close:focus { }
 		
 		.ui-dialog .ui-dialog-content { 
+		
 			position: relative; border: 0; 
 			padding: @dialogPadding; 
 			background: none; overflow: hidden; zoom: 1; 
-			min-width: 400px;
+			min-width: 400px; width: auto!important;
+			box-sizing: border-box; -moz-box-sizing: border-box;
 		}
 		
 		
