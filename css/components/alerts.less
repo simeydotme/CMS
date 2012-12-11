@@ -4,7 +4,11 @@
 	   Alert Variables
 	   ========================================================================== */
 			
-			@alertColor: 				@yellowColor;
+			@alertHolderWidth:			300px;
+			
+			
+			@alertColor: 				@hintColor;
+			@yellowAlertColor: 			@yellowColor;
 			@redAlertColor: 			@redColor;
 			@blueAlertColor: 			@blueColor;
 			@greenAlertColor: 			@greenColor;
@@ -21,13 +25,13 @@
 			.makeAlert( @color ) {
 				
 				border: 		1px solid rgba(0,0,0,0.2);
-				border-bottom: 	3px solid @color;
+				border-left: 	3px solid @color;
 				color: 			darken( @color , 20% );
 				position:		relative;
 				
 				background:  	#f7f7f7;
 				box-shadow: 	1px 2px 3px rgba(0,0,0,0.1) inset;
-				
+
 				button.close {
 				
 					display: block; width: 25px; height: 25px;
@@ -45,6 +49,8 @@
 					&:hover, &:focus { color: #444; border-color: #444; }
 					
 				}
+				
+				.icon { margin: 0 10px 10px 0; float: left; }
 								
 			}
 
@@ -55,14 +61,50 @@
 	   ========================================================================== */
 
 		
-		.alert {		.makeAlert( @alertColor ); }
-		.alert.red {	.makeAlert( @redAlertColor ); }
-		.alert.blue {	.makeAlert( @blueAlertColor ); }
-		.alert.green {	.makeAlert( @greenAlertColor ); }
+		.alertHolder { 
+			
+			z-index: 900;
+			position: fixed; top: 20px; left: 50%; margin: 0;
+			width: @alertHolderWidth; margin-left: -@alertHolderWidth/2;
+			font-size: 12px; line-height: 16px;
+			
+			&.top-right { 
+				
+				left: auto; right: 20px; margin: 0; 
+			
+			}
+			
+			&.bottom-right { 
+				
+				left: auto; right: 20px; margin: 0; bottom: 20px; top: auto;
+			
+			}
+			
+			.alert,
+			.alert.yellow,
+			.alert.red,
+			.alert.blue,
+			.alert.green,
+			
+			.alert.purple,
+			.alert.orange,
+			.alert.dark {
+				box-shadow: 0 -40px 50px -35px rgba(0, 0, 0, 0.07) inset, 0 5px 24px -5px grey;
+				margin: auto; opacity: 0; padding: 10px 25px 10px 15px; margin: 0 0 10px; 
+			}
+			
+		}		
 		
-		.alert.purple {	.makeAlert( @purpleAlertColor ); }
-		.alert.orange {	.makeAlert( @orangeAlertColor ); }
-		.alert.dark {	.makeAlert( @darkAlertColor ); }
+		
+		.alert {			.makeAlert( @alertColor ); }
+		.alert.yellow {		.makeAlert( @yellowAlertColor ); }
+		.alert.red {		.makeAlert( @redAlertColor ); }
+		.alert.blue {		.makeAlert( @blueAlertColor ); }
+		.alert.green {		.makeAlert( @greenAlertColor ); }
+		
+		.alert.purple {		.makeAlert( @purpleAlertColor ); }
+		.alert.orange {		.makeAlert( @orangeAlertColor ); }
+		.alert.dark {		.makeAlert( @darkAlertColor ); }
 		
 		
 		
