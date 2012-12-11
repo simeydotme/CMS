@@ -15,6 +15,7 @@
 			
 			@purpleAlertColor: 			@purpleColor;
 			@orangeAlertColor: 			@orangeColor;
+			@pinkAlertColor: 			@pinkColor;
 			@darkAlertColor: 			@darkColor;
 
 	/* ==========================================================================
@@ -25,14 +26,16 @@
 			.makeAlert( @color ) {
 				
 				border: 		1px solid rgba(0,0,0,0.2);
-				border-left: 	3px solid @color;
-				color: 			darken( @color , 20% );
 				position:		relative;
 				
 				background:  	#f7f7f7;
 				box-shadow: 	1px 2px 3px rgba(0,0,0,0.1) inset;
-
-				button.close {
+				
+				border-left: 	3px solid;
+				
+				
+				
+				.close {
 				
 					display: block; width: 25px; height: 25px;
 					position: absolute; right: -1px; top: -1px;
@@ -49,6 +52,7 @@
 					&:hover, &:focus { color: #444; border-color: #444; }
 					
 				}
+				
 				
 				.icon { margin: 0 10px 10px 0; float: left; }
 								
@@ -90,21 +94,26 @@
 			.alert.orange,
 			.alert.dark {
 				box-shadow: 0 -40px 50px -35px rgba(0, 0, 0, 0.07) inset, 0 5px 24px -5px grey;
-				margin: auto; opacity: 0; padding: 10px 25px 10px 15px; margin: 0 0 10px; 
+				margin: auto; opacity: 0; padding: 10px 25px 10px 15px; margin: 0 0 10px;
+				border: 1px solid rgba(0,0,0,0.35);
+				
+				
+				.close { border: 1px solid rgba(0,0,0,0.35); }
+				
 			}
 			
 		}		
 		
+		.alert {			.makeAlert( @alertColor ); 			border-left-color: @alertColor; 		color: darken( @alertColor , 20% ); }
+		.alert.yellow {		.makeAlert( @yellowAlertColor );	border-left-color: @yellowAlertColor; 	color: darken( @yellowAlertColor , 20% ); }
+		.alert.red {		.makeAlert( @redAlertColor ); 		border-left-color: @redAlertColor; 		color: darken( @redAlertColor , 20% ); }
+		.alert.blue {		.makeAlert( @blueAlertColor ); 		border-left-color: @blueAlertColor; 	color: darken( @blueAlertColor , 20% ); }
+		.alert.green {		.makeAlert( @greenAlertColor ); 	border-left-color: @greenAlertColor; 	color: darken( @greenAlertColor , 20% ); }
 		
-		.alert {			.makeAlert( @alertColor ); }
-		.alert.yellow {		.makeAlert( @yellowAlertColor ); }
-		.alert.red {		.makeAlert( @redAlertColor ); }
-		.alert.blue {		.makeAlert( @blueAlertColor ); }
-		.alert.green {		.makeAlert( @greenAlertColor ); }
-		
-		.alert.purple {		.makeAlert( @purpleAlertColor ); }
-		.alert.orange {		.makeAlert( @orangeAlertColor ); }
-		.alert.dark {		.makeAlert( @darkAlertColor ); }
+		.alert.purple {		.makeAlert( @purpleAlertColor ); 	border-left-color: @purpleAlertColor; 	color: darken( @purpleAlertColor , 20% ); }
+		.alert.orange {		.makeAlert( @orangeAlertColor ); 	border-left-color: @orangeAlertColor; 	color: darken( @orangeAlertColor , 20% ); }
+		.alert.pink {		.makeAlert( @pinkAlertColor ); 		border-left-color: @pinkAlertColor; 	color: darken( @pinkAlertColor , 20% ); }
+		.alert.dark {		.makeAlert( @darkAlertColor );   	border-left-color: @darkAlertColor; 	color: darken( @darkAlertColor , 20% ); }
 		
 		
 		
