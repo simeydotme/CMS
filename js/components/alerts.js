@@ -5,19 +5,8 @@
 	   ========================================================================== */
 		
 		$(function() {
-						
-						
-			growl( 'Testing Growl-style notifications', { duration: 20000 } );
-			growl( 'WARNING!', { style: 'warning' } );
-			growl( 'oh... $h*t...' , { style: 'error' } );
-			growl( "hehe, not really.<br>Oh, and I'm sticky" , { style: 'info', sticky: true } );
-		
 			
-			notify( "<strong>Danger, Will Robinson!</strong><br>There's someone behind you!" );
-			notify( "<strong>not really!</strong>", { duration: 5000, sticky: false, style: 'info' } );
-			notify( "DANGER!", { duration: 6000, sticky: false, style: 'error' } );
-			notify( "we should congratulate people!", { duration: 15000, sticky: false, style: 'success' } );
-
+			notify( "<strong>Looks like this is your first time here!?</strong><br>Please take some time to look around, and make sure your profile is up to date.!", { style: 'info' } );
 
 		});
 
