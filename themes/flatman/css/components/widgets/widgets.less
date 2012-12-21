@@ -1,0 +1,103 @@
+		
+		@import "datepicker.less";
+		@import "dialog.less";
+		@import "qtip.less";
+		@import "slider.less";
+		@import "progress.less";
+
+
+	/* ==========================================================================
+	   Widget Variables
+	   ========================================================================== */
+
+		@widgetPadding:				10px 15px;
+		@widgetBackground:			#FDFDFD;
+		
+		@widgetBorder:				1px solid @secondaryColor;
+		@widgetBorderHint:			3px solid @hintColor;
+		
+		@widgetBorderRadius:		4px;
+		@widgetBoxShadow:			0 8px 40px -14px @darkColor;
+		
+		@widgetHeaderPadding:		5px 10px;
+		@widgetHeaderColor:			@secondaryColor;
+		
+		@widgetOverlayColor:		#eee;
+
+
+	/* ==========================================================================
+	   Widget Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Widget Styles
+	   ========================================================================== */
+
+		.widget { 
+		
+			border: 		@widgetBorder;
+			box-shadow: 	0 8px 40px -14px @darkColor;
+			border-radius: 	@widgetBorderRadius;
+			background: 	@widgetBackground;
+		
+		}
+		
+		.widgetHeader {
+			
+			padding: @widgetHeaderPadding; 
+			position: relative;
+			.gradient( @widgetHeaderColor, darken(@widgetHeaderColor,5%) ); 
+			color: white;
+			height: 28px; line-height: 29px;
+			 
+		}
+		
+		.widgetHeaderIcon {
+			
+			width: 26px; height: 26px;
+			display: block;
+			top: 6px; position: absolute;
+			text-indent: -999em;
+			background-color: #fff;
+			background-position: center center; background-repeat: no-repeat;
+			border-radius: @widgetBorderRadius*0.8; cursor: pointer;	
+			opacity: 0.5;
+			
+			
+			&:hover { box-shadow: 0 0 4px white; opacity: 0.9; }
+					
+		}
+
+		.ui-widget-overlay { 
+			position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+			background: @widgetOverlayColor; opacity: 0.7;
+		}
+
+
+
+
+		.ui-draggable .ui-widget-header { cursor: move; }
+
+
+
+		.ui-resizable { position: relative;}
+		.ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; }
+		.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+		.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+		.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+		.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+		.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+		.ui-resizable-se { cursor: se-resize; width: 16px; height: 16px; right: 1px; bottom: 1px; background: url('@{imgPath}/interface/corner-grab.png') no-repeat bottom right; }
+		.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+		.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+		.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+
+
+
+
+
+
+
+

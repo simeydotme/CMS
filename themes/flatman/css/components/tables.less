@@ -1,0 +1,128 @@
+
+
+	/* ==========================================================================
+	   Table Variables
+	   ========================================================================== */
+		
+		@tableColor: 			@secondaryColor;
+		
+		@tableStripeColor:		#f3f3f3;
+		@tableHoverColor:		fade( @hintColor, 4% );
+		@tableSectionColor:		lighten(@tableColor, 35%);
+
+		@tableCellBorderColor:	#bbb;
+		
+		@tableHeadPadding:		8px;
+		@tableBodyPadding:		4px 8px;
+		
+		@activeIcon:			"@{imgPath}/@{iconPath}/eye.png";
+		@inactiveIcon:			"@{imgPath}/@{iconPath}/eye-close.png";
+		@activeHoverIcon:		"@{imgPath}/@{iconPath}/eye-half.png";
+
+		@expandIcon:			"@{imgPath}/@{iconPath}/control.png";
+		@collapseIcon:			"@{imgPath}/@{iconPath}/control-270.png";
+
+
+	/* ==========================================================================
+	   Table Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Table Styles
+	   ========================================================================== */
+		
+		.table { font-size: 0.9em; }
+		.table-bordered { font-size: 0.9em; border: 1px solid @tableColor; }
+		
+		.table-bordered th, 
+		.table-bordered td { border-color: @tableColor;  }
+		.table-bordered th:first-child,
+		.table-bordered td:first-child { border-left: none;  }
+		
+		.table thead { .gradient( @tableColor, darken(@tableColor,5%) ); color: white; }
+		.table thead th,
+		.table thead td {  padding: @tableHeadPadding; font-weight: normal; }
+		
+		.table thead th:first-child,
+		.table thead td:first-child { border-radius: 4px 0 0 0; }
+		.table thead th:last-child,
+		.table thead td:last-child { border-radius: 0 4px 0 0;}
+		
+		.table tbody tr td ,
+		.table tbody tr th { 
+			font-weight: normal; padding: @tableBodyPadding; border:none; 
+			border-bottom-color: @tableCellBorderColor; 
+			border-top-color: @tableCellBorderColor; 
+			border-left-color: @tableCellBorderColor; 
+			border-bottom: 1px solid @tableCellBorderColor; 
+		
+		}
+		.table tbody tr:last-child td ,
+		.table tbody tr:last-child th {
+			border-bottom: none;	
+		}
+		
+		.table tbody td:first-child, 
+		.table tbody th:first-child { font-weight: normal;  }
+		
+		.table tbody:first-child tr:first-child th,
+		.table tbody:first-child tr:first-child td { box-shadow: 0 11px 12px -10px #bbb inset; border-top: 1px solid darken(@tableColor,15%); }
+		
+		.table tbody tr td.icon		{ border-left-style: dotted; border-left-width: 1px; width: 24px; }
+		.table tbody tr td.icon a	{ display: block; text-align: center; }
+		
+		
+		.table tbody tr.section td,
+		.table tbody tr.section th { cursor: pointer; font-size: 14px; font-weight: 600;  background-color: @tableSectionColor; }
+		.table tbody tr.section td,
+		.table tbody tr.section th,
+		.table tbody tr.section:hover td,
+		.table tbody tr.section:hover th { background-color: @tableSectionColor; border-bottom-color: darken( @tableSectionColor, 20%);  }
+		
+		.table tbody tr td.collapse		{ width: 24px; }
+		.table tbody tr td.collapse a	{ 
+			
+			text-indent: -999em; width: 24px; height: 20px; display: block; background-repeat: no-repeat; background-position: center 4px;
+			
+			&.collapse { background-image: url('@{collapseIcon}'); 
+				&:hover { background-image: url('@{expandIcon}'); }}
+			&.expand { background-image: url('@{expandIcon}'); 
+				&:hover { background-image: url('@{collapseIcon}'); }}
+			
+					
+		}
+		
+		
+		.table tbody tr td a.state {
+			
+			text-indent: -999em; width: 24px; height: 20px; display: block; background-repeat: no-repeat; background-position: center 4px;
+			
+			&.active { background-image: url('@{activeIcon}'); }
+			&.inactive { background-image: url('@{inactiveIcon}'); }
+			&:hover { background-image: url('@{activeHoverIcon}'); }
+
+		}
+		
+		
+		.table-striped tbody tr:nth-child(odd) td, 
+		.table-striped tbody tr:nth-child(odd) th { background-color: @tableStripeColor; }
+		
+		.table-striped tbody tr.section td, 
+		.table-striped tbody tr.section th {  background-color: @tableSectionColor; }
+		
+		
+		
+
+		.table-hover tbody tr:hover td, 
+		.table-hover tbody tr:hover th { background-color: @tableHoverColor; border-bottom-color: @hintColor; }
+		
+		.table img { max-width: none; }
+		
+		
+		
+		
+		
+		
+		

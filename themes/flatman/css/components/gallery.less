@@ -1,0 +1,66 @@
+
+
+	/* ==========================================================================
+	   Gallery Variables
+	   ========================================================================== */
+		
+		@thumbnailWidth:		130px;
+		@thumbnailHeight:		@thumbnailWidth * 0.75;
+		@thumbnailPadding:		4px;
+		@thumbnailBorder:		1px;
+		@thumbnailMargin:		5px;
+		@thumbnailColor:		@hintColor;
+		
+	/* ==========================================================================
+	   Gallery Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Gallery Styles
+	   ========================================================================== */
+		
+		
+		.gallery-wrapper {
+			
+			.thumbnail,
+			.placeholder { 
+			
+				display: 		inline-block; *display: inline; *zoom:1;
+				border-radius: 	5px;
+				
+				padding: 		@thumbnailPadding;
+				border: 		@thumbnailBorder solid #DDD;
+				margin: 		0 @thumbnailMargin @thumbnailMargin*2 0;
+				
+				vertical-align: top; text-align: center; position: relative;
+				.transition( border 1s );
+				
+				background-color: #FCFCFC;
+				
+				&:hover { border-color: @hintColor; }
+				
+			}
+			
+			.placeholder {
+				
+				border: 1px dotted @greenColor;
+				background-color: fade( @greenColor, 5% );
+				
+			}
+			
+			.ui-sortable-helper:hover {
+				
+				border-color: 	@greenColor;
+				box-shadow: 	0 8px 30px -5px rgba(0,0,0,0.4);
+				
+			}
+			
+			.thumbnail img { max-height: @thumbnailHeight; max-width: @thumbnailWidth; }
+			.thumbnail button { position: absolute; top: 8px; right: 8px; padding: 2px; }
+			
+			
+			
+			
+		}

@@ -5,6 +5,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
    
    
+   <?php $theme = "themes/flatman"; ?>
+   
+   
+   
     <head>
 		<title>Super Dooper CMS</title>
 		
@@ -14,15 +18,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/vendor/normalize/1.0.1/normalize.min.css">
-        <link rel="stylesheet" href="css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">
+        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/normalize/1.0.1/normalize.min.css">
+        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">
         
 		
-		<link rel="stylesheet/less" type="text/css" href="css/main.less">
+		<link rel="stylesheet/less" type="text/css" href="<?php echo( $theme ) ?>/css/main.less">
 		
-        <script src="js/fonts.js"></script>
-        <script src="js/vendor/less/1.3.1/less.js"></script>
-        <script src="js/vendor/modernizr/2.6.1/modernizr.min.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/fonts.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/less/1.3.1/less.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/modernizr/2.6.1/modernizr.min.js"></script>
 		
     </head>
 	
@@ -34,18 +38,18 @@
 				<h1>Dot Label CMS</h1>
 			</header>
 			
-			<?php include('html-includes/account-bar.html'); ?>
+			<?php include('html-includes/account-bar.php'); ?>
 			
 			
 			<section class="body" role="main">
 			
-				<?php include('html-includes/navigation.html'); ?>
+				<?php include('html-includes/navigation.php'); ?>
 			
 				<section class="content">
 					<?php 
 						
 						$page = ( $_SERVER['QUERY_STRING'] == "" ? 'dashboard' : $_SERVER['QUERY_STRING']  );
-						include('html-includes/' . $page . '.html'); 
+						include('html-includes/' . $page . '.php'); 
 					
 					?>
 				</section>
@@ -57,25 +61,25 @@
 		</div>
 		
 		
-        <script src="js/vendor/jquery/1.8.2/jquery.min.js"></script>
-        <script src="js/vendor/jqueryui/1.9.1/jqueryui.custom.min.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/jquery/1.8.2/jquery.min.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/jqueryui/1.9.1/jqueryui.custom.min.js"></script>
 		
-        <script src="js/vendor/bootstrap/2.2.1/bootstrap.min.js"></script>
-        <script src="js/vendor/qtip/2.0.0/qtip.min.js"></script>
-        <script src="js/vendor/ckeditor/4.0.0/ckeditor.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.2.1/bootstrap.min.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.0/qtip.min.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.0/ckeditor.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/main.js"></script>
 		
-		<script src="js/shell/nav.js"></script>
+		<script src="<?php echo( $theme ) ?>/js/shell/nav.js"></script>
 		
-        <script src="js/components/alerts.js"></script>
-        <script src="js/components/widgets.js"></script>		
-        <script src="js/components/progress.js"></script>		
+        <script src="<?php echo( $theme ) ?>/js/components/alerts.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/components/widgets.js"></script>		
+        <script src="<?php echo( $theme ) ?>/js/components/progress.js"></script>		
 		
 		<?php 
 			
-			echo('<script src="js/pages/' . $page . '.js"></script>'); 
+			echo('<script src="' . $theme . '/js/pages/' . $page . '.js"></script>'); 
 		
 		?>
 		

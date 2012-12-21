@@ -1,0 +1,99 @@
+
+
+	/* ==========================================================================
+	   Permissions Variables
+	   ========================================================================== */
+		
+		@permissionPerspective: 	500px;
+		@permissionOrigin:			18% 20px;
+
+
+	/* ==========================================================================
+	   Permissions Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Permissions Styles
+	   ========================================================================== */
+
+		
+		.permissionLevel { 
+			
+			height: 100px;
+			
+			-webkit-perspective: @permissionPerspective; 	-webkit-perspective-origin: @permissionOrigin;
+					perspective: @permissionPerspective; 			perspective-origin: @permissionOrigin;
+
+		}
+		
+		.permissionLevel > div { position: absolute; opacity: 0; }
+		
+		.permissionLevel .out 	{ -webkit-animation: puffOut 0.4s; animation: puffOut 0.4s; opacity: 0; visibility: hidden; }
+		.permissionLevel .in 	{ -webkit-animation: puffIn 0.8s; animation: puffIn 0.8s; opacity: 1; visibility: visible; }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		@-webkit-keyframes puffOut {
+		
+			0% { -webkit-transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			49% { -webkit-transform: translate3d(30px,0,-10px); opacity: 0; visibility: visible; }
+			50% { visibility: hidden; }
+			
+		}
+		
+		@-webkit-keyframes puffIn {
+		
+			0% { visibility: hidden; }
+			1% { -webkit-transform: translate3d(0px,0,-20px); opacity: 0; }
+			51% { -webkit-transform: translate3d(0px,0,0px); opacity: 0; visibility: visible; }
+			100% { -webkit-transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			
+		}
+		
+		@keyframes puffOut {
+		
+			0% { transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			49% { transform: translate3d(30px,0,-10px); opacity: 0; visibility: visible; }
+			50% { visibility: hidden; }
+			
+		}
+		
+		@keyframes puffIn {
+		
+			0% { visibility: hidden; }
+			1% { transform: translate3d(0px,0,-20px); opacity: 0; }
+			51% { transform: translate3d(0px,0,0px); opacity: 0; visibility: visible; }
+			100% { transform: translate3d(0,0,0); opacity: 1; visibility: visible; }
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

@@ -1,0 +1,182 @@
+
+
+	/* ==========================================================================
+	   Dialog Variables
+	   ========================================================================== */
+
+		@dialogPadding:				10px 15px;
+		@dialogBackground:			#FDFDFD;
+
+	/* ==========================================================================
+	   Dialog Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Dialog Styles
+	   ========================================================================== */
+
+		.ui-dialog { 
+		
+			position: fixed; min-width: 400px; height: auto; overflow: hidden; top: 0px!important;
+			.widget;
+			border-radius: 0 0 @widgetBorderRadius @widgetBorderRadius;
+			border-top: 0; border-bottom: @widgetBorderHint;
+			
+					
+			&.in {
+				-webkit-animation: dialogAnimIn 600ms ease-out;
+				-ms-animation: dialogAnimIn 600ms ease-out;
+				animation: dialogAnimIn 600ms ease-out;
+			}
+			&.out {
+				-webkit-animation: dialogAnimOut 600ms ease-out;	
+				-ms-animation: dialogAnimOut 600ms ease-out;	
+				animation: dialogAnimOut 600ms ease-out;
+			}
+			
+		}
+		
+		
+		.ui-dialog.ui-action .ui-dialog-titlebar-close { display: none; }
+		
+		
+		.ui-dialog .ui-dialog-titlebar {
+			 
+			.widgetHeader;
+			background: none;
+			 
+		}
+		
+		.ui-dialog-perspective-wrapper { 
+			-webkit-perspective: 500px; -moz-perspective: 500px; -ms-perspective: 500px; perspective: 500px;
+			position: fixed;  top: 0; width: 100%; z-index:9000; 
+		}
+		
+		
+		.ui-dialog .ui-dialog-title { 
+			font-size: 16px; font-family: @serif; line-height: 20px; color: #333;
+		}
+		
+		.ui-dialog .ui-dialog-titlebar-close { 
+		
+			.widgetHeaderIcon;
+			right: 6px; background-image: url('@{imgPath}/vendor/fugue/icons/cross.png'); 
+			
+		}
+		
+		.ui-dialog .ui-dialog-titlebar-close span {  }
+		
+		.ui-dialog .ui-dialog-titlebar-close:hover, 
+		.ui-dialog .ui-dialog-titlebar-close:focus { }
+		
+		.ui-dialog .ui-dialog-content { 
+		
+			position: relative; border: 0; 
+			padding: @dialogPadding; 
+			background: none; overflow: hidden; zoom: 1; 
+			min-width: 400px; width: auto!important;
+			box-sizing: border-box; -moz-box-sizing: border-box;
+		}
+		
+		
+		.ui-dialog .ui-dialog-buttonpane { 
+			text-align: left; 
+			border-width: 1px 0 0 0; 
+			background-image: none; 
+			margin: .5em 0 0 0; 
+			padding: @dialogPadding; 
+		}
+		.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { text-align: right; }
+		.ui-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; }
+		
+		
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		@-webkit-keyframes dialogAnimIn {
+			
+			0% { -webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px); opacity: 0; }
+			15% { -webkit-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px); }
+			100% {-webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			
+		}
+		
+		@-webkit-keyframes dialogAnimOut {
+			
+			0% { -webkit-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			75% { -webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px); }
+			100% { -webkit-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px); opacity: 0; }
+			
+		}
+		
+		
+		
+		
+		@-ms-keyframes dialogAnimIn {
+			
+			0% { -ms-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px); opacity: 0; }
+			15% { -ms-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px); }
+			100% { -ms-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			
+		}
+		
+		@-ms-keyframes dialogAnimOut {
+			
+			0% { -ms-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			75% { -ms-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px); }
+			100% { -ms-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px); opacity: 0; }
+			
+		}
+		
+			
+		
+		@keyframes dialogAnimIn {
+			
+			0% { -moz-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -220px, 120px); opacity: 0; }
+			15% { -moz-transform: rotate3d(1, 0, 0, 100deg) translate3d(0px, -120px, 120px); }
+			100% {-moz-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			
+		}
+		
+		@keyframes dialogAnimOut {
+			
+			0% { -moz-transform: rotate3d(1, 0, 0, 0deg) translate3d(0px, 0px, 0px); opacity: 1; }
+			75% { -moz-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -120px, -120px); }
+			100% { -moz-transform: rotate3d(1, 0, 0, -20deg) translate3d(0px, -220px, -120px); opacity: 0;}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

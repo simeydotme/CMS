@@ -1,0 +1,181 @@
+
+	/* ==========================================================================
+	   Button Variables
+	   ========================================================================== */
+		
+		@btnColor1:					#F7F7F7;
+		@btnColor2:					#DCE2E5;
+		@btnBorder:					#BECCD3;
+		
+		@btnBlueColor1:			lighten( @blueColor, 10% );
+		@btnBlueColor2:			darken( @blueColor, 5% );
+		@btnBlueBorder:			#118cbd;
+		
+		@btnRedColor1:			lighten( @redColor , 10% );
+		@btnRedColor2:			darken( @redColor , 10% );
+		@btnRedBorder:			darken( @redColor , 25% );
+		
+		@btnPinkColor1:			lighten( @pinkColor , 5% );
+		@btnPinkColor2:			darken( @pinkColor , 15% );
+		@btnPinkColorBorder:	darken( @pinkColor , 25% );
+		
+		@btnPurpleColor1:			lighten( @purpleColor , 5% );
+		@btnPurpleColor2:			darken( @purpleColor , 15% );
+		@btnPurpleColorBorder:		darken( @purpleColor , 25% );
+		
+		@btnOrangeColor1:			lighten( @orangeColor , 15% );
+		@btnOrangeColor2:			darken( @orangeColor , 5% );
+		@btnOrangeColorBorder:		darken( @orangeColor , 15% );
+		
+		@btnYellowColor1:			lighten( @yellowColor , 10% );
+		@btnYellowColor2:			darken( @yellowColor , 5% );
+		@btnYellowColorBorder:		darken( @yellowColor , 15% );
+		
+		@btnGreenColor1:			lighten( @greenColor , 15% );
+		@btnGreenColor2:			darken( @greenColor , 0% );
+		@btnGreenColorBorder:		darken( @greenColor , 3% );
+		
+		@btnDarkColor1:			lighten( @darkColor , 15% );
+		@btnDarkColor2:			darken( @darkColor , 5% );
+		@btnDarkColorBorder:	darken( @darkColor , 5% );
+		
+		
+
+	/* ==========================================================================
+	   Button Mixins
+	   ========================================================================== */
+
+		.btnGradient( @color1 , @color2 ) {
+			
+			@color:  mix( @color1, @color2 );
+			
+			background-color: @color;
+			background-repeat:repeat-x;
+			
+			background-image:-webkit-gradient(linear, 0 0, 0 100%, from(@color1), to(@color2));
+			background-image:-webkit-linear-gradient(top, @color1, @color2);
+			   background-image:-moz-linear-gradient(top, @color1, @color2);
+			    background-image:-ms-linear-gradient(top, @color1, @color2);
+			     background-image:-o-linear-gradient(top, @color1, @color2);
+			        background-image:linear-gradient(to bottom, @color1, @color2);
+					
+			
+		}
+		
+		.makeBtn( @color1 , @color2, @color3 ) { 
+		
+			font-weight: 600; font-size: 12px; font-family: @sans;
+			border-radius: 4px;
+			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
+			
+			.btnGradient( @color1, @color2 );
+			text-shadow: 0 -1px 1px darken( @color3, 8% );
+			
+			&:hover {
+			
+				.btnGradient( darken( @color1, 3% ), darken( @color2, 3% ) );
+				border-color: darken( @color3, 3% );
+				background-position: 0 0;
+				
+			}
+			
+			&:active,
+			&.active { 
+				background-color: @color2; 
+				background-image: none;
+				box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05); 
+			}
+			
+			&.disabled,
+			&[disabled] {
+			  cursor: default;
+			  background-color: @color2;
+			  background-image: none;
+			  opacity: 0.65;
+			  filter: alpha(opacity=65);
+			  box-shadow: none;
+			}
+
+		}
+
+	/* ==========================================================================
+	   Button Styles
+	   ========================================================================== */
+
+
+		
+		.btn-group > .btn, 
+		.btn-group > .dropdown-menu,
+		.btn-group ul.dropdown-menu { font-size: 12px; }
+		
+		.btn 					{ .makeBtn( @btnColor1, @btnColor2, @btnBorder ) }
+		.btn .caret 			{ margin-left: 5px; }
+		.btn img:first-child 	{ margin-right: 5px; }
+		.btn img:last-child 	{ margin-left: 5px; }
+		
+.lt-ie9 .btn img { max-width: none; }
+		
+		
+		
+		.btn.blue 	{ 
+						.makeBtn( @btnBlueColor1, @btnBlueColor2, @btnBlueBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+					
+		.btn.red 	{ 
+						.makeBtn( @btnRedColor1, @btnRedColor2, @btnRedBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+		.btn.pink 	{ 
+						.makeBtn( @btnPinkColor1, @btnPinkColor2, @btnPinkColorBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+		.btn.purple { 
+						.makeBtn( @btnPurpleColor1, @btnPurpleColor2, @btnPurpleColorBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+		.btn.orange { 
+						.makeBtn( @btnOrangeColor1, @btnOrangeColor2, @btnOrangeColorBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+		.btn.yellow { 
+						.makeBtn( @btnYellowColor1, @btnYellowColor2, @btnYellowColorBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+		.btn.green { 
+						.makeBtn( @btnGreenColor1, @btnGreenColor2, @btnGreenColorBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+		.btn.dark { 
+						.makeBtn( @btnDarkColor1, @btnDarkColor2, @btnDarkColorBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
