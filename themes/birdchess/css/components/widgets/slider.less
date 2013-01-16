@@ -7,19 +7,19 @@
 	   Slider Variables
 	   ========================================================================== */
 		
-		@sliderMargin: 				10px auto;
-		@sliderHeight: 				6px;
-		@sliderBackground:			#f4f4f4;
+		@sliderMargin: 				10px 10px 30px;
+		@sliderHeight: 				4px;
+		@sliderBackground:			#444;
 		@sliderBorder:				1px solid darken(@sliderBackground, 5%);
-		@sliderRadius:				5px; 
+		@sliderRadius:				10px; 
 		
 		@sliderHoverBorder:			1px solid darken(@sliderBackground, 25%);
 		@sliderHoverBackground:		darken(@sliderBackground, 2%);
 		
-		@sliderHandleColor:			#ddd;
+		@sliderHandleColor:			#f1f1f1;
 		@sliderBorderColor:			darken( @sliderHandleColor, 20% );
-		@sliderHandleHeight:		14px;
-		@sliderHandleWidth:			28px;
+		@sliderHandleHeight:		12px;
+		@sliderHandleWidth:			30px;
 
 
 	/* ==========================================================================
@@ -28,11 +28,22 @@
 
 		.ui-slider-pattern( @color ) { 
 			
-			background-color: @color;
-			background-image: -webkit-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
-			background-image: 	 -moz-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
-			background-image: 	  -ms-repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
-			background-image: 	 	  repeating-linear-gradient(28deg, transparent, transparent 35px, darken( @color, 10%) 20px, darken(@color, 10%) 72px);
+			background-color: lighten(@color,15%);
+			background-image: -webkit-repeating-linear-gradient(28deg, transparent, transparent 35px, @color 20px, @color 72px);
+			background-image: 	 -moz-repeating-linear-gradient(28deg, transparent, transparent 35px, @color 20px, @color 72px);
+			background-image: 	  -ms-repeating-linear-gradient(28deg, transparent, transparent 35px, @color 20px, @color 72px);
+			background-image: 	 	  repeating-linear-gradient(28deg, transparent, transparent 35px, @color 20px, @color 72px);
+			
+		}
+		
+		.ui-slider-range-color( @color ) {
+			
+			box-shadow: 0 0 2px white, 0 0 10px lighten(@color, 10% );
+			background: -webkit-linear-gradient(top, @color 0, lighten(@color,30%) 2px, @color 2px);	
+			background:    -moz-linear-gradient(top, @color 0, lighten(@color,30%) 2px, @color 2px);	
+			background:     -ms-linear-gradient(top, @color 0, lighten(@color,30%) 2px, @color 2px);	
+			background:      -o-linear-gradient(top, @color 0, lighten(@color,30%) 2px, @color 2px);	
+			background:         linear-gradient(top, @color 0, lighten(@color,30%) 2px, @color 2px);	
 			
 		}
 
@@ -40,71 +51,89 @@
 	   Slider Styles
 	   ========================================================================== */
 
-
-		.ui-slider { 
 		
-			position: relative; text-align: left; 
-			margin: @sliderMargin; width: 95%; 
+		
+		.ui-slider {
 			
-			box-shadow: 0 2px 0px rgba(0,0,0,0.1) inset;
+			
+			
+			position: relative; text-align: left; 
+			margin: @sliderMargin; width: 95%;
+			
+			box-shadow: none;
 			border: @sliderBorder; border-radius: @sliderRadius;
 			
 			.ui-slider-pattern( @sliderBackground );
-		}
-		
-		
-		.ui-slider .ui-slider-handle { 
-		
-			position: absolute; z-index: 2;
-			width: @sliderHandleWidth; height: @sliderHandleHeight; 
-			cursor: grab; border-radius: 2px;
 			
-			.gradient( lighten(@sliderHandleColor,5%), darken(@sliderHandleColor,10%) );
-			box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.3) , white 0px 0px 30px 10px;
 			
-			.transition( border 1s );
-			border-width: 0px 2px; border-style: solid; border-color: darken(@sliderHandleColor,25%);
-			
-			&:hover, &:focus, &:active { 
-			
-				border-color: @hintColor; 
-				.gradient( @sliderHandleColor, darken(@sliderHandleColor,15%) );
+			&:before {
 				
-			}
-			&:focus { outline: 1px dotted #333; }
-			&:focus:hover { outline: none; }
-			
-			
-			
-			&:before,
-			&:after {
+			  content: " "; position: absolute;
+			  width: auto; height: 16px;
+			  top: -6px; left: -4px; right: -4px;
+			  border-radius: 10px; z-index: -1;
 				
-				content: "   "; width: 2px; height: 40%; position: absolute; background: transparent; border-radius: 0px;
-				box-shadow: -1px 0px 0px rgba(255,255,255,0.8), 1px 0px 0px rgba(255,255,255,0.8), 2px 0 0 rgba(0, 0, 0, 0.3), 1px 0 0 rgba(0, 0, 0, 0.3) inset;
-			}
-			&:before { left: 10px; top: 30%; }
-			&:after { right: 10px; top: 30%; }
+				background: -moz-linear-gradient(top,  rgba(0,0,0,0.1) 0%, rgba(255,255,255,1) 85%); /* FF3.6+ */
+				background: -webkit-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(255,255,255,1) 85%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(255,255,255,1) 85%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(255,255,255,1) 85%); /* IE10+ */
+				background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(255,255,255,1) 85%); /* W3C */
 			
-		}
-		
-		.ui-slider {
+			}
+			
+			
+			
+			
 			
 			.ui-slider-range { 
 			
 				position: absolute; z-index: 1; display: block; border: 0; border-radius: @sliderRadius;
-				box-shadow: 0 2px 2px rgba(255, 255, 255, 0.7) inset, 0 -1px 1px rgba(0, 0, 0, 0.4) inset;
+				opacity: 0.7;
 				
-				.ui-slider-pattern( @hintColor );
-			
+				.ui-slider-range-color( @hintColor );
+				
 			}
 			
-			&.red .ui-slider-range 		{ .ui-slider-pattern( @redColor ); }
-			&.blue .ui-slider-range 	{ .ui-slider-pattern( @blueColor ); }
-			&.orange .ui-slider-range 	{ .ui-slider-pattern( @orangeColor ); }
-			&.yellow .ui-slider-range 	{ .ui-slider-pattern( @yellowColor ); }
-			&.purple .ui-slider-range 	{ .ui-slider-pattern( @purpleColor ); }
-			&.green .ui-slider-range 	{ .ui-slider-pattern( @greenColor ); }
-			&.dark .ui-slider-range 	{ .ui-slider-pattern( @darkColor ); }
+			&.red .ui-slider-range 		{ .ui-slider-range-color( @redColor ) }
+			&.blue .ui-slider-range 	{ .ui-slider-range-color( @blueColor ); }
+			&.orange .ui-slider-range 	{ .ui-slider-range-color( @orangeColor ); }
+			&.yellow .ui-slider-range 	{ .ui-slider-range-color( @yellowColor ); }
+			&.purple .ui-slider-range 	{ .ui-slider-range-color( @purpleColor ); }
+			&.green .ui-slider-range 	{ .ui-slider-range-color( @greenColor ); }
+			&.dark .ui-slider-range 	{ .ui-slider-range-color( @darkColor ); }
+			
+			
+			
+			
+			
+			
+			.ui-slider-handle { 
+		
+				position: absolute; z-index: 2;
+				width: @sliderHandleWidth; height: @sliderHandleHeight; 
+				cursor: grab; border-radius: @sliderHandleWidth*2;
+				
+				.gradient( lighten(@sliderHandleColor,5%), darken(@sliderHandleColor,10%) );
+				box-shadow: 0 0 10px 0px #AAA, 0 2px 3px #555;
+				
+				.transition( border 1s );
+				border: none;
+		
+				top: -(@sliderHandleHeight*0.5)+1; 
+				margin-left: -@sliderHandleWidth*0.5;
+				
+				&:hover {
+					box-shadow: 0 0 10px 0px #888, 0 2px 3px #333;	
+				}
+				
+				/* dont get the outline in way of the visual when using it */
+				&:focus { outline: 1px dotted #333; }
+				&:focus:hover,
+				&:focus:active { outline: none; }
+				
+			}
+			
+			
 			
 		}
 		
@@ -113,14 +142,39 @@
 
 		
 		.ui-slider-horizontal { height: @sliderHeight; }
-		.ui-slider-horizontal .ui-slider-handle { top: -(@sliderHandleHeight*0.25+1); margin-left: -@sliderHandleWidth*0.5; }
+		.ui-slider-horizontal .ui-slider-handle { 
+		
+			width: @sliderHandleWidth; height: @sliderHandleHeight; 
+				
+				&:before, 
+				&:after {
+					content: " ";
+					width: 2px;
+					height: 40%;
+					position: absolute;
+					background: transparent;
+					border-radius: 0px;
+					box-shadow: -1px 0px 0px rgba(255, 255, 255, 0.8), 1px 0px 0px rgba(255, 255, 255, 0.8), 2px 0 0 rgba(0, 0, 0, 0.3), 1px 0 0 rgba(0, 0, 0, 0.3) inset;
+				}
+				
+				&:before {
+					left: 10px;
+					top: 30%;
+				}
+				
+				&:after {
+					right: 12px;
+					top: 30%;
+				} 
+				
+		}
 		.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
 		.ui-slider-horizontal .ui-slider-range-min { left: 0; }
 		.ui-slider-horizontal .ui-slider-range-max { right: 0; }
 		
 		
 		.ui-slider-vertical { width: @sliderHeight; height: 100px; }
-		.ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
+		.ui-slider-vertical .ui-slider-handle { width: @sliderHandleHeight; height: @sliderHandleWidth; }
 		.ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
 		.ui-slider-vertical .ui-slider-range-min { bottom: 0; }
 		.ui-slider-vertical .ui-slider-range-max { top: 0; }

@@ -3,36 +3,36 @@
 	   Button Variables
 	   ========================================================================== */
 		
-		@btnColor1:					#F7F7F7;
-		@btnColor2:					#DCE2E5;
+		@btnColor1:					#eee;
+		@btnColor2:					darken(@btnColor1,7%);
 		@btnBorder:					#BECCD3;
 		
-		@btnBlueColor1:			lighten( @blueColor, 10% );
+		@btnBlueColor1:			lighten( @blueColor, 5% );
 		@btnBlueColor2:			darken( @blueColor, 5% );
-		@btnBlueBorder:			#118cbd;
+		@btnBlueBorder:			darken( @blueColor, 25% );
 		
 		@btnRedColor1:			lighten( @redColor , 10% );
-		@btnRedColor2:			darken( @redColor , 10% );
+		@btnRedColor2:			darken( @redColor , 5% );
 		@btnRedBorder:			darken( @redColor , 25% );
 		
-		@btnPinkColor1:			lighten( @pinkColor , 5% );
-		@btnPinkColor2:			darken( @pinkColor , 15% );
+		@btnPinkColor1:			lighten( @pinkColor , 0% );
+		@btnPinkColor2:			darken( @pinkColor , 10% );
 		@btnPinkColorBorder:	darken( @pinkColor , 25% );
 		
 		@btnPurpleColor1:			lighten( @purpleColor , 5% );
-		@btnPurpleColor2:			darken( @purpleColor , 15% );
+		@btnPurpleColor2:			darken( @purpleColor , 5% );
 		@btnPurpleColorBorder:		darken( @purpleColor , 25% );
 		
-		@btnOrangeColor1:			lighten( @orangeColor , 15% );
+		@btnOrangeColor1:			lighten( @orangeColor , 5% );
 		@btnOrangeColor2:			darken( @orangeColor , 5% );
 		@btnOrangeColorBorder:		darken( @orangeColor , 15% );
 		
-		@btnYellowColor1:			lighten( @yellowColor , 10% );
-		@btnYellowColor2:			darken( @yellowColor , 5% );
+		@btnYellowColor1:			lighten( @yellowColor , 0% );
+		@btnYellowColor2:			darken( @yellowColor , 10% );
 		@btnYellowColorBorder:		darken( @yellowColor , 15% );
 		
-		@btnGreenColor1:			lighten( @greenColor , 15% );
-		@btnGreenColor2:			darken( @greenColor , 0% );
+		@btnGreenColor1:			lighten( @greenColor , 0% );
+		@btnGreenColor2:			darken( @greenColor , 10% );
 		@btnGreenColorBorder:		darken( @greenColor , 3% );
 		
 		@btnDarkColor1:			lighten( @darkColor , 15% );
@@ -52,24 +52,25 @@
 			background-color: @color;
 			background-repeat:repeat-x;
 			
-			background-image:-webkit-gradient(linear, 0 0, 0 100%, from(@color1), to(@color2));
-			background-image:-webkit-linear-gradient(top, @color1, @color2);
-			   background-image:-moz-linear-gradient(top, @color1, @color2);
-			    background-image:-ms-linear-gradient(top, @color1, @color2);
-			     background-image:-o-linear-gradient(top, @color1, @color2);
-			        background-image:linear-gradient(to bottom, @color1, @color2);
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%,@color1), color-stop(51%,@color2)); /* Chrome,Safari4+ */
+			background-image: -webkit-linear-gradient(top,  @color1 50%,@color2 51%); /* Chrome10+,Safari5.1+ */
+			   background-image: -moz-linear-gradient(top,  @color1 50%, @color2 51%); /* FF3.6+ */
+			    background-image: -ms-linear-gradient(top,  @color1 50%,@color2 51%); /* IE10+ */
+				 background-image: -o-linear-gradient(top,  @color1 50%,@color2 51%); /* Opera 11.10+ */
+			        background-image: linear-gradient(to bottom,  @color1 50%,@color2 51%); /* W3C */
 					
-			
 		}
 		
 		.makeBtn( @color1 , @color2, @color3 ) { 
 		
-			font-weight: 600; font-size: 12px; font-family: @sans;
-			border-radius: 4px;
+			font-weight: 400; font-size: 14px; font-family: @sans;
+			border-radius: 2px;
 			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
 			
 			.btnGradient( @color1, @color2 );
 			text-shadow: 0 -1px 1px darken( @color3, 8% );
+			
+			padding: 6px 16px;
 			
 			&:hover {
 			
@@ -101,12 +102,19 @@
 	/* ==========================================================================
 	   Button Styles
 	   ========================================================================== */
-
-
+ 		
+		.btn-group > .btn { border-radius: 0; }
 		
-		.btn-group > .btn, 
 		.btn-group > .dropdown-menu,
-		.btn-group ul.dropdown-menu { font-size: 12px; }
+		.btn-group ul.dropdown-menu { font-size: 14px; border-radius: 2px; }
+		
+		.btn-group > .dropdown-toggle:first-child,
+		.btn-group > .btn:first-child { border-top-left-radius: 2px; border-bottom-left-radius: 2px; } 
+		.btn-group > .dropdown-toggle:last-child,
+		.btn-group > .btn:last-child, .btn-group > .dropdown-toggle { border-top-right-radius: 2px; border-bottom-right-radius: 2px; } 
+		
+		.btn-group > .dropdown-toggle { margin-right: -1px; }
+		
 		
 		.btn 					{ .makeBtn( @btnColor1, @btnColor2, @btnBorder ) }
 		.btn .caret 			{ margin-left: 5px; }

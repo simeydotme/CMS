@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
    
    
-   <?php $theme = "themes/flatman"; ?>
+   <?php $theme = "themes/birdchess"; ?>
    
    
    
@@ -72,6 +72,7 @@
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>
 		
 		<script src="<?php echo( $theme ) ?>/js/shell/nav.js"></script>
+		<script src="<?php echo( $theme ) ?>/js/shell/account-bar.js"></script>
 		
         <script src="<?php echo( $theme ) ?>/js/components/alerts.js"></script>
         <script src="<?php echo( $theme ) ?>/js/components/widgets.js"></script>		

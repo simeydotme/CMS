@@ -4,6 +4,11 @@
 	   Navigation Shell Variables
 	   ========================================================================== */
 		
+		@accountBarHeight:			36px;
+		@accountBarBackground:		#555;
+		@accountBarColor:			#eee;
+		@accountBarHoverColor:		#333;
+		@accountBarPadding:			3px 10px;
 		
 
 
@@ -17,9 +22,67 @@
 	   Navigation Shell Styles
 	   ========================================================================== */
 
+		.account-bar { 
+			height: @accountBarHeight; line-height: @accountBarHeight; 
+			background: @accountBarBackground;
+			padding: @accountBarPadding;
+		}
 		
-		.account-bar .navbar			{ margin: 0;  }
-		.account-bar .navbar-inner		{ border-radius:0; border: none; border-bottom: 1px solid #444; }
+		.account-bar .dropdown {
+			
+			
+			.dropdown-menu {
+				
+				display: block;
+				
+				.transition(0.5s all ease);
+				.transform( translateX(-200%) );
+				 box-shadow: none; margin-top: 5px;
+				
+				&:before {
+					content: '';
+					display: inline-block;
+					border-left: 7px solid transparent;
+					border-right: 7px solid transparent;
+					border-bottom: 7px solid #CCC;
+					border-bottom-color: rgba(0, 0, 0, 0.2);
+					position: absolute;
+					top: -7px;
+					left: 9px;	
+				}
+				&:after {
+					content:'';
+					display:inline-block;
+					border-left:6px solid transparent;
+					border-right:6px solid transparent;
+					border-bottom:6px solid #ffffff;
+					position:absolute;
+					top:-6px;
+					left:10px;
+				}
+				
+			}
+			
+			&.open {
+				
+				.dropdown-menu { 
+					box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+					.transform( translateX(0) ); 
+				}
+					
+			}
+			
+		}
+		
+		.account-bar .nav > .item:last-child { float: right; }
+
+		
+		.account-bar .nav > .item > a { color: @accountBarColor; }
+		.account-bar .nav > .item > a > .caret { border-top-color: @accountBarColor; border-bottom-color: @accountBarColor; }
+
+
+		.account-bar .nav > .item > a:hover { color: @accountBarHoverColor; }
+		.account-bar .nav > .item > a:hover > .caret { border-top-color: @accountBarHoverColor; border-bottom-color: @accountBarHoverColor; }
 
 
 

@@ -27,17 +27,52 @@
 				<div class="form-actions above-table">
 					
 					<div class="btn-group">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Filter News <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							
+						<a class="btn dropdown-toggle" id="ddl-filter" role="button" data-toggle="dropdown" data-target="#" href="news.php">Filter News <span class="caret"></span></a>
+						<ul class="dropdown-menu" id="menu-filter" role="menu" aria-labelledby="ddl-filter">
+						
 							<li><a href="#">by direct</a></li>
 							<li><a href="#">by twitter</a></li>
 							<li><a href="#">by blog</a></li>
-							
+						
 						</ul>
 					</div>
 					
 					<a href="#" class="new btn orange pull-right">
+						<span>Add News</span>
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
+					</a>
+					
+					<a href="#" class="new btn blue pull-right">
+						<span>Add News</span>
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
+					</a>
+					
+					<a href="#" class="new btn red pull-right">
+						<span>Add News</span>
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
+					</a>
+					
+					<a href="#" class="new btn green pull-right">
+						<span>Add News</span>
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
+					</a>
+					
+					<a href="#" class="new btn yellow pull-right">
+						<span>Add News</span>
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
+					</a>
+					
+					<a href="#" class="new btn dark pull-right">
+						<span>Add News</span>
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
+					</a>
+					
+					<a href="#" class="new btn purple pull-right">
+						<span>Add News</span>
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
+					</a>
+					
+					<a href="#" class="new btn pink pull-right">
 						<span>Add News</span>
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
 					</a>
