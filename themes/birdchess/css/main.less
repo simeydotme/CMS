@@ -46,13 +46,13 @@
 
 		@primaryColor: 			#12A1DA;
 		@secondaryColor: 		#7A8999;
-		@hintColor: 			@purpleColor;
+		@hintColor: 			@secondaryColor;
 		
 		@blueColor:				@primaryColor;
 		@redColor:				#E0362D;
 		@orangeColor:			#FF7B00;
 		@yellowColor:			#E5CE19;
-		@greenColor:			#31C11D;
+		@greenColor:			#61C900;
 		@purpleColor:			#9B3AC1;
 		@pinkColor:				#F062B2;
 		@darkColor:				#0B1D26;
@@ -104,6 +104,14 @@
 			-ms-transform:		@transform; 
 			-o-transform:		@transform;  
 			transform:			@transform;  
+		}
+
+		.filter(@filter) {
+			-webkit-filter:	@filter;  
+			-moz-filter:	@filter;
+			-ms-filter:		@filter; 
+			-o-filter:		@filter;  
+			filter:			@filter;  
 		}
 
 

@@ -43,7 +43,14 @@
 		nav ul { margin: 0; background: @navBackground; box-shadow: -26px 0 21px -26px darken( @navBackground, 15% ) inset;  }
 		nav ul .item { display: block; } 
 		nav ul .item > a .text { text-shadow: 0 1px 1px black; }
-		nav ul .item .icon { position: relative; top: -1px; }
+		
+		nav ul .item .icon { 
+			position: relative; top: -1px; 
+			.filter( sepia(100%) hue-rotate(130deg) );
+			.transition( 0.6s all ease ); 
+		}
+		nav ul .item:hover .icon,
+		nav ul .item.active .icon { .filter( none ); }
 		
 		nav .divider { height: 1px; padding: @dividerHeight/2 1px; overflow: hidden; }
 		
@@ -71,7 +78,7 @@
 				background: darken(@navPrimaryColor,8%); 
 				border-bottom-color: transparent;
 				border-top-color: transparent;
-
+				
 			}
 		
 		}

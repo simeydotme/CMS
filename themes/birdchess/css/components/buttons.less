@@ -7,6 +7,10 @@
 		@btnColor2:					#DCE2E5;
 		@btnBorder:					#BECCD3;
 		
+		@btnSecondaryColor1:		lighten( @secondaryColor , 10% );
+		@btnSecondaryColor2:		darken( @secondaryColor, 5% );
+		@btnSecondaryBorder:		darken( @secondaryColor , 25% );
+		
 		@btnBlueColor1:			lighten( @blueColor, 10% );
 		@btnBlueColor2:			darken( @blueColor, 5% );
 		@btnBlueBorder:			#118cbd;
@@ -31,8 +35,8 @@
 		@btnYellowColor2:			darken( @yellowColor , 5% );
 		@btnYellowColorBorder:		darken( @yellowColor , 15% );
 		
-		@btnGreenColor1:			lighten( @greenColor , 15% );
-		@btnGreenColor2:			darken( @greenColor , 0% );
+		@btnGreenColor1:			lighten( @greenColor , 5% );
+		@btnGreenColor2:			darken( @greenColor , 5% );
 		@btnGreenColorBorder:		darken( @greenColor , 3% );
 		
 		@btnDarkColor1:			lighten( @darkColor , 15% );
@@ -117,6 +121,13 @@
 		
 		
 		
+		.btn.alt 	{ 
+						.makeBtn( @btnSecondaryColor1, @btnSecondaryColor2, @btnSecondaryBorder ); 
+						color: white; 
+						
+						.caret 	{ border-top-color: white; }
+					}
+					
 		.btn.blue 	{ 
 						.makeBtn( @btnBlueColor1, @btnBlueColor2, @btnBlueBorder ); 
 						color: white; 

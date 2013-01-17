@@ -42,41 +42,6 @@
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
 					</a>
 					
-					<a href="#" class="new btn blue pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
-					
-					<a href="#" class="new btn red pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
-					
-					<a href="#" class="new btn green pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
-					
-					<a href="#" class="new btn yellow pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
-					
-					<a href="#" class="new btn dark pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
-					
-					<a href="#" class="new btn purple pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
-					
-					<a href="#" class="new btn pink pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
-					
 				</div>
 				
 				<table class="table table-striped table-hover">

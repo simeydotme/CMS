@@ -31,7 +31,7 @@
 							buttons: {
 								
 								"ok": {
-								  text:'Yes', class:'btn green',
+								  text:'Yes', class:'btn alt',
 								  click: function() { $(this).animateDialogClose(); adminLogout(); }
 								},
 								"cancel": {
