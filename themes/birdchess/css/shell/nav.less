@@ -46,13 +46,10 @@
 		
 		nav ul .item .icon { 
 			position: relative; top: -1px; 
-			.filter( sepia(100%) hue-rotate(130deg) );
-			.transition( 0.6s all ease ); 
 		}
-		nav ul .item:hover .icon,
-		nav ul .item.active .icon { .filter( none ); }
 		
-		nav .divider { height: 1px; padding: @dividerHeight/2 1px; overflow: hidden; }
+		nav .divider { height: 1px; padding: @dividerHeight/2 1px; overflow: hidden; background: darken(@navPrimaryColor,18%); }
+		nav .item.active + .divider { background: transparent; }
 		
 		nav .item > a {
 			
@@ -122,8 +119,6 @@
 				background: lighten( @navPrimaryColor, 5% ); 
 				padding-left: 20px; border-radius: 3px;
 				
-				//box-shadow: -26px 0 21px -26px darken( @navPrimaryColor, 15% ) inset;
-
 			}
 			
 		}
@@ -133,9 +128,11 @@
 		
 		
 		
-		
-		
-@media (max-width: 767px) {
+	/* ==========================================================================
+	   Nav Media Queries
+	   ========================================================================== */
+
+	@media (max-width: 767px) {
 
 		
 		nav { width: @navCollapsedWidth; padding: 10px 0 0; }
@@ -150,8 +147,9 @@
 		nav .item a:hover 	{ padding: 4px 10px; }
 		nav .sub  			{ display: none!important; }
 		
-
-}		
+		nav .divider,
+		nav .item.active + .divider { background: darken(@navPrimaryColor,18%); }
+	}		
 		
 		
 		
