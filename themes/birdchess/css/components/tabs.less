@@ -8,6 +8,8 @@
 		@tabBorderColor:				#738393;
 		@tabHighlightColor:				@hintColor;
 		@tabInactiveColor:				fade( @tabBorderColor, 15% );
+		
+		@borderRadius:					3px;
 
 
 	/* ==========================================================================
@@ -27,6 +29,7 @@
 		
 			padding: @tabPadding;
 			border-top-width: 3px;
+			border-radius: @borderRadius @borderRadius 0 0; 
 			
 			img { opacity: 0.5; }
 			
@@ -70,10 +73,23 @@
 		
 		
 		
-		
-		
-		
-		
+	/* ==========================================================================
+	   Tabs media queries
+	   ========================================================================== */
+
+		@media (max-width: 767px) {
+			
+			.nav-tabs { margin-bottom: 20px; padding-bottom: 10px; }
+			.nav-tabs > li { margin: 5px 5px 0 0; }
+			.nav-tabs > li > a { border-radius: @borderRadius; }
+			.nav-tabs > li > a:hover { border-color: rgba(0,0,0,0.05); box-shadow: none; }
+			
+			.nav-tabs > .active > a,
+			.nav-tabs > .active > a:hover { 
+				border-bottom: 1px solid @tabBorderColor;
+			}
+
+		}
 		
 		
 		
