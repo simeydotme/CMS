@@ -45,7 +45,7 @@
 			$.extend( settings, options );
 			
 			
-			var $alert = $('<div class="alert">'+ message +'</div>');
+			var $alert = $('<div class="alert growl">'+ message +'</div>');
 			var $close = $('<button type="button" class="close">×</button>').prependTo( $alert );
 			var $img = $('<img class="icon">');
 			
@@ -85,10 +85,10 @@
 			}
 			
 			
-			if( $('.alertHolder').length > 0 ) {
-				var $holder = $('.alertHolder');
+			if( $('.growlHolder').length > 0 ) {
+				var $holder = $('.growlHolder');
 			} else { 
-				var $holder = $('<div class="alertHolder '+ settings.position +'"></div>').appendTo('body');
+				var $holder = $('<div class="growlHolder '+ settings.position +'"></div>').appendTo('body');
 			}
 			
 			$alert.appendTo( $holder ).addClass('animated flipInX');
@@ -165,7 +165,7 @@
 			$.extend( settings, options );
 			
 			
-			var $notify = $('<div class="alert">'+ message +'</div>');
+			var $notify = $('<div class="alert notify">'+ message +'</div>');
 			var $close = $('<button type="button" class="close">×</button>').prependTo( $notify );
 			var $img = $('<img class="icon">');
 			
