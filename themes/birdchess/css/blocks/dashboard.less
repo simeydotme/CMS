@@ -1,0 +1,95 @@
+
+
+	/* ==========================================================================
+	   Dashboard Jump Variables
+	   ========================================================================== */
+
+	/* ==========================================================================
+	   Dashboard Jump Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Dashboard Jump Styles
+	   ========================================================================== */
+		
+		.jump .section { width: 30%; margin-right: 3%; display: inline-block; *display: inline; *zoom: 1; vertical-align: top; }
+		.jump .section:nth-child(3n) { margin: 0; }
+		
+		.jump h4,	
+		.jump h3 { 
+		
+			margin: 0; line-height: 24px;
+			
+			small { padding-left: 24px; margin-top: 5px; font-family: @sans; font-weight: 400; }
+			
+			a { display: block; color: #444; text-decoration: none; padding: 10px 20px; border-radius: 3px;
+				&:hover { 
+				
+					background-color: @primaryColor; color: white; 
+					small { color: white; }
+				}
+			}
+		}
+		
+		
+		
+		
+		
+		.jump .custom-modules {
+			
+			margin-top: 10px;
+			
+			.module {
+				
+				width: 22%; display: inline-block; *display: block; *zoom: 1; margin-right: 3%; vertical-align: top;
+				
+				&:nth-child(4n) { margin: 0; }
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+	/* ==========================================================================
+	   Dashboard Media Queries
+	   ========================================================================== */
+
+		
+		@media (max-width: 999px) {
+
+			.jump .custom-modules {
+				.module { 
+					width: 47%; margin-right: 3%; 
+					&:nth-child(2n) { margin: 0; }
+				}
+			}
+
+			.jump .section { width: 48%; margin-right: 2%; }
+			.jump .section:nth-child(2n) { margin: 0; }
+
+		}
+		
+		
+		@media (max-width: 549px) {
+		
+			.jump .custom-modules .module,
+			.jump .section  { width: auto; margin: 0; display: block; }
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
