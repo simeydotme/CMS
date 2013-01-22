@@ -35,5 +35,14 @@
 			
 		});
 		
+		$('nav .item').each( function() {
+			
+			var $_this = $(this);
+			if( $_this.find('.subitem').length == 0 ) {
+				$_this.addClass('solo');	
+			}
+			
+		});
+		
 		
 	});

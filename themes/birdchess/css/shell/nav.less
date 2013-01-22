@@ -55,7 +55,7 @@
 			
 			color: white; text-decoration: none;
 			
-			display: block;
+			display: block; position: relative;
 			padding: 4px 5px 4px 20px;
 			
 			.gradient( @navPrimaryColor, darken(@navPrimaryColor,5%) );
@@ -68,6 +68,20 @@
 			
 			/* ========================================================================== */
 			
+			
+			&:after {
+				content: " ";
+				width: 14px; height: 14px;
+				position: absolute; right: 10px; top: 6px;
+				background-image: url('@{imgPath}/vendor/bootstrap/2.2.1/glyphicons-halflings-white.png');
+				background-position: -313px -119px;
+				opacity: 0.15; transition: all 0.4s ease;
+			}
+			
+			&:hover:after { opacity: 0.7; }
+			
+			/* ========================================================================== */
+
 			&:hover { 
 				
 				padding-left: 26px;
@@ -90,6 +104,13 @@
 			
 			/* ========================================================================== */
 			
+			&:after {
+				background-position: -288px -120px;
+				opacity: 0.7;
+			}
+			
+			/* ========================================================================== */
+
 			&:hover { 
 								
 				background: darken(@navActiveColor,8%); 
@@ -97,6 +118,10 @@
 			}
 
 		
+		}
+		
+		nav .item.solo > a {
+			&:after { background-position: -456px -72px; }	
 		}
 		
 		
@@ -135,20 +160,20 @@
 	@media (max-width: 767px) {
 
 		
-		nav { width: @navCollapsedWidth; padding: 10px 0 0; }
-		
-		nav, nav ul { height: 100%; }
-		
-		nav .logo { display: none; }
+		nav 			{ width: @navCollapsedWidth; padding: 10px 0 0; }
+		nav, nav ul 	{ height: 100%; }
+		nav .logo		{ display: none; }
 		
 		
-		nav .item .text { display: none; }
+		nav .item .text 	{ display: none; }
 		nav .item a 		{ padding: 4px 10px; }
+		nav .item > a:after	{ background-image: none; }
 		nav .item a:hover 	{ padding: 4px 10px; }
 		nav .sub  			{ display: none!important; }
 		
 		nav .divider,
 		nav .item.active + .divider { background: darken(@navPrimaryColor,18%); }
+		
 	}		
 		
 		
