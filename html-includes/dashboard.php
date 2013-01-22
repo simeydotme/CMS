@@ -1,10 +1,11 @@
 
-
-		<h2>
-			Admin Dashboard
-			<small>Quick overview of content management system</small>
-		</h2>
-		<hr>
+		<header class="page-header">
+			<h2>
+				Admin Dashboard
+				<small>Quick overview of content management system</small>
+			</h2>
+			<hr>
+		</header>
 		
 		
 		<section class="jump">
@@ -36,9 +37,7 @@
 			
 			
 			
-			<div class="row-fluid">
-				
-				<div class="span12">
+			<div class="custom-modules-wrapper">
 					
 					<h3>Custom Modules</h3>
 					
@@ -71,8 +70,6 @@
 							</a></h4>
 					
 					</div>
-					
-				</div>
 				
 			</div>
 			
