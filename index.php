@@ -34,7 +34,7 @@
 				
 		<div id="container">
 		
-			<header class="container-fluid">
+			<header class="site-header">
 				<h1>Dot Label CMS</h1>
 			</header>
 			
