@@ -1,11 +1,13 @@
 
-
-		<h2>
-			News
-			<small>Manage your news or blog</small>
-		</h2>
+		<header class="page-header">
+			<h2>
+				News
+				<small>Manage your news or blog</small>
+			</h2>
+			<hr>
+		</header>
 		
-		<hr>
+		
 				
 		<ul class="nav nav-tabs">
 			<li class="active">

@@ -1,11 +1,11 @@
 
-
-		<h2>
-			Gallery
-			<small>Manage your picture galleries</small>
-		</h2>
-		<hr>
-		
+		<header class="page-header">
+			<h2>
+				Gallery
+				<small>Manage your picture galleries</small>
+			</h2>
+			<hr>
+		</header>
 		
 		
 		

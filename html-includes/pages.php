@@ -1,42 +1,11 @@
 
-
-		<h2>
-			Pages / Content
-			<small>Manage your pages and main content</small>
-		</h2>
-		<hr>
-		
-		
-<!--		<div class="alert">
-			<button type="button" class="close">×</button>
-			<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/exclamation.png" class="icon">
-			<strong>Danger, Will Robinson!</strong>
-			There is a gas leak, we're all going to die!
-		</div>
-		
-		<div class="alert red">
-			<button type="button" class="close">×</button>
-			<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/exclamation-red.png" class="icon">
-			<strong>Danger, Will Robinson!</strong>
-			There is a gas leak, we're all going to die!
-		</div>
-		
-		<div class="alert blue">
-			<button type="button" class="close">×</button>
-			<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/question.png" class="icon">
-			<strong>Danger, Will Robinson!</strong>
-			There is a gas leak, we're all going to die!
-		</div>
-		
-		<div class="alert green">
-			<button type="button" class="close">×</button>
-			<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/tick-circle.png" class="icon">
-			<strong>Danger, Will Robinson!</strong>
-			There is a gas leak, we're all going to die!
-		</div>
--->		
-		
-		
+		<header class="page-header">
+			<h2>
+				Pages / Content
+				<small>Manage your pages and main content</small>
+			</h2>
+			<hr>
+		</header>
 		
 		
 		

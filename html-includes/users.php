@@ -1,10 +1,11 @@
 
-
-		<h2>
-			Users
-			<small>Manage Users and Permissions</small>
-		</h2>
-		<hr>
+		<header class="page-header">
+			<h2>
+				Users
+				<small>Manage Users and Permissions</small>
+			</h2>
+			<hr>
+		</header>
 		
 		
 		
