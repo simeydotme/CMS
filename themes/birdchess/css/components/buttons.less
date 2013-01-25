@@ -68,37 +68,19 @@
 		
 		.makeBtn( @color1 , @color2, @color3 ) { 
 		
-			font-weight: 600; font-size: 12px; font-family: @sans;
-			border-radius: 4px;
-			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
-			
 			.btnGradient( @color1, @color2 );
 			text-shadow: 0 -1px 1px darken( @color3, 8% );
-			
+						
 			&:hover {
 			
 				.btnGradient( darken( @color1, 3% ), darken( @color2, 3% ) );
 				border-color: darken( @color3, 3% );
-				background-position: 0 0;
 				
 			}
-			
 			&:active,
-			&.active { 
-				background-color: @color2; 
-				background-image: none;
-				box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05); 
-			}
-			
+			&.active { background-color: @color2; }
 			&.disabled,
-			&[disabled] {
-			  cursor: default;
-			  background-color: @color2;
-			  background-image: none;
-			  opacity: 0.65;
-			  filter: alpha(opacity=65);
-			  box-shadow: none;
-			}
+			&[disabled] {  background-color: @color2; }
 
 		}
 
@@ -112,7 +94,6 @@
 		.btn-group > .dropdown-menu,
 		.btn-group ul.dropdown-menu { font-size: 12px; }
 		
-		.btn 					{ .makeBtn( @btnColor1, @btnColor2, @btnBorder ); text-shadow: 0 1px 1px #fff;  }
 		.btn .caret 			{ margin-left: 5px; }
 		.btn img:first-child 	{ margin-right: 5px; }
 		.btn img:last-child 	{ margin-left: 5px; }
@@ -121,62 +102,108 @@
 		
 		
 		
+		
+		.btn { 
+		
+			font-weight: 600; font-size: 12px; font-family: @sans;
+			border-radius: 4px;
+			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
+			
+			.makeBtn( @btnColor1, @btnColor2, @btnBorder ); 
+			text-shadow: 0 1px 1px #fff;
+			
+			/* to make buttons sit in line with inputs, removed in media query. */
+			margin-top: -3px;
+			
+			&:hover { background-position: 0 0; }
+			&:active,
+			&.active { background-image: none; box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05); }
+			&.disabled,
+			&[disabled] { cursor: default; background-image: none; opacity: 0.65; filter: alpha(opacity=65); box-shadow: none; }
+		
+		}
+		
+		
 		.btn.alt 	{ 
 						.makeBtn( @btnSecondaryColor1, @btnSecondaryColor2, @btnSecondaryBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
 					
 		.btn.blue 	{ 
 						.makeBtn( @btnBlueColor1, @btnBlueColor2, @btnBlueBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
 					
 		.btn.red 	{ 
 						.makeBtn( @btnRedColor1, @btnRedColor2, @btnRedBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
+		
 		.btn.pink 	{ 
 						.makeBtn( @btnPinkColor1, @btnPinkColor2, @btnPinkColorBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
+		
 		.btn.purple { 
 						.makeBtn( @btnPurpleColor1, @btnPurpleColor2, @btnPurpleColorBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
+		
 		.btn.orange { 
 						.makeBtn( @btnOrangeColor1, @btnOrangeColor2, @btnOrangeColorBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
+		
 		.btn.yellow { 
 						.makeBtn( @btnYellowColor1, @btnYellowColor2, @btnYellowColorBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
+		
 		.btn.green { 
 						.makeBtn( @btnGreenColor1, @btnGreenColor2, @btnGreenColorBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
+		
 		.btn.dark { 
 						.makeBtn( @btnDarkColor1, @btnDarkColor2, @btnDarkColorBorder ); 
-						color: white; 
 						
+						color: white; 
 						.caret 	{ border-top-color: white; }
-					}
+		}
+		
+		
+		
+		
+		
+		
+	@media (max-width: 480px) {
+
+
+		.btn { margin-top: auto; }
+
+
+	}
+		
+		
+		
+		
+		
 		
 		
 		
