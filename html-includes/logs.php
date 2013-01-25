@@ -32,33 +32,38 @@
 				<div class="form-actions above-table">
 					
 					<div class="formRow">
+					
 						<div class="formQuestion">
-						<label>See logs from:</label>
+							<label>See logs from:</label>
 						</div>
 						
 						<div class="formAnswer">
 					
-					<select class="input-small">
-						<option>2013</option>
-						<option>2012</option>
-						<option>2011</option>
-					</select>
-					
-					<select class="input-medium">
-						<option>January</option>
-						<option>February</option>
-						<option>March</option>
-					</select>
-					
-					<select class="input-small">
-						<option>01</option>
-						<option>02</option>
-						<option>03</option>
-					</select>
+							<select class="input-small">
+								<option>2013</option>
+								<option>2012</option>
+								<option>2011</option>
+							</select>
+							
+							<select class="input-medium">
+								<option>January</option>
+								<option>February</option>
+								<option>March</option>
+							</select>
+							
+							<select class="input-small">
+								<option>01</option>
+								<option>02</option>
+								<option>03</option>
+							</select>
 						
 						</div>
+						
+					</div>
 					
 				</div>
+				
+				
 				
 				<table class="table table-hover" id="logs-table">
 				
