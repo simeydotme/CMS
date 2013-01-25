@@ -9,6 +9,7 @@
 		@tableStripeColor:		#f3f3f3;
 		@tableHoverColor:		fade( @hintColor, 20% );
 		@tableSectionColor:		lighten(@tableColor, 35%);
+		@tableFlaggedColor:		lighten(@redColor,40%);
 
 		@tableCellBorderColor:	#bbb;
 		
@@ -18,6 +19,9 @@
 		@activeIcon:			"@{imgPath}/@{iconPath}/eye.png";
 		@inactiveIcon:			"@{imgPath}/@{iconPath}/eye-close.png";
 		@activeHoverIcon:		"@{imgPath}/@{iconPath}/eye-half.png";
+
+		@flaggedIcon:			"@{imgPath}/@{iconPath}/flag.png";
+		@unflaggedIcon:			"@{imgPath}/@{iconPath}/flag-white.png";
 
 		@expandIcon:			"@{imgPath}/@{iconPath}/control.png";
 		@collapseIcon:			"@{imgPath}/@{iconPath}/control-270.png";
@@ -56,7 +60,9 @@
 			border-bottom-color: @tableCellBorderColor; 
 			border-top-color: @tableCellBorderColor; 
 			border-left-color: @tableCellBorderColor; 
-			border-bottom: 1px solid @tableCellBorderColor; 
+			border-bottom: 1px solid @tableCellBorderColor;
+			
+			.transition( background-color 0.3s ease );
 		
 		}
 		.table tbody tr:last-child td ,
@@ -72,6 +78,11 @@
 		
 		.table tbody tr td.icon		{ border-left-style: dotted; border-left-width: 1px; width: 24px; }
 		.table tbody tr td.icon a	{ display: block; text-align: center; }
+		
+		
+		
+		
+		
 		
 		
 		.table tbody tr.section td,
@@ -95,15 +106,28 @@
 		}
 		
 		
+		
+		
+		
+		
+		
 		.table tbody tr td a.state {
 			
 			text-indent: -999em; width: 24px; height: 20px; display: block; background-repeat: no-repeat; background-position: center 4px;
 			
 			&.active { background-image: url('@{activeIcon}'); }
 			&.inactive { background-image: url('@{inactiveIcon}'); }
-			&:hover { background-image: url('@{activeHoverIcon}'); }
+			&.active:hover,
+			&.inactive:hover { background-image: url('@{activeHoverIcon}'); }
+
+			&.flagged { background-image: url('@{flaggedIcon}'); }
+			&.unflagged { background-image: url('@{unflaggedIcon}'); }
+			&.flagged:hover { background-image: url('@{unflaggedIcon}'); }
+			&.unflagged:hover { background-image: url('@{flaggedIcon}'); }
 
 		}
+		
+		
 		
 		
 		.table-striped tbody tr:nth-child(odd) td, 
@@ -120,9 +144,19 @@
 		
 		.table img { max-width: none; }
 		
+
+
+
 		
-		
-		
-		
+		.table tbody tr.flagged td, 
+		.table tbody tr.flagged th { background-color: @tableFlaggedColor; }
+
+
+
+
+
+
+
+
 		
 		
