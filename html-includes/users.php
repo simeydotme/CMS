@@ -55,7 +55,7 @@
 							<td><a href="#" class="tooltip" title="edit this user">Jimbob</a></td>
 							<td><a href="#" class="tooltip" title="send an email to this user">jimbob@hotmail.com</a></td>
 							<td>3 minutes ago</td>
-							<td class="icon"><a href="#" class="state active tooltip" title="deactivate this user">active</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle this user as active/inactive">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 							<td class="icon"><a href="#" class="delete tooltip" title="delete this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
 						</tr>
@@ -64,7 +64,7 @@
 							<td><a href="#" class="tooltip" title="edit this user">Jefferey</a></td>
 							<td><a href="#" class="tooltip" title="send an email to this user">jeffers@mcjeffjeff.uk</a></td>
 							<td>2 days ago</td>
-							<td class="icon"><a href="#" class="state active tooltip" title="deactivate this user">active</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle this user as active/inactive">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 							<td class="icon"><a href="#" class="delete tooltip" title="delete this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
 						</tr>
@@ -73,7 +73,7 @@
 							<td><a href="#" class="tooltip" title="edit this user">Jenx</a></td>
 							<td><a href="#" class="tooltip" title="send an email to this user">jenxxx85@yahoomail.com</a></td>
 							<td>last week</td>
-							<td class="icon"><a href="#" class="state active tooltip" title="deactivate this user">active</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle this user as active/inactive">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 							<td class="icon"><a href="#" class="delete tooltip" title="delete this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
 						</tr>
@@ -82,7 +82,7 @@
 							<td><a href="#" class="tooltip" title="edit this user">Usurper</a></td>
 							<td><a href="#" class="tooltip" title="send an email to this user">js@mail.com</a></td>
 							<td>last year</td>
-							<td class="icon"><a href="#" class="state active tooltip" title="deactivate this user">active</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle this user as active/inactive">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 							<td class="icon"><a href="#" class="delete tooltip" title="delete this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
 						</tr>
@@ -91,7 +91,7 @@
 							<td><a href="#" class="tooltip" title="edit this user">J-Dawg</a></td>
 							<td><a href="#" class="tooltip" title="send an email to this user">j@enterprise.gov</a></td>
 							<td>last month</td>
-							<td class="icon"><a href="#" class="state active tooltip" title="deactivate this user">active</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle this user as active/inactive">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 							<td class="icon"><a href="#" class="delete tooltip" title="delete this user"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
 						</tr>
