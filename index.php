@@ -64,7 +64,7 @@
         <script src="<?php echo( $theme ) ?>/js/vendor/jquery/1.8.2/jquery.min.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/jqueryui/1.9.1/jqueryui.custom.min.js"></script>
 		
-        <script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.2.1/bootstrap.min.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.2.1/bootstrap.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.0/qtip.min.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.0/ckeditor.js"></script>
 
@@ -77,6 +77,8 @@
         <script src="<?php echo( $theme ) ?>/js/components/alerts.js"></script>
         <script src="<?php echo( $theme ) ?>/js/components/widgets.js"></script>		
         <script src="<?php echo( $theme ) ?>/js/components/progress.js"></script>		
+        <script src="<?php echo( $theme ) ?>/js/components/tables.js"></script>		
+        <script src="<?php echo( $theme ) ?>/js/components/tabs.js"></script>		
 		
 		<?php 
 			
