@@ -12,7 +12,7 @@
 		
 		<ul class="nav nav-tabs">
 			<li id="tab-logs-list" class="active">
-				<a href="#log-list" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/book-open-list.png" class="icon" alt=""> Logs for Jan 1st 2013</a>
+				<a href="#log-list" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/book-open-list.png" class="icon" alt=""> Logs for 3rd Jan 2013</a>
 			</li>			
 			
 			<li id="tab-logs-flagged">
@@ -54,8 +54,10 @@
 							<select class="input-small">
 								<option>01</option>
 								<option>02</option>
-								<option>03</option>
+								<option selected="selected">03</option>
 							</select>
+							
+							<button class="btn blue">show logs</button>
 						
 						</div>
 						
@@ -77,22 +79,55 @@
 					</thead>
 					
 					<tbody>
+						<tr class="unflagged">
+							<th scope="row">22:17</th>
+							<td><a href="#" class="tooltip" title="send an email to this user">James</a></td>
+							<td><a href="#" class="view">Added "Paul" as a new user</a></td>
+							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
+						</tr>
 						<tr class="flagged">
-							<th scope="row">11:34</th>
+							<th scope="row">13:34</th>
 							<td><a href="#" class="tooltip" title="send an email to this user">Jimbob</a></td>
-							<td><a href="#" class="view">Deleted a photo from "My Horses"</a></td>
-							<td><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
+							<td><a href="#" class="view">Deleted a news article</a></td>
+							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
 						</tr>
 						<tr class="unflagged">
-							<th scope="row">11:34</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jimbob</a></td>
-							<td><a href="#" class="view">Deleted a photo from "My Horses"</a></td>
-							<td><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
+							<th scope="row">10:59</th>
+							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
+							<td><a href="#" class="view">Uploaded image into "Cats"</a></td>
+							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
+						</tr>
+						<tr class="unflagged">
+							<th scope="row">10:58</th>
+							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
+							<td><a href="#" class="view">Uploaded image into "Cats"</a></td>
+							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
+						</tr>
+						<tr class="unflagged">
+							<th scope="row">10:55</th>
+							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
+							<td><a href="#" class="view">Uploaded image into "Cats"</a></td>
+							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
+						</tr>
+						<tr class="flagged">
+							<th scope="row">09:55</th>
+							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
+							<td><a href="#" class="view">Deleted a news post</a></td>
+							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
 						</tr>
 					</tbody>
 				
 				
 				</table>
+				
+				
+				<div class="pagination pagination-centered">
+					<ul>
+						<li class="prev"><a href="#"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/arrow-180-medium.png" class="icon" alt="view logs for 2nd Jan 2013"> 2nd</a></li>
+						<li class="active"><a>3rd Jan 2013</a></li>
+						<li class="next"><a href="#">4th <img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/arrow-000-medium.png" class="icon" alt="view logs for 4th Jan 2013"></a></li>
+					</ul>
+				</div>
 				
 				
 
@@ -102,7 +137,34 @@
 			
 			<div class="tab-pane" id="log-flagged">
 			
-				<h3>All flagged logs</h3>
+				<table class="table table-hover" id="logs-table">
+				
+					<thead>
+						<tr>
+							<th scope="col">Time</th>
+							<th scope="col">Who</th>
+							<th scope="col">What</th>
+							<td></td>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr class="flagged">
+							<th scope="row">13:34</th>
+							<td><a href="#" class="tooltip" title="send an email to this user">Jimbob</a></td>
+							<td><a href="#" class="view">Deleted a news article</a></td>
+							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
+						</tr>
+						<tr class="flagged">
+							<th scope="row">09:55</th>
+							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
+							<td><a href="#" class="view">Deleted a news post</a></td>
+							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
+						</tr>
+					</tbody>
+				
+				
+				</table>
 
 			</div>			
 			
