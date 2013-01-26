@@ -28,7 +28,7 @@
 		
 				<div class="form-actions above-table">
 					
-					<a href="#user-new" class="new btn orange pull-right">
+					<a href="#user-new" class="new btn purple pull-right">
 						<span>New User</span>
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/user-silhouette.png" class="icon">
 					</a>
