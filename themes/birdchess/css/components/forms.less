@@ -89,6 +89,13 @@
 		
 		.@{row} .@{question} 	{ max-width: 200px; width: 30%; text-align: right; margin: 5px 10px 0 0; }
 		.@{row} .@{answer} 		{ width: 66%; }
+		
+		
+		.@{row}.text,
+		.@{row}.text .@{question},
+		.@{row}.text .@{answer} 		{ margin: 0; }
+		.@{row}.text .@{question}		{ margin-right: 10px; }
+		
 
 		
 		
@@ -124,8 +131,17 @@
 			cursor: pointer; 
 		}
 				
+				
+				
+				
 		
-		.form-actions.above-table { padding: 5px; margin: 5px 0; background: transparent; border: 0; min-height: 30px; }
+		.form-actions.above-table { 
+			background: #eee;
+			border-radius: 3px;
+			margin: 10px 0;
+			padding: 20px 20px 14px;
+			min-height: 30px;
+		}
 		
 		
 		
