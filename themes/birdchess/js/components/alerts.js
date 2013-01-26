@@ -4,12 +4,6 @@
 	   Alerts
 	   ========================================================================== */
 		
-		$(function() {
-			
-			notify( "<strong>Looks like this is your first time here!?</strong><br>Please take some time to look around, and make sure your profile is up to date.!", { style: 'info' } );
-
-		});
-
 
 
 
@@ -158,14 +152,16 @@
 			
 				duration: 10000,
 				style: 'alert',
-				sticky: true
+				sticky: true,
+				where: '.page-header',
+				method: 'append' // before / after / append / prepend
 			
 			};
 			
 			$.extend( settings, options );
 			
 			
-			var $notify = $('<div class="alert notify">'+ message +'</div>');
+			var $notify = $('<div class="alert notify animated fadeInDown">'+ message +'</div>');
 			var $close = $('<button type="button" class="close">×</button>').prependTo( $notify );
 			var $img = $('<img class="icon">');
 			
@@ -206,13 +202,34 @@
 			}
 			
 			
-			if( $('.notifyHolder').length > 0 ) {
-				var $holder = $('.notifyHolder');
-			} else { 
-				var $holder = $('<div class="notifyHolder"></div>').insertAfter( $('.content hr').first() );
-			}
 			
-			$notify.appendTo( $holder ).addClass('animated fadeInDown');
+			
+			switch( settings.method ) {
+			
+				case 'append':
+				
+						$notify.appendTo( $( settings.where ) );
+						break;
+						
+				case 'prepend':
+				
+						$notify.prependTo( $( settings.where ) );
+						break;
+						
+				case 'after':
+				
+						$notify.insertAfter( $( settings.where ) );
+						break;
+						
+				case 'before':
+				
+						$notify.insertBefore( $( settings.where ) );
+						break;
+						
+				default:
+				
+						$notify.appendTo( $( settings.where ) );
+			}
 			
 			
 			
@@ -239,7 +256,6 @@
 						$what.slideUp( function() {
 							 
 							$what.remove();
-							if( $holder.is(':empty') ) { $holder.remove(); }
 							
 						});
 													

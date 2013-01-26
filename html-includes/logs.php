@@ -102,7 +102,7 @@
 							<tr class="unflagged">
 								<th scope="row">&mdash;</th>
 								<td>&mdash;</td>
-								<td>Couldn&prime;t find any logs.</td>
+								<td>Nothing to report for this day - <img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/folder-smiley.png" class="icon" alt="no logs flagged for warning (smiley face)"></td>
 								<td class="icon"></td>
 							</tr>
 						
@@ -133,7 +133,7 @@
 			
 			
 			<div class="tab-pane" id="log-flagged">
-				
+								
 				<table class="table table-hover" id="logs-flagged-table">
 				
 					<thead>
@@ -169,7 +169,7 @@
 								<tr class="unflagged">
 									<th scope="row">&mdash;</th>
 									<td>&mdash;</td>
-									<td>No logs flagged! <img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/script-smiley.png" class="icon" alt="no logs flagged for warning (smiley face)"></td>
+									<td>No logs have been flagged - <img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/folder-smiley.png" class="icon" alt="no logs flagged for warning (smiley face)"> </td>
 									<td class="icon"></td>
 								</tr>
 							
@@ -187,30 +187,40 @@
 			
 			<div class="tab-pane" id="log-current">
 			
-				<!-- Template for the selected log 
-				<script type="text/x-tmpl" id="tmpl-log-selected">-->
-					
 					
 					<h3>Log #13</h3>
 					<hr>
 					
-					<div class="formRow text">
-						<div class="formQuestion"><strong>Date:</strong></div>
-						<div class="formAnswer"><p>Jan 1st 2013</p></div>
-					</div>
-			
-					<div class="formRow text">
-						<div class="formQuestion"><strong>Time:</strong></div>
-						<div class="formAnswer"><p>12:29 pm</p></div>
-					</div>
+					<div class="row-fluid">
+						<div class="span4">
 						
-					<div class="formRow text">
-						<div class="formQuestion"><strong>User:</strong></div>
-						<div class="formAnswer"><p>Jenny</p></div>
-					</div>
+							<div class="formRow text">
+								<div class="formQuestion"><strong>Date:</strong></div>
+								<div class="formAnswer"><p>Jan 1st 2013</p></div>
+							</div>
 					
+							<div class="formRow text">
+								<div class="formQuestion"><strong>Time:</strong></div>
+								<div class="formAnswer"><p>12:29 pm</p></div>
+							</div>
+								
+							<div class="formRow text">
+								<div class="formQuestion"><strong>User:</strong></div>
+								<div class="formAnswer"><p>Jenny</p></div>
+							</div>
+							
+						</div>
+
+
+						<div class="span8">
 						
-				<!--</script>-->
+							<div class="formRow text">
+								<div class="formQuestion"><strong>Description:</strong></div>
+								<div class="formAnswer"><p>Jenny uploaded a picture into the album: "Cats"</p></div>
+							</div>
+						
+						</div>
+					</div>
 
 			</div>			
 			

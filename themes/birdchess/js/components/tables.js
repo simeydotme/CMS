@@ -26,21 +26,22 @@
 
 
 
+
+
+
 		$(function() {
 		
 		
 	/* ==========================================================================
 	   This function shows tiny spinner in place of 'states' in main tables.
 	   ========================================================================== */
-
+		
 			$('.state').on('click', function(e) {
 				
 				e.preventDefault();
+				var $this = $(this);
 				
-				var $this = $(this).hide();
-				var $i = $('<i class="spinner tiny"></i>');
-				
-				$this.after( $i );
+				$this.swapOutForSpinner();
 				
 		/* ==========================================================================
 		   Active States
@@ -59,13 +60,23 @@
 		   ========================================================================== */
 
 				else if( $this.is('.flagged') ) { 
+					
+					// swap the classes out for the flags
 					$this.removeClass('flagged').addClass('unflagged');
 					$this.parents('tr').removeClass('flagged').addClass('unflagged');
+					
+					// growl out hte result
+					growl("Log has been <strong>unflagged</strong>", { style: "info", duration: 3000 });
 				}
 				
 				else if( $this.is('.unflagged') ) { 
+				
+					// swap the classes out for the flags
 					$this.removeClass('unflagged').addClass('flagged'); 
 					$this.parents('tr').removeClass('unflagged').addClass('flagged'); 
+					
+					// growl out hte result
+					growl("Log has been <strong>flagged</strong>", { style: "info", duration: 3000 })
 				}
 
 
@@ -76,7 +87,7 @@
 				// timeout to simulate ajax call
 				setTimeout( function() {
 					
-					$i.fadeOut( function() { $this.fadeIn(); $i.remove(); });
+					$this.swapInForSpinner();
 					
 				}, 800);
 				
@@ -85,10 +96,6 @@
 		
 		
 		});
-		
-		
-		
-		
 		
 		
 		
