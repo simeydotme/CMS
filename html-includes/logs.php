@@ -16,7 +16,7 @@
 			</li>			
 			
 			<li id="tab-logs-flagged">
-				<a href="#log-flagged" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/flag.png" class="icon" alt=""> All flagged logs</a>
+				<a href="#log-flagged" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/flag.png" class="icon" alt=""> All flagged logs <span class="badge">4</span></a>
 			</li>
 
 			<li id="tab-logs-current" class="disabled">
@@ -78,43 +78,40 @@
 						</tr>
 					</thead>
 					
+					<!-- Template for the current list of logs -->
+					<script type="text/x-tmpl" id="tmpl-logs-table">
+				
+						{% for (var i=0; i<o.length; i++) { %}
+							
+							{% if (o[i].flagged) { %}
+							<tr class="flagged">
+							{% } else { %}
+							<tr class="unflagged">
+							{% } %}
+								<th scope="row">{%=o[i].time%}</th>
+								<td><a href="mailto:{%=o[i].email%}" class="tooltip" title="send an email to this user">{%=o[i].user%}</a></td>
+								<td><a href="#{%=o[i].id%}" class="view">{%=o[i].description%}</a></td>
+								<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-flag-id="{%=o[i].id%}">Flag this</a></td>
+							</tr>
+							
+							
+						{% } %}
+						
+						{% if (o.length<=0) { %}
+								
+							<tr class="unflagged">
+								<th scope="row">&mdash;</th>
+								<td>&mdash;</td>
+								<td>Couldn&prime;t find any logs.</td>
+								<td class="icon"></td>
+							</tr>
+						
+						{% } %}
+						
+					</script>
+					
 					<tbody>
-						<tr class="unflagged">
-							<th scope="row">22:17</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">James</a></td>
-							<td><a href="#" class="view">Added "Paul" as a new user</a></td>
-							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
-						<tr class="flagged">
-							<th scope="row">13:34</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jimbob</a></td>
-							<td><a href="#" class="view">Deleted a news article</a></td>
-							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
-						<tr class="unflagged">
-							<th scope="row">10:59</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
-							<td><a href="#" class="view">Uploaded image into "Cats"</a></td>
-							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
-						<tr class="unflagged">
-							<th scope="row">10:58</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
-							<td><a href="#" class="view">Uploaded image into "Cats"</a></td>
-							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
-						<tr class="unflagged">
-							<th scope="row">10:55</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
-							<td><a href="#" class="view">Uploaded image into "Cats"</a></td>
-							<td class="icon"><a href="#" class="tooltip state unflagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
-						<tr class="flagged">
-							<th scope="row">09:55</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
-							<td><a href="#" class="view">Deleted a news post</a></td>
-							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
+						
 					</tbody>
 				
 				
@@ -136,8 +133,8 @@
 			
 			
 			<div class="tab-pane" id="log-flagged">
-			
-				<table class="table table-hover" id="logs-table">
+				
+				<table class="table table-hover" id="logs-flagged-table">
 				
 					<thead>
 						<tr>
@@ -149,20 +146,40 @@
 					</thead>
 					
 					<tbody>
-						<tr class="flagged">
-							<th scope="row">13:34</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jimbob</a></td>
-							<td><a href="#" class="view">Deleted a news article</a></td>
-							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
-						<tr class="flagged">
-							<th scope="row">09:55</th>
-							<td><a href="#" class="tooltip" title="send an email to this user">Jenny</a></td>
-							<td><a href="#" class="view">Deleted a news post</a></td>
-							<td class="icon"><a href="#" class="tooltip state flagged" title="toggle flagging this log as important">Flag this</a></td>
-						</tr>
+						<!-- Template for the current list of logs -->
+						<script type="text/x-tmpl" id="tmpl-logs-flagged-table">
+					
+							{% for (var i=0; i<o.length; i++) { %}
+								
+								{% if (o[i].flagged) { %} 
+								<tr class="flagged"> 
+								
+									<th scope="row">{%=o[i].time%}</th>
+									<td><a href="mailto:{%=o[i].email%}" class="tooltip" title="send an email to this user">{%=o[i].user%}</a></td>
+									<td><a href="#{%=o[i].id%}" class="view">{%=o[i].description%}</a></td>
+									<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-flag-id="{%=o[i].id%}">Flag this</a></td>
+								</tr>
+								{% } %}
+								
+							{% } %}
+							
+							
+							{% if (o.length<=0) { %}
+								
+								<tr class="unflagged">
+									<th scope="row">&mdash;</th>
+									<td>&mdash;</td>
+									<td>No logs flagged! <img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/script-smiley.png" class="icon" alt="no logs flagged for warning (smiley face)"></td>
+									<td class="icon"></td>
+								</tr>
+							
+							{% } %}
+							
+						</script>
+					
+						
+											
 					</tbody>
-				
 				
 				</table>
 
@@ -170,7 +187,30 @@
 			
 			<div class="tab-pane" id="log-current">
 			
-				<h3>asdasd</h3>
+				<!-- Template for the selected log 
+				<script type="text/x-tmpl" id="tmpl-log-selected">-->
+					
+					
+					<h3>Log #13</h3>
+					<hr>
+					
+					<div class="formRow text">
+						<div class="formQuestion"><strong>Date:</strong></div>
+						<div class="formAnswer"><p>Jan 1st 2013</p></div>
+					</div>
+			
+					<div class="formRow text">
+						<div class="formQuestion"><strong>Time:</strong></div>
+						<div class="formAnswer"><p>12:29 pm</p></div>
+					</div>
+						
+					<div class="formRow text">
+						<div class="formQuestion"><strong>User:</strong></div>
+						<div class="formAnswer"><p>Jenny</p></div>
+					</div>
+					
+						
+				<!--</script>-->
 
 			</div>			
 			
