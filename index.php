@@ -25,6 +25,7 @@
 		<link rel="stylesheet/less" type="text/css" href="<?php echo( $theme ) ?>/css/main.less">
 		
         <script src="<?php echo( $theme ) ?>/js/fonts.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/tmpl/2.1.0/tmpl.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/less/1.3.1/less.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/modernizr/2.6.1/modernizr.min.js"></script>
 		
@@ -60,10 +61,13 @@
 		
 		</div>
 		
-		
+
         <script src="<?php echo( $theme ) ?>/js/vendor/jquery/1.8.2/jquery.min.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/jqueryui/1.9.1/jqueryui.custom.min.js"></script>
 		
+		<!-- load the js template file for current page -->
+		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/tmpl-' . $page . '.js"></script>');  ?>
+
         <script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.2.1/bootstrap.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.0/qtip.min.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.0/ckeditor.js"></script>
@@ -80,11 +84,8 @@
         <script src="<?php echo( $theme ) ?>/js/components/tables.js"></script>		
         <script src="<?php echo( $theme ) ?>/js/components/tabs.js"></script>		
 		
-		<?php 
-			
-			echo('<script src="' . $theme . '/js/pages/' . $page . '.js"></script>'); 
-		
-		?>
+		<!-- load the script file for current page -->
+		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/' . $page . '.js"></script>');  ?>
 		
 
     </body>
