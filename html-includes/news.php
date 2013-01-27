@@ -123,7 +123,7 @@
 				
 					<div class="formRow">
 						<div class="formQuestion">
-							<label>Dropdown</label>
+							<label>Category</label>
 						</div>
 						<div class="formAnswer">
 							<select><option></option></select>
@@ -135,7 +135,7 @@
 							<label>Date</label>
 						</div>
 						<div class="formAnswer">
-							<input type="date" placeholder="DD/MM/YYYY">
+							<input type="text" placeholder="DD/MM/YYYY" class="date">
 						</div>
 					</div>
 				
