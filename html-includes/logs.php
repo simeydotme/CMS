@@ -10,7 +10,7 @@
 		
 		
 		
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs logs-tabs">
 			<li id="tab-logs-list" class="active">
 				<a href="#log-list" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/book-open-list.png" class="icon" alt=""> Logs for 3rd Jan 2013</a>
 			</li>			
@@ -91,7 +91,7 @@
 								<th scope="row">{%=o[i].time%}</th>
 								<td><a href="mailto:{%=o[i].email%}" class="tooltip" title="send an email to this user">{%=o[i].user%}</a></td>
 								<td><a href="#{%=o[i].id%}" class="view">{%=o[i].description%}</a></td>
-								<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-flag-id="{%=o[i].id%}">Flag this</a></td>
+								<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-log-id="{%=o[i].id%}">Flag this</a></td>
 							</tr>
 							
 							
@@ -148,31 +148,33 @@
 					<tbody>
 						<!-- Template for the current list of logs -->
 						<script type="text/x-tmpl" id="tmpl-logs-flagged-table">
-					
+							
+							{% var c = false; %}
 							{% for (var i=0; i<o.length; i++) { %}
 								
 								{% if (o[i].flagged) { %} 
+								{% c=true; %}
 								<tr class="flagged"> 
 								
 									<th scope="row">{%=o[i].time%}</th>
 									<td><a href="mailto:{%=o[i].email%}" class="tooltip" title="send an email to this user">{%=o[i].user%}</a></td>
 									<td><a href="#{%=o[i].id%}" class="view">{%=o[i].description%}</a></td>
-									<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-flag-id="{%=o[i].id%}">Flag this</a></td>
+									<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-log-id="{%=o[i].id%}">Flag this</a></td>
 								</tr>
 								{% } %}
 								
 							{% } %}
 							
 							
-							{% if (o.length<=0) { %}
-								
+							{% if (c==false) { %} 
+							
 								<tr class="unflagged">
 									<th scope="row">&mdash;</th>
 									<td>&mdash;</td>
 									<td>No logs have been flagged - <img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/folder-smiley.png" class="icon" alt="no logs flagged for warning (smiley face)"> </td>
 									<td class="icon"></td>
 								</tr>
-							
+								
 							{% } %}
 							
 						</script>
