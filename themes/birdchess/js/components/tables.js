@@ -36,7 +36,7 @@
 	   This function shows tiny spinner in place of 'states' in main tables.
 	   ========================================================================== */
 		
-			$('.state').on('click', function(e) {
+			$('table').on('click', '.state', function(e) {
 				
 				e.preventDefault();
 				var $this = $(this);
@@ -90,6 +90,10 @@
 					$this.swapInForSpinner();
 					
 				}, 800);
+				
+				
+				
+				$this.trigger('stateChange');
 				
 			});
 		
