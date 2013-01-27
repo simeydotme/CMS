@@ -70,7 +70,7 @@
 
         <script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.2.1/bootstrap.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.0/qtip.min.js"></script>
-        <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.0/ckeditor.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.1/ckeditor.js"></script>
 
         <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>
