@@ -24,18 +24,6 @@
 		<div class="tab-content">
 		
 			<div class="tab-pane active" id="gallery-list">
-		
-		
-				<div class="form-actions above-table">
-					
-					<a id="button-upload" href="#" class="new btn orange pull-right">
-						<span>Add Images</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/picture--plus.png" class="icon">
-					</a>
-					
-				</div>
-				
-								
 
 				<table class="table table-striped table-hover" id="gallery-table">
 				
@@ -128,24 +116,22 @@
 				
 			<div class="tab-pane" id="gallery-edit">
 				
-				<h3>
+				<h3>Landing Page Gallery</h3>
 				
-					Landing Page Gallery
-				
+				<div class="form-actions above-table">
+					
 					<button id="button-saveorder" href="#" class="new btn blue" disabled>
 						<span>Save Changes</span>
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon">
 					</button>
 					
-					<button id="button-resetorder" href="#" class="new btn" disabled>
+					<button id="button-resetorder" href="#" class="new btn alt pull-right" disabled>
 						<span>Reset Changes</span>
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/arrow-circle-double.png" class="icon">
 					</button>
-										
-				</h3>
-				
-				
 					
+				</div>
+				
 				<div class="gallery-wrapper">
 				
 					<a class="thumbnail" href="#" data-id="image[1]">
