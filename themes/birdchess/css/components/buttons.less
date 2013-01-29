@@ -90,9 +90,7 @@
 
 
 		
-		.btn-group > .btn, 
-		.btn-group > .dropdown-menu,
-		.btn-group ul.dropdown-menu { font-size: 12px; }
+		
 		
 		.btn .caret 			{ margin-left: 5px; }
 		.btn img:first-child 	{ margin-right: 5px; }
@@ -105,7 +103,7 @@
 		
 		.btn { 
 		
-			font-weight: 600; font-size: 12px; font-family: @sans;
+			font-weight: 600; font-size: 0.8em; font-family: @sans;
 			border-radius: 4px;
 			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
 			
@@ -123,64 +121,79 @@
 		
 		}
 		
+		/* Unfortunately, because of Bootstrap this menu has to be in Pixels.
+			Just remember to change it if you update font size. */
+		.btn-group > .btn, 
+		.btn-group > .dropdown-menu { font-size: 12px; }
 		
-		.btn.alt 	{ 
+		
+		
+		.btn.alt,
+		.btn-group.open .btn.alt.dropdown-toggle { 
 						.makeBtn( @btnSecondaryColor1, @btnSecondaryColor2, @btnSecondaryBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 					
-		.btn.blue 	{ 
+		.btn.blue,
+		.btn-group.open .btn.blue.dropdown-toggle { 
 						.makeBtn( @btnBlueColor1, @btnBlueColor2, @btnBlueBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 					
-		.btn.red 	{ 
+		.btn.red,
+		.btn-group.open .btn.red.dropdown-toggle { 
 						.makeBtn( @btnRedColor1, @btnRedColor2, @btnRedBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 		
-		.btn.pink 	{ 
+		.btn.pink,
+		.btn-group.open .btn.pink.dropdown-toggle { 
 						.makeBtn( @btnPinkColor1, @btnPinkColor2, @btnPinkColorBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 		
-		.btn.purple { 
+		.btn.purple,
+		.btn-group.open .btn.purple.dropdown-toggle { 
 						.makeBtn( @btnPurpleColor1, @btnPurpleColor2, @btnPurpleColorBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 		
-		.btn.orange { 
+		.btn.orange,
+		.btn-group.open .btn.orange.dropdown-toggle { 
 						.makeBtn( @btnOrangeColor1, @btnOrangeColor2, @btnOrangeColorBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 		
-		.btn.yellow { 
+		.btn.yellow,
+		.btn-group.open .btn.yellow.dropdown-toggle { 
 						.makeBtn( @btnYellowColor1, @btnYellowColor2, @btnYellowColorBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 		
-		.btn.green { 
+		.btn.green,
+		.btn-group.open .btn.green.dropdown-toggle { 
 						.makeBtn( @btnGreenColor1, @btnGreenColor2, @btnGreenColorBorder ); 
 						
 						color: white; 
 						.caret 	{ border-top-color: white; }
 		}
 		
-		.btn.dark { 
+		.btn.dark,
+		.btn-group.open .btn.dark.dropdown-toggle { 
 						.makeBtn( @btnDarkColor1, @btnDarkColor2, @btnDarkColorBorder ); 
 						
 						color: white; 

@@ -23,23 +23,33 @@
 		];
 		
 		
+	/* ==========================================================================
+	   update the logs table with the data in the {logsData} object.
+	   ========================================================================== */
+	   
+		// self-executing function.
 		window.populateLogsTable = (function reference(){
 			
-			// update the logs table with the data in the {logsData} object.
 			var logsTableData = tmpl("tmpl-logs-table", window.logsData);
 			$('#logs-table tbody').html( logsTableData );
 				
-			return reference; //return the function itself to reference
+			return reference; 
+			//return the function itself to reference
 		
 		}());
+		
+	/* ==========================================================================
+	   update the logs flagged table with the data in the {logsData} object.
+	   ========================================================================== */
 
+		// self-executing function.
 		window.populateLogsFlaggedTable = (function reference(){
 			
-			// update the logs flagged table with the data in the {logsData} object.
 			var logsFlaggedTableData = tmpl("tmpl-logs-flagged-table", window.logsData);
 			$('#logs-flagged-table tbody').html( logsFlaggedTableData );	
 				
-			return reference; //return the function itself to reference
+			return reference; 
+			//return the function itself to reference
 		
 		}());
 

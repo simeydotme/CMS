@@ -16,7 +16,7 @@
 			</li>			
 			
 			<li id="tab-logs-flagged">
-				<a href="#log-flagged" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/flag.png" class="icon" alt=""> All flagged logs <span class="badge">4</span></a>
+				<a href="#log-flagged" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/flag.png" class="icon" alt=""> All flagged logs <span class="badge hidden">0</span></a>
 			</li>
 
 			<li id="tab-logs-current" class="disabled">
@@ -91,7 +91,11 @@
 								<th scope="row">{%=o[i].time%}</th>
 								<td><a href="mailto:{%=o[i].email%}" class="tooltip" title="send an email to this user">{%=o[i].user%}</a></td>
 								<td><a href="#{%=o[i].id%}" class="view">{%=o[i].description%}</a></td>
-								<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-log-id="{%=o[i].id%}">Flag this</a></td>
+								<td class="icon">
+									<a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-log-id="{%=o[i].id%}">
+									{% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}
+									</a>
+								</td>							
 							</tr>
 							
 							
@@ -159,7 +163,11 @@
 									<th scope="row">{%=o[i].time%}</th>
 									<td><a href="mailto:{%=o[i].email%}" class="tooltip" title="send an email to this user">{%=o[i].user%}</a></td>
 									<td><a href="#{%=o[i].id%}" class="view">{%=o[i].description%}</a></td>
-									<td class="icon"><a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-log-id="{%=o[i].id%}">Flag this</a></td>
+									<td class="icon">
+										<a href="#" class="tooltip state {% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}" title="toggle flagging this log as important" data-log-id="{%=o[i].id%}">
+										{% if (o[i].flagged) { %}flagged{% } else { %}unflagged{% } %}
+										</a>
+									</td>
 								</tr>
 								{% } %}
 								

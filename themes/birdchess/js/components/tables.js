@@ -7,16 +7,15 @@
 		$(function() {
 			
 			var $section = $('tbody .section');
-			//$section.nextAll('tr').hide();
 			
 			$section.toggle( function() {
 			
-				$(this).nextAll('tr').hide();
+				$(this).nextAll('tr').xhide();
 				$(this).find('td.collapse a').addClass('expand');
 			
 			}, function() {
 			
-				$(this).nextAll('tr').show();
+				$(this).nextAll('tr').xshow();
 				$(this).find('td.collapse a').removeClass('expand');
 			
 			});
@@ -47,36 +46,54 @@
 		   Active States
 		   ========================================================================== */
 				
-				if( $this.is('.active') ) { 
-					$this.removeClass('active').addClass('inactive'); 
+				if( $this.hasClass('active') ) {
+					// change it's state 
+					$this.removeClass('active').addClass('inactive').text('Active');
+					$this.parents('tr').removeClass('active').addClass('inactive');
+					// trigger stateChange
+					$this.trigger('stateChange', 'inactive'); 
+					// growl out the result
+					growl("Item has been set to <strong>inactive/hidden</strong>", { style: "warning", duration: 3000 });
 				}
 				
-				else if( $this.is('.inactive') ) { 
-					$this.removeClass('inactive').addClass('active'); 
+				else if( $this.hasClass('inactive') ) {
+					// change it's state  
+					$this.removeClass('inactive').addClass('active').text('Inactive');
+					$this.parents('tr').removeClass('inactive').addClass('active');
+					// trigger stateChange 
+					$this.trigger('stateChange', 'active'); 
+					// growl out the result
+					growl("Item has been set to <strong>active/visible</strong>", { style: "warning", duration: 3000 });
 				}
 				
 		/* ==========================================================================
 		   Flagged States
 		   ========================================================================== */
 
-				else if( $this.is('.flagged') ) { 
+				else if( $this.hasClass('flagged') ) { 
 					
-					// swap the classes out for the flags
-					$this.removeClass('flagged').addClass('unflagged');
+					// swap the classes for the flags
+					$this.removeClass('flagged').addClass('unflagged').text('Unflagged');
 					$this.parents('tr').removeClass('flagged').addClass('unflagged');
 					
-					// growl out hte result
-					growl("Log has been <strong>unflagged</strong>", { style: "info", duration: 3000 });
+					// trigger stateChange 
+					$this.trigger('stateChange', 'unflagged'); 
+					
+					// growl out the result
+					growl("Item has been <strong>unflagged</strong>", { style: "info", duration: 3000 });
 				}
 				
-				else if( $this.is('.unflagged') ) { 
+				else if( $this.hasClass('unflagged') ) { 
 				
-					// swap the classes out for the flags
-					$this.removeClass('unflagged').addClass('flagged'); 
+					// swap the classes for the flags
+					$this.removeClass('unflagged').addClass('flagged').text('Flagged');; 
 					$this.parents('tr').removeClass('unflagged').addClass('flagged'); 
 					
-					// growl out hte result
-					growl("Log has been <strong>flagged</strong>", { style: "info", duration: 3000 })
+					// trigger stateChange 
+					$this.trigger('stateChange', 'flagged'); 
+					
+					// growl out the result
+					growl("Item has been <strong>flagged</strong>", { style: "info", duration: 3000 });
 				}
 
 
@@ -90,10 +107,8 @@
 					$this.swapInForSpinner();
 					
 				}, 800);
+
 				
-				
-				
-				$this.trigger('stateChange');
 				
 			});
 		

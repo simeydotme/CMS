@@ -44,7 +44,7 @@
 							<td class="collapse"></td>
 							<th scope="row"><a href="#">Another Page</a></th>
 							<td></td>
-							<td class="icon"><a href="#" class="state inactive tooltip" title="activate this">inactive</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle active/visible status">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 						</tr>
 					</tbody>
@@ -60,21 +60,21 @@
 							<td class="collapse"></td>
 							<th scope="row"><a href="#">The Distillery</a></th>
 							<td></td>
-							<td class="icon"><a href="#" class="state active tooltip" title="deactivate this">active</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle active/visible status">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 						</tr>
 						<tr>
 							<td class="collapse"></td>
 							<th scope="row"><a href="#">Our Rare Crafts</a></th>
 							<td></td>
-							<td class="icon"><a href="#" class="state active tooltip" title="deactivate this">active</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle active/visible status">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 						</tr>
 						<tr>
 							<td class="collapse"></td>
 							<th scope="row"><a href="#">About The Balvenie</a></th>
 							<td></td>
-							<td class="icon"><a href="#" class="state inactive tooltip" title="activate this">inactive</a></td>
+							<td class="icon"><a href="#" class="state active tooltip" title="toggle active/visible status">active</a></td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 						</tr> 
 					</tbody>

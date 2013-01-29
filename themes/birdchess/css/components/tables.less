@@ -37,6 +37,9 @@
 	   Table Styles
 	   ========================================================================== */
 		
+		
+	/* === Table Layouts ============================================================ */
+		
 		.table { font-size: 0.9em; }
 		.table-bordered { font-size: 0.9em; border: 1px solid @tableColor; }
 		
@@ -45,6 +48,9 @@
 		.table-bordered th:first-child,
 		.table-bordered td:first-child { border-left: none;  }
 		
+		
+	/* === Table Header ============================================================ */
+
 		.table thead { .gradient( @tableColor, darken(@tableColor,5%) ); color: white; }
 		.table thead th,
 		.table thead td {  padding: @tableHeadPadding; font-weight: normal; }
@@ -54,6 +60,9 @@
 		.table thead th:last-child,
 		.table thead td:last-child { border-radius: 0 4px 0 0;}
 		
+		
+	/* === Table Body ============================================================ */
+
 		.table tbody tr td ,
 		.table tbody tr th { 
 			font-weight: normal; padding: @tableBodyPadding; border:none; 
@@ -81,9 +90,7 @@
 		
 		
 		
-		
-		
-		
+	/* === Table Sectioned content ============================================================ */
 		
 		.table tbody tr.section td,
 		.table tbody tr.section th { cursor: pointer; font-size: 14px; font-weight: 600;  background-color: @tableSectionColor; }
@@ -102,33 +109,44 @@
 			&.expand { background-image: url('@{expandIcon}'); 
 				&:hover { background-image: url('@{collapseIcon}'); }}
 			
-					
 		}
 		
 		
 		
 		
 		
+	/* === Table States (flagged/active) ============================================================ */
 		
-		
-		.table tbody tr td a.state {
+		.table tbody tr {
 			
-			text-indent: -999em; width: 24px; height: 20px; display: block; background-repeat: no-repeat; background-position: center 4px;
+			td a.state {
 			
-			&.active { background-image: url('@{activeIcon}'); }
-			&.inactive { background-image: url('@{inactiveIcon}'); }
-			&.active:hover,
-			&.inactive:hover { background-image: url('@{activeHoverIcon}'); }
-
-			&.flagged { background-image: url('@{flaggedIcon}'); }
-			&.unflagged { background-image: url('@{unflaggedIcon}'); }
-			&.flagged:hover { background-image: url('@{unflaggedIcon}'); }
-			&.unflagged:hover { background-image: url('@{flaggedIcon}'); }
+				text-indent: -999em; width: 24px; height: 20px; display: block; background-repeat: no-repeat; background-position: center 4px;
+				
+				&.active { background-image: url('@{activeIcon}'); }
+				&.inactive { background-image: url('@{inactiveIcon}'); }
+				&.active:hover,
+				&.inactive:hover { background-image: url('@{activeHoverIcon}'); }
+	
+				&.flagged { background-image: url('@{flaggedIcon}'); }
+				&.unflagged { background-image: url('@{unflaggedIcon}'); }
+				&.flagged:hover { background-image: url('@{unflaggedIcon}'); }
+				&.unflagged:hover { background-image: url('@{flaggedIcon}'); }
+			
+			}
+			
+			&.inactive { opacity: 0.4; .transition( opacity 0.2s ); }
+			&.inactive:hover { opacity: 1; }
+			
+			&.flagged td, 
+			&.flagged th { background-color: @tableFlaggedColor; }
 
 		}
 		
 		
 		
+		
+	/* === Table Stripes ============================================================ */
 		
 		.table-striped tbody tr:nth-child(odd) td, 
 		.table-striped tbody tr:nth-child(odd) th { background-color: @tableStripeColor; }
@@ -137,7 +155,7 @@
 		.table-striped tbody tr.section th {  background-color: @tableSectionColor; }
 		
 		
-		
+	/* === Table Hovering ============================================================ */
 
 		.table-hover tbody tr:hover td, 
 		.table-hover tbody tr:hover th { background-color: @tableHoverColor; border-bottom-color: @hintColor; }
@@ -147,9 +165,6 @@
 
 
 
-		
-		.table tbody tr.flagged td, 
-		.table tbody tr.flagged th { background-color: @tableFlaggedColor; }
 
 
 

@@ -20,7 +20,22 @@
 
 
 
+		
+	/* ==========================================================================
+	   Override the default jQuery hide/show functions.
+	   ========================================================================== */
 
+		$.fn.xhide = function() {
+			return $(this).each( function(k,v) {
+				$(v).addClass('hidden');
+			});
+		};
+
+		$.fn.xshow = function() {
+			return $(this).each( function(k,v) {
+				$(v).removeClass('hidden');
+			});
+		};
 
 
 
