@@ -34,13 +34,9 @@
 				
 			</div>
 			
-			<hr>
-			
 			
 			
 			<div class="custom-modules-wrapper">
-					
-					<h3>Custom Modules</h3>
 					
 					<div class="custom-modules">
 					
@@ -73,8 +69,8 @@
 					</div>
 				
 			</div>
-			
-			<hr>
+
+
 
 			<div class="row-fluid">
 				
