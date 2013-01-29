@@ -47,9 +47,17 @@
 							<td class="icon"><a href="#" class="delete tooltip" title="delete this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
 						</tr>
 						<tr>
-							<td>About Us</td>
-							<th scope="row"><a href="#" class="edit tooltip">About Us Gallery</a></th>
+							<td>Product Gallery</td>
+							<th scope="row"><a href="#" class="edit tooltip">Product Showcase</a></th>
 							<td><span class="badge">4</span></td>
+							<td>Yesterday</td>
+							<td class="icon"><a href="#" class="edit tooltip" title="edit this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
+							<td class="icon"><a href="#" class="delete tooltip" title="delete this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
+						</tr>
+						<tr>
+							<td>Events Gallery</td>
+							<th scope="row"><a href="#" class="edit tooltip">Gallery of Events and Activities</a></th>
+							<td><span class="badge yellow">0</span> &mdash; <a href="#">add some!</a></td>
 							<td>Yesterday</td>
 							<td class="icon"><a href="#" class="edit tooltip" title="edit this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/pencil.png" class="icon" alt="edit"></a></td>
 							<td class="icon"><a href="#" class="delete tooltip" title="delete this"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png" class="icon" alt="delete"></a></td>
