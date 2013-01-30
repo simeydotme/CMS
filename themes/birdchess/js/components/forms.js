@@ -22,13 +22,21 @@
 					$l.append( $y, $n, $t ).insertBefore( $this );
 					$this.addClass('replaced');
 					
-					// check if the checkbox is checked, apply styling.
+					// check if the checkbox is checked, apply styling. trigger focus.
 					$this.on('change', function() {
 					
 						if ($this.is(':checked')) {  $l.addClass('on'); }
 						else { $l.removeClass('on'); }
+						
+						$this.trigger('focus');
 					
 					});
+					
+					$this.on('focus', function() { $l.addClass('focus') });
+					$this.on('blur', function() { $l.removeClass('focus') });
+					
+					
+					
 					
 					// check if the checkbox is checked on init.
 					if ($this.is(':checked')) {  $l.addClass('on'); }
