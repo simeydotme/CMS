@@ -85,6 +85,7 @@
         <script src="<?php echo( $theme ) ?>/js/components/tables.js"></script>		
         <script src="<?php echo( $theme ) ?>/js/components/tabs.js"></script>		
         <script src="<?php echo( $theme ) ?>/js/components/spinners.js"></script>		
+        <script src="<?php echo( $theme ) ?>/js/components/forms.js"></script>		
 		
 		<!-- load the script file for current page -->
 		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/' . $page . '.js"></script>');  ?>
