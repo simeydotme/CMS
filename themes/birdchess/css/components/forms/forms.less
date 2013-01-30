@@ -72,6 +72,8 @@
 			}
 			
 			
+			
+			
 		
 		}
 
@@ -102,6 +104,9 @@
 		
 		form h3 { padding-bottom: 5px; border-bottom: 1px solid #DDD; }
 		
+		label { display: inline-block; *display: inline; *zoom: 1; margin-top: 5px; }
+		.@{row} .@{question} label { margin: 0; }
+			
 		
 		
 	
@@ -148,6 +153,11 @@
 		.formSize();
 		
 		
+		
+	/* ==========================================================================
+	   Form Media Queries
+	   ========================================================================== */
+
 	@media (max-width: 979px) {
 		
 		.formSize( 256px );
