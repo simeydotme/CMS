@@ -37,7 +37,7 @@
 				
 				
 				
-				<table class="table table-striped table-hover">
+				<table class="table table-striped table-hover" id="user-table">
 				
 					<thead>
 						<tr>
@@ -182,27 +182,27 @@
 							
 							<div class="permissionLevel">
 							
-								<div class="super text red">
+								<div class="level super text red">
 									<h5>Super Admin</h5>
 									<p>Access and control for entire website.</p>
 								</div>
 
-								<div class="admin text purple">
+								<div class="level admin text purple">
 									<h5>Admin</h5>
 									<p>Control over all content and settings.</p>
 								</div>
 
-								<div class="creator text blue">
+								<div class="level creator text blue">
 									<h5>Content Admin</h5>
 									<p>Full control over content.</p>
 								</div>
 
-								<div class="editor text green">
+								<div class="level editor text green">
 									<h5>Content Editor</h5>
 									<p>Ability to edit existing content.</p>
 								</div>
 
-								<div class="peon text dark">
+								<div class="level peon text dark">
 									<h5>Zero Permission</h5>
 									<p>No ability to edit anything.</p>
 								</div>
@@ -218,29 +218,30 @@
 					<div class="row-fluid more-permissions" style="display: none;">
 					
 						<div class="span4">
-							<label><input type="checkbox" id="site-admin" class="level1"> <strong>Site Admin</strong></label>
+							<div class="boss"><input type="checkbox" id="site-admin" class="level1"> <label for="site-admin"><strong>Site Admin</strong></label></div>
 							<hr>
-							<label><input type="checkbox" id="website-settings" class="level2 site-admin"> Website Settings</label>
-							<label><input type="checkbox" id="manage-users" class="level2 site-admin"> Manage Users</label>
-							<label><input type="checkbox" id="manage-logs" class="level2 site-admin"> Manage Logs</label>
+							<div><input type="checkbox" id="website-settings" class="level2 site-admin"> <label for="website-settings">Website Settings</label></div>
+							<div><input type="checkbox" id="manage-users" class="level2 site-admin"> <label for="manage-users">Manage Users</label></div>
+							<div><input type="checkbox" id="manage-logs" class="level2 site-admin"> <label for="manage-logs">Manage Logs</label></div>
 						</div>
 						
 						<div class="span4">
-							<label><input type="checkbox" id="content-admin" class="level1"> <strong>Content Admin</strong></label>
+							<div class="boss"><input type="checkbox" id="content-admin" class="level1"> <label for="content-admin"><strong>Content Admin</strong></label></div>
 							<hr>
-							<label><input type="checkbox" id="page-content" class="level2 content-admin"> Page Content</label>
-							<label><input type="checkbox" id="manage-news" class="level2 content-admin"> Manage News</label>
-							<label><input type="checkbox" id="manage-blog" class="level2 content-admin"> Manage Blog</label>
-							<label><input type="checkbox" id="manage-twitter" class="level2 content-admin"> Manage Twitter</label>
+							<div><input type="checkbox" id="page-content" class="level2 content-admin"> <label for="page-content">Page Content</label></div>
+							<div><input type="checkbox" id="manage-news" class="level2 content-admin"> <label for="manage-news">Manage News</label></div>
+							<div><input type="checkbox" id="manage-galleries" class="level2 content-admin"> <label for="manage-galleries">Manage Galleries</label></div>
+							<div><input type="checkbox" id="manage-blog" class="level2 content-admin"> <label for="manage-blog">Manage Blog</label></div>
+							<div><input type="checkbox" id="manage-twitter" class="level2 content-admin"> <label for="manage-twitter">Manage Twitte</label>r</div>
 						</div>
 						
 						<div class="span4">
-							<label><input type="checkbox" id="modules-admin" class="level1"> <strong>Modules Admin</strong></label>
+							<div class="boss"><input type="checkbox" id="modules-admin" class="level1"> <label for="website-settings"><strong>Modules Admin</strong></label></div>
 							<hr>
-							<label><input type="checkbox" id="manage-expressions" class="level2 modules-admin"> Manage Expressions</label>
-							<label><input type="checkbox" id="manage-rare-crafts" class="level2 modules-admin"> Manage Rare Crafts</label>
-							<label><input type="checkbox" id="manage-comments" class="level2 modules-admin"> Manage Comments</label>
-							<label><input type="checkbox" id="manage-quicklinks" class="level2 modules-admin"> Manage Quicklinks</label>
+							<div><input type="checkbox" id="manage-expressions" class="level2 modules-admin"> <label for="manage-expressions">Manage Expressions</label></div>
+							<div><input type="checkbox" id="manage-rare-crafts" class="level2 modules-admin"> <label for="manage-rare-crafts">Manage Rare Crafts</label></div>
+							<div><input type="checkbox" id="manage-comments" class="level2 modules-admin"> <label for="manage-comments">Manage Comments</label></div>
+							<div><input type="checkbox" id="manage-quicklinks" class="level2 modules-admin"> <label for="manage-quicklinks">Manage Quicklinks</label></div>
 						</div>
 					
 					</div>
@@ -266,8 +267,17 @@
 			</div>
 				
 			<div class="tab-pane" id="user-edit">
-				black
+				blank
 			</div>		
+		
+		
+		
+			<div id="dialog-deleteuser" style="display:none;">
+				Really delete this user?<br>
+				<span class="red text">This action cannot be undone.</span>
+			</div>
+		
+		
 		
 		
 		
