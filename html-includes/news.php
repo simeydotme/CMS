@@ -139,6 +139,15 @@
 						</div>
 					</div>
 				
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Published</label>
+						</div>
+						<div class="formAnswer">
+							<input type="checkbox" id="chk_published" checked>
+						</div>
+					</div>
+				
 					
 					<div class="formRow buttonRow">
 						
