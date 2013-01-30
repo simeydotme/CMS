@@ -9,12 +9,55 @@
 
 
 
+
+
+
 		/* ==========================================================================
 		 	Generate a username based off user's first and last names.
 		   ========================================================================== */
 
-			var generateUsername = function() {
+
+			$('#user-table .delete').on('click', function(e) {
 				
+				e.preventDefault();
+				
+				var $confirm = $('#dialog-deleteuser');
+				var $userRow = $(this).parents('tr');
+				
+				$confirm.dialog({
+					
+					buttons: {
+						
+						"ok": {
+						  text:'Ok', class:'btn red',
+						  click: function() { $userRow.fadeOut().attr('data-destroy','_destroy'); $(this).animateDialogClose(); }
+						},
+						"cancel": {
+						  text:'Cancel', class:'btn',
+						  click: function() { $(this).animateDialogClose(); }
+						}
+					}
+					
+				}).dialog('widget').appendTo('.ui-dialog-perspective-wrapper');
+				
+				
+			});
+
+
+
+
+
+
+
+
+
+		/* ==========================================================================
+		 	Generate a username based off user's first and last names.
+		   ========================================================================== */
+			
+			// self-executing function.
+			window.generateUsername = (function reference(){
+			
 				$fname = $('input.firstname');
 				$sname = $('input.surname');
 				$uname = $('input.username');
@@ -44,9 +87,10 @@
 					
 				});
 			
-			}
-			
-			generateUsername();
+				return reference;
+				//return the function itself to reference
+
+			}());
 			
 			
 			
@@ -62,30 +106,32 @@
 				var $slider = $('.ui-slider');
 				var colors = 'red blue green purple dark';
 				
+				$('.permissionLevel .level ').xhide();
+				
 				switch( val ) {
 						
 					case 4: 
-						$('.permissionLevel .super').removeClass('out').addClass('in'); 
+						$('.permissionLevel .super').xshow(); 
 						$slider.removeClass(colors).addClass('red'); 
 						break;
 						
 					case 3: 
-						$('.permissionLevel .admin').removeClass('out').addClass('in'); 
+						$('.permissionLevel .admin').xshow(); 
 						$slider.removeClass(colors).addClass('purple'); 
 						break;
 					
 					case 2: 
-						$('.permissionLevel .creator').removeClass('out').addClass('in'); 
+						$('.permissionLevel .creator').xshow(); 
 						$slider.removeClass(colors).addClass('blue'); 
 						break;
 					
 					case 1: 
-						$('.permissionLevel .editor').removeClass('out').addClass('in'); 
+						$('.permissionLevel .editor').xshow(); 
 						$slider.removeClass(colors).addClass('green'); 
 						break;
 					
 					case 0: 
-						$('.permissionLevel .peon').removeClass('out').addClass('in'); 
+						$('.permissionLevel .peon').xshow(); 
 						$slider.removeClass(colors).addClass('dark'); 
 						break;
 					
@@ -98,8 +144,6 @@
 				
 				value: 1, min: 0, max: 4, range: 'min',
 				slide: function( event, ui ) { 
-					
-					$('.permissionLevel').find('.super, .admin, .creator, .editor, .peon').not('.out').removeClass('in').addClass('out');
 					
 					sliderLabel( ui.value );
 				
@@ -130,23 +174,16 @@
 		 	Tik box priviledge assignments
 		   ========================================================================== */
 
-			// grant all priviledges to super admin.
-			$('.super').on('click', function() {
-				if( $(this).is(':checked') ) {
-					$('.level1, .level2').prop('checked',true);
-				} else {
-					$('.level1, .level2').prop('checked',false);
-				}
-			});
+			
 			
 			// grant all sub-priviledges to section-admin
-			$('.level1').on('click', function() {
-
+			$('input.level1').on('change', function() {
+				
 				var admin = $(this).attr('id');
 				if( $(this).is(':checked') ) {
-					$('.'+admin).prop('checked',true);
+					$('.'+admin).prop('checked',true).trigger('change');
 				} else {
-					$('.'+admin).prop('checked',false);
+					$('.'+admin).prop('checked',false).trigger('change');
 				}
 			
 			});
