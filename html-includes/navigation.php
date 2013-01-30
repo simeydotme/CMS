@@ -95,6 +95,33 @@
 					
 				</li>
 				
+				<li class="item">
+				
+					<a href="?store">
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/currency.png" class="icon" alt="">
+						<span class="text">Store</span>
+					</a>
+
+					<ul class="sub">
+					
+						<li class="subitem">
+							<a href="?store#product-add">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/box--plus.png" class="icon" alt="">
+								<span class="text">Add a product</span>
+							</a>
+						</li>
+
+						<li class="subitem">
+							<a href="?gallery">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/store-label.png" class="icon" alt="">
+								<span class="text">Manage store</span>
+							</a>
+						</li>
+
+					</ul>
+					
+				</li>
+				
 			<li class="divider"></li>
 				
 				<li class="item">
@@ -144,7 +171,7 @@
 					</ul>
 				</li>
 			
-			<li class="divider"></li>
+			<li class="divider gap"></li>
 			
 				<li class="item">
 					<a href="?users">
