@@ -27,10 +27,10 @@
 					
 						if ($this.is(':checked')) {  $l.addClass('on'); }
 						else { $l.removeClass('on'); }
-						
-						$this.trigger('focus');
 					
 					});
+					
+					$( $this , $l ).on('click change', function() { $this.trigger('focus'); });
 					
 					$this.on('focus', function() { $l.addClass('focus') });
 					$this.on('blur', function() { $l.removeClass('focus') });
