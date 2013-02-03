@@ -174,10 +174,29 @@
 			<li class="divider gap"></li>
 			
 				<li class="item">
+				
 					<a href="?users">
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/users.png" class="icon" alt="">
 						<span class="text">Users</span>
 					</a>
+					
+					<ul class="sub">
+					
+						<li class="subitem">
+							<a href="?users">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/user-silhouette.png" class="icon" alt="">
+								<span class="text">Add new user</span>
+							</a>
+						</li>
+
+						<li class="subitem">
+							<a href="?users#user-new">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/user-worker-boss.png" class="icon" alt="">
+								<span class="text">Manage users</span>
+							</a>
+						</li>
+
+					</ul>
 				</li>
 				
 				<li class="item">
