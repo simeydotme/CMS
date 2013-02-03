@@ -12,6 +12,9 @@
 		@answer:					formAnswer;
 		
 		@inputBorder:				#BFBDB9;
+		@inputColor:				#555;
+		
+		@formInputActiveColor:		@hintColor;
 
 
 	/* ==========================================================================
@@ -30,15 +33,11 @@
 			input[type="color"], 
 			.uneditable-input { 
 			
-				width: @MaxWidth; margin-right: 5px; border: 1px solid @inputBorder;
+				width: @MaxWidth; margin-right: 5px;
 				
 				&.medium 	{ width: @MaxWidth - 100; }
 				&.small 	{ width: @MaxWidth - 180; }
 				&.mini 		{ width: @MaxWidth - 250; }
-								
-				&:hover		{ 
-					border-color: darken( @inputBorder, 15%); 
-				}
 				
 			}
 			
@@ -52,6 +51,17 @@
 				
 			}
 			
+			.select2-container {
+				
+				width: @MaxWidth + 14; margin-right: 5px;
+				
+				&.medium 	{ width: @MaxWidth - 100 + 14; }
+				&.small 	{ width: @MaxWidth - 180 + 14; }
+				&.mini 		{ width: @MaxWidth - 250 + 14; }
+				
+			}
+			
+			
 			input[type="radio"], input[type="checkbox"] {
 				
 				margin: -1px 5px 0 0;
@@ -60,7 +70,7 @@
 			
 			
 			
-			select, textarea,
+			select, textarea, .select2-container,
 			input[type="text"], input[type="password"], 
 			input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"],
 			 input[type="number"], 
@@ -68,9 +78,26 @@
 			input[type="search"], input[type="tel"], 
 			input[type="color"], 
 			.uneditable-input {
+				
 				margin-bottom: 4px;	
+				color: @inputColor;
 			}
 			
+			select, textarea, .select2-container .select2-choice, .select2-drop,
+			input[type="text"], input[type="password"], 
+			input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"],
+			 input[type="number"], 
+			input[type="email"], input[type="url"], 
+			input[type="search"], input[type="tel"], 
+			input[type="color"], 
+			.uneditable-input {
+
+				border: 1px solid @inputBorder;
+			
+				&:hover		{ 
+					border-color: darken( @inputBorder, 15%); 
+				}
+			}
 			
 			
 			
