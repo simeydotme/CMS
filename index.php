@@ -20,6 +20,7 @@
 
         <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/normalize/1.0.1/normalize.min.css">
         <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">
+        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/select2/3.2.0/select2.css">
         
 		
 		<link rel="stylesheet/less" type="text/css" href="<?php echo( $theme ) ?>/css/main.less">
@@ -68,10 +69,10 @@
 		<!-- load the js template file for current page -->
 		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/tmpl-' . $page . '.js"></script>');  ?>
 
-
         <script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.2.1/bootstrap.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.0/qtip.min.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.1/ckeditor.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.2.0/select2.js"></script>
 
         <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>
