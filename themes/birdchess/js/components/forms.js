@@ -11,7 +11,14 @@
 			
 			$(':checkbox').chkbox();
     		$(':radio').radio();
-			$('select').select2({ minimumResultsForSearch: 14 });
+			
+			$('select').each( function() {
+				var $this = $(this);
+				var classes = $this.attr('class');
+				 
+				$this.select2({ minimumResultsForSearch: 14 });
+				$this.select2("container").addClass( classes )
+			});
 
 		});
 		

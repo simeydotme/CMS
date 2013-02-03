@@ -93,7 +93,9 @@
 			.uneditable-input {
 
 				border: 1px solid @inputBorder;
-			
+				
+				.transition( border 0.4s ease );
+				
 				&:hover		{ 
 					border-color: darken( @inputBorder, 15%); 
 				}
@@ -193,15 +195,15 @@
 	
 	@media (max-width: 767px) {
 		
-		.formRow.buttonRow 		{ padding: 10px; }
+		.@{row}.buttonRow 		{ padding: 10px; }
 
-		.formRow .formQuestion,
-		.formRow .formAnswer 	{ display: block; }
+		.@{row} .@{question},
+		.@{row} .@{answer} 		{ display: block; }
 		
-		.formRow .formQuestion 	{ width: auto; text-align: left; margin: 0 0 2px; }
-		.formRow .formAnswer 	{ width: auto; }
+		.@{row} .@{question} 	{ width: auto; text-align: left; margin: 0 0 2px; }
+		.@{row} .@{answer} 		{ width: auto; }
 
-
+		.@{row} .@{question} label { margin-top: 10px; }
 
 	}
 	
@@ -219,8 +221,11 @@
 		.uneditable-input { 
 			 width: 95%!important; 
 		}
-		select	{ 
+		select{ 
 			width: 98%!important; 
+		}
+		.select2-container {
+			width: 100%!important; 
 		}
 
 		.ui-datepicker-trigger { display: none; }

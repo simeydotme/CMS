@@ -3,6 +3,8 @@
 	   Button Variables
 	   ========================================================================== */
 		
+		@btnFontSize:			@fontSize - 2;
+		
 		@btnColor1:					#F7F7F7;
 		@btnColor2:					#DCE2E5;
 		@btnBorder:					#BECCD3;
@@ -103,7 +105,7 @@
 		
 		.btn { 
 		
-			font-weight: 600; font-size: 0.8em; font-family: @sans;
+			font-weight: 600; font-size: @btnFontSize; font-family: @sans;
 			border-radius: 4px;
 			box-shadow: 0 1px 0px rgba(255, 255, 255, 0.4) inset;
 			
@@ -111,7 +113,7 @@
 			text-shadow: 0 1px 1px #fff;
 			
 			/* to make buttons sit in line with inputs, removed in media query. */
-			margin-top: -3px;
+			vertical-align: top;
 			
 			&:hover { background-position: 0 0; }
 			&:active,
@@ -121,10 +123,12 @@
 		
 		}
 		
+		.table .btn { padding: 2px 7px; margin: 0 0 0 5px; }
+		
 		/* Unfortunately, because of Bootstrap this menu has to be in Pixels.
 			Just remember to change it if you update font size. */
 		.btn-group > .btn, 
-		.btn-group > .dropdown-menu { font-size: 12px; }
+		.btn-group > .dropdown-menu { font-size: @btnFontSize; }
 		
 		
 		
@@ -206,10 +210,6 @@
 		
 		
 	@media (max-width: 480px) {
-
-
-		.btn { margin-top: auto; }
-
 
 	}
 		

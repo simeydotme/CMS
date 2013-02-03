@@ -6,6 +6,8 @@
 		
 		@tableColor: 			@secondaryColor;
 		
+		@tableFontSize:			@fontSize - 1;
+		
 		@tableStripeColor:		#f3f3f3;
 		@tableHoverColor:		fade( @hintColor, 20% );
 		@tableSectionColor:		lighten(@tableColor, 35%);
@@ -40,8 +42,8 @@
 		
 	/* === Table Layouts ============================================================ */
 		
-		.table { font-size: 0.9em; }
-		.table-bordered { font-size: 0.9em; border: 1px solid @tableColor; }
+		.table { font-size: @tableFontSize; }
+		.table-bordered {  border: 1px solid @tableColor; }
 		
 		.table-bordered th, 
 		.table-bordered td { border-color: @tableColor;  }
