@@ -19,9 +19,7 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/normalize/1.0.1/normalize.min.css">
-        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">
-        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/select2/3.2.0/select2.css">
-        
+        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">        
 		
 		<link rel="stylesheet/less" type="text/css" href="<?php echo( $theme ) ?>/css/main.less">
 		
