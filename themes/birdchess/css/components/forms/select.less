@@ -1,0 +1,66 @@
+
+
+	/* ==========================================================================
+	   Select Variables
+	   ========================================================================== */
+		
+			@selectColor: @formInputActiveColor;
+
+	/* ==========================================================================
+	   Select Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Select Styles
+	   ========================================================================== */
+		
+		
+		
+
+		
+		.select2-container {
+			 
+			&.select2-drop-above .select2-choice,
+			.select2-choice	{ 
+				
+				height: 20px; padding: 4px 6px; line-height: 20px;
+				.gradient( white, #f7f7f7 );
+				box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.075);			
+				
+				div { 
+					width: 30px; 
+					.gradient( @hintColor, darken(@hintColor,7%) );
+					box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+					border-radius: 0 2px 2px 0;
+					
+					b {
+						background: none;
+						background-image: url('../@{imgPath}/vendor/bootstrap/2.2.1/glyphicons-halflings-white.png');
+						background-position: -304px -112px;
+					}
+					
+				}
+			
+			}
+			&.select2-dropdown-open .select2-choice div { background: transparent; box-shadow: none; }
+			&.select2-dropdown-open .select2-choice div b { background-image: url('../@{imgPath}/vendor/bootstrap/2.2.1/glyphicons-halflings.png'); }
+
+		}
+		
+		
+		.select2-results .select2-result { border-radius: 3px; }
+		.select2-results .select2-highlighted { background-color: @selectColor; color: white; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1); }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
