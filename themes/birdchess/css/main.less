@@ -29,7 +29,9 @@
 		
 		@import "components/forms/forms.less";
 		@import "components/forms/checkbox.less";
+		@import "components/forms/radio.less";
 		@import "components/forms/buttons.less";
+		@import "components/forms/select.less";
 		
 		@import "blocks/dashboard.less";
 		@import "blocks/permissions.less";
@@ -64,13 +66,23 @@
 		
 		@fontSize:				14px; /* setting this to relative size kills IE9 ? */
 		
-		@primaryColor: 			#12A1DA;
+		
+		/* 	Primary Color - 
+			mainly for navigation */
+		@primaryColor: 			@blueColor;
+		/* 	Secondary Color - 
+			for embellishments such as table head, borders, etc. */
 		@secondaryColor: 		#7A8999;
-		@hintColor: 			@secondaryColor;
+		/* 	Hint Color - 
+			Provides coloring for all hints/highlights/widgets across site */
+		@hintColor: 			mix( @secondaryColor, @primaryColor );
+		/* 	Faded Color - 
+			Provides coloring for non-important things such as dashboard bg, form buttons above tables */
+		@fadedColor:			#e4f1fc;
 		
-		@fadedColor:			#e4f1fc;	
 		
-		@blueColor:				@primaryColor;
+		
+		@blueColor:				#12A1DA;
 		@redColor:				#E0362D;
 		@orangeColor:			#FF7B00;
 		@yellowColor:			#E5CE19;
@@ -80,10 +92,13 @@
 		@darkColor:				#0B1D26;
 		
 		
+		
 		@sans:	 	'Open Sans',Helvetica,Arial,sans-serif;
 		@serif: 	'Droid Serif',Georgia,serif;
 		
 		
+		/* 	Image paths - 
+			Shouldn't need changing. */
 		@imgPath: 	"../../img";
 		@iconPath: 	"vendor/fugue/icons";
 		
@@ -158,7 +173,15 @@
 		.hidden { visibility: hidden!important; display: none!important; }
 
 
+		::-moz-selection {
+			background-color: @hintColor;
+			color: #fff;
+		}
 
+		::selection {
+			background-color: @hintColor;
+			color: #fff;
+		}
 
 
 
