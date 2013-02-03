@@ -39,19 +39,19 @@
 						
 						<div class="formAnswer">
 					
-							<select class="small">
+							<select class="mini">
 								<option>2013</option>
 								<option>2012</option>
 								<option>2011</option>
 							</select>
 							
-							<select class="medium">
+							<select class="small">
 								<option>January</option>
 								<option>February</option>
 								<option>March</option>
 							</select>
 							
-							<select class="small">
+							<select class="mini">
 								<option>01</option>
 								<option>02</option>
 								<option selected="selected">03</option>
