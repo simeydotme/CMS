@@ -10,6 +10,9 @@
 		@tabInactiveColor:				fade( @tabBorderColor, 15% );
 		
 		@borderRadius:					3px;
+		
+		
+		@secondaryTabBorderColor:		#999;
 
 
 	/* ==========================================================================
@@ -24,6 +27,7 @@
 
 		
 		.nav-tabs { padding: 0 10px; border-bottom: 1px solid @tabBorderColor; }
+		.nav-tabs-secondary { padding: 0 24px; border-bottom: 1px solid @secondaryTabBorderColor; }
 		
 		.nav-tabs > li > a {
 		
@@ -48,12 +52,18 @@
 			
 		}
 		
-		.nav-tabs > li.disabled > a:hover {
+		.nav-tabs > li.disabled {
 			
-			border-color: transparent; 
-			box-shadow: none;
+			img { .filter( grayscale(100%) ); }
 			
-			img { opacity: 0.5; }
+			> a:hover {
+			
+				border-color: transparent; 
+				box-shadow: none;
+				
+				img { opacity: 0.5; }
+				
+			}
 			
 		}
 		
@@ -68,6 +78,16 @@
 			img { opacity: 1; }
 			
 		}
+
+		.nav-tabs-secondary > li > a,
+		.nav-tabs-secondary > .active > a,
+		.nav-tabs-secondary > .active > a:hover { border-top-width: 1px; padding-top: 5px; }
+
+		.nav-tabs-secondary > .active > a,
+		.nav-tabs-secondary > .active > a:hover { border-color: @secondaryTabBorderColor @secondaryTabBorderColor transparent; }
+		
+		
+		
 		
 		
 		

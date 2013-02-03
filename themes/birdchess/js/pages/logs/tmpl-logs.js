@@ -19,7 +19,7 @@
 			{ "id":"9", "flagged": false, 	"date": "03/01/2013", "time": "17:58", "user":"James", "email":"james@jen.com", "description": "Edited a news post" },
 			{ "id":"10", "flagged": false, 	"date": "03/01/2013", "time": "21:01", "user":"Simon", "email":"jenny@jen.com", "description": "Removed admin priviledges from user" },
 			{ "id":"11", "flagged": false, 	"date": "03/01/2013", "time": "21:03", "user":"Jenny", "email":"jenny@jen.com", "description": "Uploaded a picture into 'Cats'" },
-			{ "id":"12", "flagged": false, 	"date": "03/01/2013", "time": "22:38", "user":"James", "email":"james@jen.com", "description": "Deleted a news post" },
+			{ "id":"12", "flagged": false, 	"date": "03/01/2013", "time": "22:38", "user":"James", "email":"james@jen.com", "description": "Deleted a news post" }
 		];
 		
 		

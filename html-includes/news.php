@@ -171,7 +171,7 @@
 			</div>
 				
 			<div class="tab-pane" id="news-edit">
-				black
+				blank
 			</div>		
 		
 		

@@ -6,21 +6,28 @@
 		
 		$(function() {
 			
-			var $section = $('tbody .section');
+			var $collapsibleTable = $('.table-collapsible');
+			var $triggers = $collapsibleTable.find('.section, .section .collapse');
 			
-			$section.toggle( function() {
-			
-				$(this).nextAll('tr').xhide();
-				$(this).find('td.collapse a').addClass('expand');
-			
-			}, function() {
-			
-				$(this).nextAll('tr').xshow();
-				$(this).find('td.collapse a').removeClass('expand');
+			$collapsibleTable.on('click', function() {
+				
+				if( !$(this).next('tr').hasClass('hidden') ) {
+					
+					$(this).nextAll('tr').xhide();
+					$(this).find('td.collapse a').addClass('expand');
+				
+				} else {
+					
+					$(this).nextAll('tr').xshow();
+					$(this).find('td.collapse a').removeClass('expand');
+				
+				}
 			
 			});
+			
+			$collapsibleTable.find('tr:not(.section)').xhide();
 		
-		});
+		})
 
 
 

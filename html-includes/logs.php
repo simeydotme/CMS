@@ -16,7 +16,7 @@
 			</li>			
 			
 			<li id="tab-logs-flagged">
-				<a href="#log-flagged" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/flag.png" class="icon" alt=""> All flagged logs <span class="badge hidden">0</span></a>
+				<a href="#log-flagged" data-toggle="tab"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/ui-toolbar-bookmark.png" class="icon" alt=""> All flagged logs <span class="badge hidden">0</span></a>
 			</li>
 
 			<li id="tab-logs-current" class="disabled">
