@@ -9,7 +9,7 @@
 			var $collapsibleTable = $('.table-collapsible');
 			var $triggers = $collapsibleTable.find('.section, .section .collapse');
 			
-			$collapsibleTable.on('click', function() {
+			$triggers.on('click', function() {
 				
 				if( !$(this).next('tr').hasClass('hidden') ) {
 					
