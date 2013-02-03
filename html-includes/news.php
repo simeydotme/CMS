@@ -126,7 +126,12 @@
 							<label>Category</label>
 						</div>
 						<div class="formAnswer">
-							<select><option></option></select>
+							<select>
+								<option>Category1</option>
+								<option>Category2</option>
+								<option>Category3</option>
+								<option>Category4</option>
+							</select>
 						</div>
 					</div>
 				
