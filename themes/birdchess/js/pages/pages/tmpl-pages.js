@@ -11,7 +11,8 @@
 		
 			{ "id":"1", "title": "Home", 
 				"subPages": [
-					{"id": "11", "title": "A Sub Page"}
+					{"id": "11", "title": "A Sub Page"},
+					{"id": "12", "title": "A Second Sub Page"}
 				]
 			},
 			

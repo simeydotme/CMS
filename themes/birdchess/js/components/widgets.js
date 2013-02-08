@@ -11,13 +11,22 @@
 			$('body').prepend('<div class="ui-dialog-perspective-wrapper"></div>');
 			$.extend( $.ui.dialog.prototype.options, { 
 				modal: true, draggable: false,
-				open: function() { $(this).parents('.ui-dialog').removeClass('out').addClass('in') }
+				open: function() {
+					// use css to run animation instead of JS.
+					$(this).parents('.ui-dialog').removeClass('out').addClass('in');
+					$('#container').addClass("blur");
+					$('.ui-widget-overlay').fadeIn();
+				}
 			}); 
 			
 			// function to close dialog using css animations.
 			$.fn.animateDialogClose = function() {
 				var $dialog = $(this);
+					// use css to run animation instead of JS.
 					$dialog.parents('.ui-dialog').removeClass('in').addClass('out');
+					$('.ui-widget-overlay').fadeOut();
+					$('#container').removeClass("blur");
+					// delay close so we actually see the animation.
 					setTimeout( function() { $dialog.dialog('close'); }, 500);
 					
 				return $dialog;
