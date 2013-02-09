@@ -7,6 +7,8 @@
 		@questionWidth: 			200px;
 		@answerWidth:				300px;
 		
+		@formControlRadius:			3px;
+		
 		@row:						formRow;
 		@question:					formQuestion;
 		@answer:					formAnswer;
@@ -81,6 +83,7 @@
 				
 				margin-bottom: 4px;	
 				color: @inputColor;
+				border-radius: @formControlRadius;
 			}
 			
 			select, textarea, .select2-container .select2-choice, .select2-drop,
@@ -148,8 +151,8 @@
 			.cke_top, .cke_bottom { background: #f6f6f6; }
 			
 			.cke_chrome { margin-bottom: 4px; }
-			.cke_chrome, .cke_inner, .cke_top { border-radius: 4px 4px 0 0; }
-			.cke_chrome, .cke_inner, .cke_bottom { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+			.cke_chrome, .cke_inner, .cke_top { border-radius: @formControlRadius @formControlRadius 0 0; }
+			.cke_chrome, .cke_inner, .cke_bottom { border-bottom-left-radius: @formControlRadius; border-bottom-right-radius: @formControlRadius; }
 		
 		}
 		
@@ -171,7 +174,7 @@
 		
 		.form-actions.above-table { 
 			background: @fadedColor;
-			border-radius: 3px;
+			border-radius: @formControlRadius;
 			margin: 10px 0;
 			padding: 20px 20px 14px;
 			min-height: 30px;
