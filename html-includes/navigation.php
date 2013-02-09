@@ -183,14 +183,14 @@
 					<ul class="sub">
 					
 						<li class="subitem">
-							<a href="?users">
+							<a href="?users#user-new">
 								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/user-silhouette.png" class="icon" alt="">
 								<span class="text">Add new user</span>
 							</a>
 						</li>
 
 						<li class="subitem">
-							<a href="?users#user-new">
+							<a href="?users">
 								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/user-worker-boss.png" class="icon" alt="">
 								<span class="text">Manage users</span>
 							</a>

@@ -61,16 +61,17 @@
 		</div>
 		
 
-        <script src="<?php echo( $theme ) ?>/js/vendor/jquery/1.8.2/jquery.min.js"></script>
-        <script src="<?php echo( $theme ) ?>/js/vendor/jqueryui/1.9.1/jqueryui.custom.min.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/jquery/1.9.1/jquery.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/jqueryui/1.10.0/jqueryui.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
 		
 		<!-- load the js template file for current page -->
 		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/tmpl-' . $page . '.js"></script>');  ?>
 
-        <script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.2.1/bootstrap.js"></script>
-        <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.0/qtip.min.js"></script>
+		<script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.3.0/bootstrap.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.1/qtip2.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.1/ckeditor.js"></script>
-        <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.2.0/select2.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.3.0/select2.js"></script>
 
         <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>
