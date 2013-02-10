@@ -71,7 +71,7 @@
 		<script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.3.0/bootstrap.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.1/qtip2.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.1/ckeditor.js"></script>
-        <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.3.0/select2.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.4.0b/select2.js"></script>
 
         <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>

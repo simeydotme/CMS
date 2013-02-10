@@ -5,7 +5,9 @@
 	   ========================================================================== */
 		
 			@checkboxColor: @formInputActiveColor;
+			
 			@checkboxRadius: @formControlRadius;
+			@toggleRadius: 2px;
 			
 			
 	/* ==========================================================================
@@ -65,7 +67,7 @@
 				
 				
 					content: " ";
-					width: 28px; height: 22px; border-radius: @checkboxRadius/2;
+					width: 28px; height: 22px; border-radius: @toggleRadius;
 					display: block; position: absolute; overflow: hidden; z-index: 3;
 					left: 4px; top: 4px;
 					
@@ -111,7 +113,7 @@
 		  &.focus {
 			  
 			outline: 0;
-			box-shadow: 0 1px 15px rgba(0,0,0,0.1) inset, 0 1px 4px rgba(0,0,0,0.1) inset, 1px -1px 2px rgba(0,0,0,0.1), 0 0 8px rgba(82,168,236,1), 0 0 1px 1px rgba(0,0,0,.2) inset;  
+			box-shadow: 0 1px 15px rgba(0,0,0,0.1) inset, 0 1px 4px rgba(0,0,0,0.1) inset, 1px -1px 2px rgba(0,0,0,0.1), 0 0 8px @checkboxColor, 0 0 1px 1px rgba(0,0,0,.2) inset;  
 			  
 		  }
 		

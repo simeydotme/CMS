@@ -17,6 +17,9 @@
 		@inputColor:				#555;
 		
 		@formInputActiveColor:		@hintColor;
+		
+		@formInnerShadow:			0 1px 1px rgba(0, 0, 0, 0.125) inset;
+		@formOuterShadow:			0 0 8px fade(@hintColor, 70%);
 
 
 	/* ==========================================================================
@@ -84,6 +87,7 @@
 				margin-bottom: 4px;	
 				color: @inputColor;
 				border-radius: @formControlRadius;
+				
 			}
 			
 			select, textarea, .select2-container .select2-choice, .select2-drop,
@@ -96,12 +100,21 @@
 			.uneditable-input {
 
 				border: 1px solid @inputBorder;
+				box-shadow: @formInnerShadow;
 				
 				.transition( border 0.4s ease );
 				
-				&:hover		{ 
-					border-color: darken( @inputBorder, 15%); 
+				
+				
+				&:hover	{ 
+					border-color: @formInputActiveColor; 
 				}
+				
+				&:focus { 
+					border-color: @formInputActiveColor; 
+					box-shadow: @formOuterShadow , @formInnerShadow;
+				}
+				
 			}
 			
 			

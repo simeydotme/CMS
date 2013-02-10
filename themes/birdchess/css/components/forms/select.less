@@ -55,8 +55,10 @@
 			
 			&.select2-container-active { 			
 				outline: 0;
-				box-shadow: 0 1px 15px rgba(0,0,0,0.1) inset, 0 1px 4px rgba(0,0,0,0.1) inset, 1px -1px 2px rgba(0,0,0,0.1), 0 0 8px rgba(82,168,236,1), 0 0 1px 1px rgba(0,0,0,.2) inset;  
-				.select2-choice { border: 1px solid darken( @inputBorder, 15%) }
+				box-shadow: @formOuterShadow;  
+				
+				.select2-choice { border: 1px solid @formInputActiveColor; background: white; }
+			
 			}
 			
 		}
@@ -66,8 +68,38 @@
 		.select2-results .select2-highlighted { background-color: @selectColor; color: white; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1); }
 		
 		
-		.select2-drop { border-radius: 0 0 @selectRadius @selectRadius; }
-		.select2-drop-above { border-radius: @selectRadius @selectRadius 0 0 ; }
+		.select2-drop { 
+			border-radius: 0 0 @selectRadius @selectRadius; 
+			border-top: none; 
+			box-shadow: 0 5px 8px fade( @hintColor, 70% );  
+		}
+		.select2-drop.select2-drop-above { 
+			border-radius: @selectRadius @selectRadius 0 0; 
+			border-bottom: none;  
+			box-shadow: 0 -5px 8px fade( @hintColor, 70% );  
+		}
+		
+		
+		.select2-container.select2-dropdown-open .select2-choice,
+		.select2-container.select2-dropdown-open { border-radius: @selectRadius @selectRadius 0 0;  }
+		.select2-container.select2-dropdown-open.select2-drop-above,
+		.select2-container.select2-dropdown-open.select2-drop-above .select2-choice { border-radius: 0 0 @selectRadius @selectRadius;  }
+		
+		.select2-drop.select2-drop-active { border-color: @formInputActiveColor; }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
