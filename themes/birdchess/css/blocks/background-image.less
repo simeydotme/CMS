@@ -1,0 +1,68 @@
+
+
+	/* ==========================================================================
+	   Background Image Variables
+	   ========================================================================== */
+
+			@bgPreviewPadding: 		@thumbnailPadding;
+			@bgPreviewBorder:		@thumbnailBorder;
+			@bgPreviewMargin:		@thumbnailMargin;
+			
+			@bgPreviewColor:		@thumbnailColor;
+
+	/* ==========================================================================
+	   Background Image Mixins
+	   ========================================================================== */
+
+
+
+	/* ==========================================================================
+	   Background Image Styles
+	   ========================================================================== */
+		
+		.background-image-preview {
+							
+				padding: 		@bgPreviewPadding;
+				border: 		@bgPreviewBorder;
+				margin: 		0 @bgPreviewMargin @bgPreviewMargin 0;
+				
+				vertical-align: top; text-align: center; position: relative;
+				.transition( all 0.3s ease );
+				
+				background-color: @bgPreviewColor;
+				
+				max-width: 100%; width: 200px;
+				cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
+				
+				&:hover { 
+					border-color: @hintColor; 
+					background-color: @hintColor; 
+				}	
+				&.open { width: 500px; }
+				
+		}
+		
+		
+		
+	/* ==========================================================================
+	   Background Image Queries
+	   ========================================================================== */
+
+	@media (max-width: 767px) {
+		
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
