@@ -196,17 +196,8 @@
 							</div>
 						</div>
 						
-						<div class="formRow">
-							<div class="formQuestion">
-								<label>Pinterest Handle</label>
-							</div>
-							<div class="formAnswer">
-								<div class="input-prepend">
-									<label class="add-on"><img src="<?php echo( $theme ) ?>/img/interface/social-icons/pinterest16.png" class="icon"></label>
-									<input id="txtPinterest" type="text" class="small" placeholder="pinterest_name">
-								</div>
-							</div>
-						</div>
+						<hr>
+						
 						
 						<div class="formRow">
 							<div class="formQuestion">
@@ -216,6 +207,18 @@
 								<div class="input-prepend">
 									<label class="add-on"><img src="<?php echo( $theme ) ?>/img/interface/social-icons/flickr16.png" class="icon"></label>
 									<input id="txtFlickr" type="text" class="small" placeholder="flikr_name">
+								</div>
+							</div>
+						</div>
+						
+						<div class="formRow">
+							<div class="formQuestion">
+								<label>Pinterest Handle</label>
+							</div>
+							<div class="formAnswer">
+								<div class="input-prepend">
+									<label class="add-on"><img src="<?php echo( $theme ) ?>/img/interface/social-icons/pinterest16.png" class="icon"></label>
+									<input id="txtPinterest" type="text" class="small" placeholder="pinterest_name">
 								</div>
 							</div>
 						</div>
