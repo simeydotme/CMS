@@ -10,7 +10,6 @@
 
 		$(function() {
 			
-			notify( "<strong>Looks like this is your first time here!?</strong><br>Please take some time to look around, and make sure your profile is up to date.!", { style: 'info' } );
 			
 		});
 
