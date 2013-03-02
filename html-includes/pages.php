@@ -115,6 +115,15 @@
 										<label>Title</label>
 									</div>
 									<div class="formAnswer">
+										<p>These options are inherited from the <a href="?settings">website settings</a> by default</p>
+									</div>
+								</div>
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Title</label>
+									</div>
+									<div class="formAnswer">
 										<input id="txtTitle" type="text" class="medium">
 									</div>
 								</div>
@@ -136,6 +145,19 @@
 										<input id="txtKeywords" type="text" value="company, partner, website, product">
 									</div>
 								</div>
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Author</label>
+									</div>
+									<div class="formAnswer">
+										<input id="txtAuthor" type="text" value="Your Company's name">
+									</div>
+								</div>
+								
+								
+								
+								
 								
 								<div class="formRow buttonRow">
 									
