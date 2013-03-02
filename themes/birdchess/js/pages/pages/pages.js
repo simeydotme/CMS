@@ -29,7 +29,20 @@
 
 
 
+	/* ==========================================================================
+	   Tokens for Keywords field
+	   ========================================================================== */
 
+		$("#txtKeywords").select2({
+			tags: "",
+			tokenSeparators: [",", " "]
+		});
+		
+		$("#txtKeywords").select2("container").find("ul.select2-choices").sortable({
+			containment: 'parent',
+			start: function() { $("#txtKeywords").select2("onSortStart"); },
+			update: function() { $("#txtKeywords").select2("onSortEnd"); }
+		});
 
 
 

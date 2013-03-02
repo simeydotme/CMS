@@ -115,7 +115,25 @@
 										<label>Title</label>
 									</div>
 									<div class="formAnswer">
-										<input type="text">
+										<input id="txtTitle" type="text" class="medium">
+									</div>
+								</div>
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Description</label>
+									</div>
+									<div class="formAnswer">
+										<input id="txtDescription" type="text">
+									</div>
+								</div>
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Keywords</label>
+									</div>
+									<div class="formAnswer">
+										<input id="txtKeywords" type="text" value="company, partner, website, product">
 									</div>
 								</div>
 								
