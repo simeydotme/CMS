@@ -22,6 +22,12 @@
 					{ "id": "22", "title": "Page of Content" },
 					{ "id": "23", "title": "Super dooper page!" }
 				]
+			},
+			
+			{ "id":"3", "title": "Error Pages", 
+				"subPages": [
+					{ "id": "31", "title": "404 - Not Found" }
+				]
 			}
 			
 		];

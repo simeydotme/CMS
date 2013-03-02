@@ -109,19 +109,12 @@
 							<form novalidate>
 							
 								<h3>Edit meta data</h3>
+								<p>These options are inherited from the <a href="?settings">website settings</a> by default</p>
+								<hr>
 								
 								<div class="formRow">
 									<div class="formQuestion">
-										<label>Title</label>
-									</div>
-									<div class="formAnswer">
-										<p>These options are inherited from the <a href="?settings">website settings</a> by default</p>
-									</div>
-								</div>
-								
-								<div class="formRow">
-									<div class="formQuestion">
-										<label>Title</label>
+										<label>Page Title</label>
 									</div>
 									<div class="formAnswer">
 										<input id="txtTitle" type="text" class="medium">
@@ -130,7 +123,7 @@
 								
 								<div class="formRow">
 									<div class="formQuestion">
-										<label>Description</label>
+										<label>Page Description</label>
 									</div>
 									<div class="formAnswer">
 										<input id="txtDescription" type="text">
@@ -139,21 +132,13 @@
 								
 								<div class="formRow">
 									<div class="formQuestion">
-										<label>Keywords</label>
+										<label>Page Keywords</label>
 									</div>
 									<div class="formAnswer">
 										<input id="txtKeywords" type="text" value="company, partner, website, product">
 									</div>
 								</div>
 								
-								<div class="formRow">
-									<div class="formQuestion">
-										<label>Author</label>
-									</div>
-									<div class="formAnswer">
-										<input id="txtAuthor" type="text" value="Your Company's name">
-									</div>
-								</div>
 								
 								
 								
