@@ -6,6 +6,9 @@
 		
 			@selectColor: @formInputActiveColor;
 			@selectRadius: @formControlRadius;
+			
+			@selectHeight: 20px;
+			@selectPadding: 4px 6px;
 
 	/* ==========================================================================
 	   Select Mixins
@@ -19,14 +22,13 @@
 		
 		
 		
-
-		
+		/* drop down list */
 		.select2-container {
 			 
 			&.select2-drop-above .select2-choice,
 			.select2-choice	{ 
 				
-				height: 20px; padding: 4px 6px; line-height: 20px;
+				height: @selectHeight; padding: @selectPadding; line-height: @selectHeight;
 				.gradient( #fafafa , #ececec );
 				box-shadow: none;
 				border-radius: @selectRadius;		
@@ -64,6 +66,78 @@
 		}
 		
 		
+		
+		/* multi token selecter */
+		.select2-container {
+			 
+			.select2-choices { 
+				
+				font-size: 12px;
+				height: @selectHeight; padding: @selectPadding; line-height: @selectHeight;
+				background: #fff;
+				box-shadow: @formInnerShadow;
+				border-radius: @selectRadius;		
+				
+				.select2-search-choice {
+					
+					margin: 0 3px 3px 0;
+					padding: 3px 5px 3px 20px;
+					
+					.gradient( #f3f3f3, #eeeeee );
+					
+					div {
+						
+						width: auto;
+						background: transparent;
+						box-shadow: none;
+						border-radius: 0 @selectRadius/2 @selectRadius/2 0;
+						border-left: none;
+					}
+					
+					.select2-search-choice-close {
+						
+						background: none;
+						background-image: url('../@{imgPath}/vendor/bootstrap/2.2.1/glyphicons-halflings.png');
+						background-position: -312px -1px;
+						opacity: 0.3;
+						margin: 0 5px 0 0;
+						.transition( opacity 0.2s ease );
+						
+						&:hover { background-position: -312px -1px; opacity: 1; }
+						
+					}
+					
+				}
+				
+				.select2-search-field { display: block!important; float: none; clear: both; }
+			
+			}	
+							
+			&:hover .select2-choice div b { opacity: 1; }
+			
+			&.select2-container-active { 			
+				outline: 0;
+				box-shadow: @formOuterShadow;  
+				
+				.select2-choices { border: 1px solid @formInputActiveColor; background: white; box-shadow: none; }
+			
+			}
+			
+		}		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		.select2-results .select2-result { border-radius: @selectRadius; }
 		.select2-results .select2-highlighted { background-color: @selectColor; color: white; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1); }
 		
@@ -79,6 +153,7 @@
 			box-shadow: 0 -5px 8px fade( @hintColor, 70% );  
 		}
 		
+		.select2-drop-multi .select2-no-results { display: none; }
 		
 		.select2-container.select2-dropdown-open .select2-choice,
 		.select2-container.select2-dropdown-open { border-radius: @selectRadius @selectRadius 0 0;  }
