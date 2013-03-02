@@ -49,6 +49,64 @@
 
 
 
+	/* ==========================================================================
+	   Zoom the background image on click;
+	   ========================================================================== */
+
+		$('.background-image-preview').on('click', function() {
+			
+			if( !$(this).hasClass('open') ) {
+				$(this).addClass('open');
+			} else {
+				$(this).removeClass('open');	
+			}
+			
+		});
+
+
+
+
+
+	/* ==========================================================================
+	   Add Contact fields
+	   ========================================================================== */
+
+		$('.add-contact-email-1').on('click', function(e) {
+			
+			$('.contact-email-wrapper-1').slideDown();
+			e.preventDefault();
+			
+		});
+		
+		$('.add-contact-email-2').on('click', function(e) {
+			
+			$('.contact-email-wrapper-2').slideDown();
+			e.preventDefault();
+			
+		});
+		
+		$('[class*=contact-email-wrapper]').each( function() {
+			
+			if( $(this).find('input').val() == "" ) {
+				$(this).hide();
+			}
+			
+		});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		
 		
