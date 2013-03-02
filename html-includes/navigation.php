@@ -19,28 +19,12 @@
 			<li class="divider"></li>
 			
 				<li class="item">
+				
 					<a href="?pages">
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/documents-stack.png" class="icon" alt="">
 						<span class="text">Pages / Content</span>
 					</a>
 					
-					<ul class="sub">
-					
-						<li class="subitem">
-							<a href="#">
-								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/document--plus.png" class="icon" alt="">
-								<span class="text">Add a Page</span>
-							</a>
-						</li>
-
-						<li class="subitem">
-							<a href="?pages">
-								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/document-convert.png" class="icon" alt="">
-								<span class="text">Manage</span>
-							</a>
-						</li>
-
-					</ul>
 				</li>
 				
 				<li class="item">
@@ -207,7 +191,7 @@
 				</li>
 				
 				<li class="item">
-					<a href="#">
+					<a href="?settings">
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/gear.png" class="icon" alt="">
 						<span class="text">Website Config</span>
 					</a>
