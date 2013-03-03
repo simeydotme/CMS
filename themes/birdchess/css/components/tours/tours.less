@@ -6,6 +6,8 @@
 	   ========================================================================== */
 		
 		@tourArrowSize:		10px;
+		@tourBackground:	#fff;
+		@tourFontColor:		#444;
 
 	/* ==========================================================================
 	   Tours Mixins
@@ -23,17 +25,26 @@
 		
 		#joyRideTipContent,
 		.joyRideTipContent { display: none; }
-
+		
+		#settings-joyride { display: none; }
+		
+		
 		.joyride-tip-guide {
 			
 			position: absolute; top: 0; left: 0;
-			background: #000; background: rgba(0,0,0,0.8); color: #fff;
+			background: @tourBackground; color: @tourFontColor;
 			display: none;
-			width: 300px;
+			width: 400px;
 			z-index: 101;			
 			
 			border-radius: @widgetBorderRadius;
 			font-size: 13px;
+			line-height: 18px;
+			
+			border: 1px solid @tourFontColor;
+			
+			box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+			margin: 10px;
 			
 			&.joyride-feature-tour { width: 450px;  }
 		}
@@ -50,13 +61,27 @@
 		
 		/* Add a little css triangle pip, older browser just miss out on the fanciness of it */
 		.joyride-tip-guide span.joyride-nub {
-		  display: block;
-		  position: absolute;
-		  left: 22px;
-		  width: 0;
-		  height: 0;
-		  border: solid @tourArrowSize;
-		  border: solid @tourArrowSize;
+			
+			display: block;
+			position: absolute;
+			left: 22px;
+			width: 0;
+			height: 0;
+			border: solid @tourArrowSize;
+			border: solid @tourArrowSize;
+		  
+		  	&:before {
+				
+				content: "  ";
+				display: block;
+				position: absolute;
+				z-index: -1;
+				left: -@tourArrowSize;
+				width: 0;
+				height: 0;
+				border: solid @tourArrowSize;
+				border: solid @tourArrowSize;
+			}
 		}
 		
 		.joyride-tip-guide span.joyride-nub.top {
@@ -67,13 +92,24 @@
 		  border-bottom-color so here we set the border-color
 		  and override the top,left,right colors below.
 		  */
-		  border-color: #000;
-		  border-color: rgba(0,0,0,0.8);
+		  border-color: @tourBackground;
 		  border-top-color: transparent !important;
 		  border-left-color: transparent !important;
 		  border-right-color: transparent !important;
 		  top: -@tourArrowSize*2;
 		  bottom: none;
+		  
+		  	&:before {
+				
+				border-color: @tourFontColor;
+				border-top-color: transparent !important;
+				border-left-color: transparent !important;
+				border-right-color: transparent !important;
+				top: -((@tourArrowSize)+1);
+				bottom: none;
+
+			}
+		  
 		}
 		
 		.joyride-tip-guide span.joyride-nub.bottom {
@@ -84,8 +120,7 @@
 		  border-top-color so here we set the border-color
 		  and override the bottom,left,right colors below.
 		  */
-		  border-color: #000;
-		  border-color: rgba(0,0,0,0.8) !important;
+		  border-color: @tourBackground !important;
 		  border-bottom-color: transparent !important;
 		  border-left-color: transparent !important;
 		  border-right-color: transparent !important;
@@ -94,8 +129,7 @@
 		}
 		
 		.joyride-tip-guide span.joyride-nub.right {
-		  border-color: #000;
-		  border-color: rgba(0,0,0,0.8) !important;
+		  border-color: @tourBackground !important;
 		  border-top-color: transparent !important;
 		  border-right-color: transparent !important;
 		  border-bottom-color: transparent !important;
@@ -106,8 +140,7 @@
 		}
 		
 		.joyride-tip-guide span.joyride-nub.left {
-		  border-color: #000;
-		  border-color: rgba(0,0,0,0.8) !important;
+		  border-color: @tourBackground !important;
 		  border-top-color: transparent !important;
 		  border-left-color: transparent !important;
 		  border-bottom-color: transparent !important;
@@ -118,8 +151,7 @@
 		}
 		
 		.joyride-tip-guide span.joyride-nub.top-right {
-		  border-color: #000;
-		  border-color: rgba(0,0,0,0.8);
+		  border-color: @tourBackground;
 		  border-top-color: transparent !important;
 		  border-left-color: transparent !important;
 		  border-right-color: transparent !important;
@@ -134,8 +166,9 @@
 		/* Mobile */
 		@media only screen and (max-width: 767px) {
 		  .joyride-tip-guide {
-			width: 95% !important;
-			left: 2.5% !important;
+			width: 90% !important;
+			left: 4% !important;
+			margin: 0;
 		  }
 		  .joyride-tip-guide-wrapper {
 			width: 100%;
@@ -152,16 +185,16 @@
 			line-height: 1.25;
 			margin: 0;
 			font-weight: bold;
-			color: #fff;
+			color: @tourFontColor;
 		}
 		
 		
 		.joyride-tip-guide a {
-		  color: rgb(215,235,255);
+		  color: rgb(0,0,0);
 		  text-decoration: none;
 		}
 		.joyride-tip-guide a:hover {
-		  color: rgba(215,235,255,0.8);
+		  color: rgba(0,0,0,0.8);
 		  text-decoration: none;
 		}
 
@@ -186,16 +219,16 @@
 			position: absolute;
 			right: 10px;
 			top: 10px;
-			color: rgba(255,255,255,0.4) !important;
+			color: @tourFontColor !important;
 			text-decoration: none;
 			font-family: Verdana, sans-serif;
-			font-size: 10px;
+			font-size: 12px;
 			font-weight: bold;
 			border-bottom: none !important;
 		}
 
 		.joyride-close-tip:hover {
-			color: rgba(255,255,255,0.9) !important;
+			opacity: 0.9 !important;
 		}
 
 		.joyride-modal-bg {

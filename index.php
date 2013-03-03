@@ -99,8 +99,6 @@
 		
 		<!-- load the script file for current page -->
 		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/' . $page . '.js"></script>');  ?>
-		<!-- load the tour file for current page -->
-		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/tour-' . $page . '.js"></script>');  ?>
 		
 	</body>
 	

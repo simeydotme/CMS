@@ -22,7 +22,7 @@
 				$("#settings-joyride").joyride({
 					tiplocation: 'left',
 					template: {
-						'button'  : '<span href="#" class="joyride-next-tip btn green"></span>'
+						'button'  : '<span href="#" class="joyride-next-tip btn blue"></span>'
 					}
 				});
 			});			
