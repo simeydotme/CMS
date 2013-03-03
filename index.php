@@ -20,6 +20,7 @@
 
         <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/normalize/1.0.1/normalize.min.css">
         <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">        
+        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/joyride/2.0.3/joyride.css">        
 		
 		<link rel="stylesheet/less" type="text/css" href="<?php echo( $theme ) ?>/css/main.less">
 		
@@ -47,7 +48,7 @@
 			
 				<section class="content">
 					<?php 
-						
+						// include the PHP file with the content for this page.
 						$page = ( $_SERVER['QUERY_STRING'] == "" ? 'dashboard' : $_SERVER['QUERY_STRING']  );
 						include('html-includes/' . $page . '.php'); 
 					
@@ -72,6 +73,7 @@
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.1/qtip2.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.1/ckeditor.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.4.0b/select2.js"></script>
+        <script src="<?php echo( $theme ) ?>/js/vendor/joyride/2.0.3/joyride.js"></script>
 
         <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>
@@ -87,11 +89,20 @@
         <script src="<?php echo( $theme ) ?>/js/components/spinners.js"></script>		
         <script src="<?php echo( $theme ) ?>/js/components/forms.js"></script>		
 		
+		
+		<?php 
+			// include the php file wit the jQuery Tour content.
+			$page = ( $_SERVER['QUERY_STRING'] == "" ? 'dashboard' : $_SERVER['QUERY_STRING']  );
+			include( $theme . '/tours/' . $page . '.php'); 
+					
+		?>
+		
 		<!-- load the script file for current page -->
 		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/' . $page . '.js"></script>');  ?>
+		<!-- load the tour file for current page -->
+		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/tour-' . $page . '.js"></script>');  ?>
 		
-
-    </body>
+	</body>
 	
 	
 </html>
