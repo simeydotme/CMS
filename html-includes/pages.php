@@ -99,6 +99,12 @@
 							</a>
 						</li>
 						
+						<li id="tab-page-background">
+							<a href="#page-background" data-toggle="tab">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/television-image.png" class="icon"> Background Image
+							</a>
+						</li>
+						
 					</ul>
 					
 					
@@ -163,7 +169,62 @@
 						
 						<div class="tab-pane" id="page-content">
 						
-						</div>	
+						</div>
+						
+						
+						
+						
+						
+						<div class="tab-pane" id="page-background">
+		
+							<form novalidate>
+							
+								<h3>Edit Background Image</h3>
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Upload Image</label>
+									</div>
+									<div class="formAnswer">
+									
+										<div class="address-bar">
+											<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/image-sunset.png" class="icon favicon">
+											file_name_of_bg.png
+										</div>
+										<span href="#" class="btn file-input">change <input type="file"></span>
+										
+										<br><small class="text red">uploading a new image will remove the old one from this page</small>						
+									</div>
+								</div>
+								
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Current Background</label>
+									</div>
+									<div class="formAnswer">
+										<img src="http://www.yorkscene.com/files/2012/09/ccaa1.jpg" alt="current background image" class="background-image-preview">
+										<br><small class="text blue">This is the default image for all pages</small>
+									</div>
+								</div>
+								
+								
+								<div class="formRow buttonRow">
+									
+									<div class="formQuestion"></div>
+									<div class="formAnswer">
+										<button type="submit" href="#" class="new btn green">
+											<span>Save</span>
+											<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="save">
+										</button>
+									</div>
+					
+								</div>
+			
+								
+							</form>
+							
+						</div>
 			
 			
 			

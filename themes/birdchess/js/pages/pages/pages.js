@@ -3,14 +3,6 @@
 	$(function() {
 		
 		
-	/* ==========================================================================
-	   notification for the flagged page.
-	   ========================================================================== */
-	   
-		//notify("Logs that seem important or were manually selected by an admin as 'flagged' are shown here.", { where: '#log-flagged', method:'prepend', style: 'warning' })
-
-		
-
 		
 		
 	/* ==========================================================================
@@ -46,7 +38,19 @@
 
 
 
+	/* ==========================================================================
+	   Zoom the background image on click;
+	   ========================================================================== */
 
+		$('.background-image-preview').on('click', function() {
+			
+			if( !$(this).hasClass('open') ) {
+				$(this).addClass('open');
+			} else {
+				$(this).removeClass('open');	
+			}
+			
+		});
 
 
 
