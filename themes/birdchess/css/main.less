@@ -7,15 +7,21 @@
 	/* ==========================================================================
 	   Includes 
 	   ========================================================================== */
+	
+	/* ====[ vendor less files ]==== */
 
 		@import "vendor/select2/3.4.0b/select2.less";
-		
+
+	/* ====[ parts of the main interface ]==== */
+
 		@import "shell/nav.less";
 		@import "shell/header.less";
 		@import "shell/footer.less";
 		@import "shell/body.less";
 		@import "shell/account-bar.less";
 		
+	/* ====[ components of the UI ]==== */
+
 		@import "components/headings.less";
 		@import "components/tables.less";
 		@import "components/alerts.less";
@@ -28,16 +34,36 @@
 		@import "components/hr.less";
 		@import "components/icons.less";
 		
-		@import "components/widgets/widgets.less"; 
+	/* ====[ UI widgets ]==== */
+
+		@import "components/widgets/widgets.less";
+			@import "components/widgets/datepicker.less";
+			@import "components/widgets/dialog.less";
+			@import "components/widgets/qtip.less";
+			@import "components/widgets/slider.less";
+			@import "components/widgets/progress.less";
+			
+	/* ====[ Form controls ]==== */
+
 		@import "components/forms/forms.less";
+			@import "components/forms/checkbox.less";
+			@import "components/forms/radio.less";
+			@import "components/forms/buttons.less";
+			@import "components/forms/select.less";
+			@import "components/forms/favicon.less";
+			
+	/* ====[ Tours ]==== */
+
 		@import "components/tours/tours.less";
 		
-		
+	/* ====[ Miscellaneous blocks of content ]==== */
+
 		@import "blocks/dashboard.less";
 		@import "blocks/permissions.less";
 		@import "blocks/background-image.less";
 
-		
+	/* ====[ Other ]==== */
+
 		@import "vendor/animate/animate-custom.less";
 
 
