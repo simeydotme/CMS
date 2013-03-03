@@ -12,6 +12,8 @@
 								<li><a href="#" title="personal options"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/wrench.png" class="icon"> <span>Your Options</span></a></li>
 								<li><a href="#" title="view the website in new tab" target="_blank"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/globe-green.png" class="icon"> <span>View Website</span></a></li>
 								<li><a href="#" title="view help and advice"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/lifebuoy.png" class="icon"> <span>Help</span></a></li>
+								<li class="divider"></li>
+								<li class="highlight"><a href="#" title="take a tour of the admin features" id="take-a-tour"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/application-blog.png" class="icon"> <span>Take a tour</span></a></li>
 							</ul>
 							
 						</li>

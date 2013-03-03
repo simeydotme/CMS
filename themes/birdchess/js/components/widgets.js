@@ -7,8 +7,13 @@
 		$(function() {
 			
 			
+		/* ==========================================================================
+		   Dialog Options and Configurations
+		   ========================================================================== */
+
 			// Dialog needs a wrapper to run perspective CSS animations from.
 			$('body').prepend('<div class="ui-dialog-perspective-wrapper"></div>');
+			
 			$.extend( $.ui.dialog.prototype.options, { 
 				modal: true, draggable: false,
 				open: function() {
@@ -34,11 +39,9 @@
 			};
 			
 			
-			
-			
-			
-			
-			
+		/* ==========================================================================
+		   Datepicker Defaults
+		   ========================================================================== */
 			
 			// defaults for datepicker
 			$.datepicker.setDefaults({ dateFormat: "dd/mm/yy", defaultDate: new Date(), showOn: 'both', buttonImage: window.cms.theme + "/img/vendor/fugue/icons/calendar-month.png", buttonImageOnly: true });
@@ -58,7 +61,10 @@
 			
 			
 			
-			
+		/* ==========================================================================
+		   Always Animate Sliders
+		   ========================================================================== */
+
 			$.extend( $.ui.slider.prototype.options, {
 				 animate: true
 			});
@@ -71,6 +77,9 @@
 
 
 
+		/* ==========================================================================
+		   qTip Tooltip applier
+		   ========================================================================== */
 
 			// apply tooltips to any element with 'class=tooltip'
 			// dont do it on touchscreens.
