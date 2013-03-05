@@ -20,7 +20,7 @@
 
         <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/normalize/1.0.1/normalize.min.css">
         <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/bootstrap/2.2.1/bootstrap.custom.min.css">        
-        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/joyride/2.0.3/joyride.css">        
+        <link rel="stylesheet" href="<?php echo( $theme ) ?>/css/vendor/jtour/1.2.0/theme3/style.css">        
 		
 		<link rel="stylesheet/less" type="text/css" href="<?php echo( $theme ) ?>/css/main.less">
 		
@@ -73,7 +73,7 @@
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.1/qtip2.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.1/ckeditor.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.4.0b/select2.js"></script>
-        <script src="<?php echo( $theme ) ?>/js/vendor/joyride/2.0.3/joyride.js"></script>
+        <!--<script src="<?php echo( $theme ) ?>/js/vendor/jtour/1.2.0/jTour.js"></script>-->
 
         <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>

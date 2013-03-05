@@ -19,12 +19,17 @@
 			$('#take-a-tour').on('click', function(e) {
 				e.preventDefault();
 								
-				$("#settings-joyride").joyride({
-					tiplocation: 'left',
-					template: {
-						'button'  : '<span href="#" class="joyride-next-tip btn blue"></span>'
-					}
-				});
+				var tourdata = [
+				   {
+					  html: "Hello World"
+				   },{
+					  html: "Welcome to the Tour",
+					  live: 5000,
+					  delayIn: 500
+				   }
+				];
+				var myTour = jTour(tourdata);
+				myTour.start();
 			});			
 			
 			
