@@ -3,6 +3,45 @@
 	$(function() {
 		
 	/* ==========================================================================
+	   Warning for Maintenance
+	   ========================================================================== */
+
+		notify('Warning: <span class="text red">This will take your website offline and replace it with a "Down for Maintenance" page!</span>', {
+			sticky: true,
+			style: 'error',
+			where: '#site-maintenance',
+			method: 'prepend'
+		});
+		
+	/* ==========================================================================
+	   Maintenance confirmation hoops
+	   ========================================================================== */
+		
+		// when the heckbox is changed to on/off.
+			$('#chkMaintenance').on('change', function() {
+				if( $(this).is(':checked') ) { showConfirmRow(); } 
+				else { hideConfirmRow(); }
+			});
+		
+		// as the user enters CONFIRM, enable/disable submit
+			$('#txtMaintenanceConfirm').on('keyup', function() {
+				var conf = ( $('#txtMaintenanceConfirm').val() == "CONFIRM" ) ? false : true;
+				$('#btnMaintenanceSubmit').prop('disabled', conf );	
+			});
+		
+		
+		var showConfirmRow = function() {
+			$('.rowConfirm').slideDown();	
+		}
+
+		var hideConfirmRow = function() {
+			$('.rowConfirm').slideUp();	
+			$('#txtMaintenanceConfirm').val("");
+		}
+		
+
+
+	/* ==========================================================================
 	   Tokens for Keywords field
 	   ========================================================================== */
 

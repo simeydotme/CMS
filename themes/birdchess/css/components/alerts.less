@@ -6,7 +6,7 @@
 			
 			@growlHolderWidth:			300px;
 			
-			@alertBackground:			#f8f8f8;
+			@alertBackground:			#fff;
 			@alertColor: 				#555;
 			
 			@growlBackground:			#fefefe;
@@ -41,7 +41,7 @@
 				
 				position:		relative;
 				background:  	@alertBackground;
-				box-shadow: 	0 0 10px @defaultColor, 0 1px 0 white inset;
+				box-shadow: 	0 0 10px fade(@defaultColor,30%), 0 1px 0 white inset;
 				
 				border: 		1px solid @defaultColor;
 				text-shadow: 	none;
@@ -62,15 +62,15 @@
 					
 					
 					
-					&.yellow { 		border-color: @yellowAlertColor; 	box-shadow: 0 0 10px @yellowAlertColor, 0 -1px 0 white inset; }
-					&.red {			border-color: @redAlertColor; 		box-shadow: 0 0 10px @redAlertColor, 0 -1px 0 white inset; }
-					&.blue {		border-color: @blueAlertColor; 		box-shadow: 0 0 10px @blueAlertColor, 0 -1px 0 white inset; }
-					&.green {		border-color: @greenAlertColor; 	box-shadow: 0 0 10px @greenAlertColor, 0 -1px 0 white inset; }
+					&.yellow { 		border-color: @yellowAlertColor; 	box-shadow: 0 0 10px fade(@yellowAlertColor,30%), 0 -1px 0 white inset; }
+					&.red {			border-color: @redAlertColor; 		box-shadow: 0 0 10px fade(@redAlertColor,30%), 0 -1px 0 white inset; }
+					&.blue {		border-color: @blueAlertColor; 		box-shadow: 0 0 10px fade(@blueAlertColor,30%), 0 -1px 0 white inset; }
+					&.green {		border-color: @greenAlertColor; 	box-shadow: 0 0 10px fade(@greenAlertColor,30%), 0 -1px 0 white inset; }
 					
-					&.purple {		border-color: @purpleAlertColor; 	box-shadow: 0 0 10px @purpleAlertColor, 0 -1px 0 white inset; }
-					&.orange {		border-color: @orangeAlertColor; 	box-shadow: 0 0 10px @orangeAlertColor, 0 -1px 0 white inset; }
-					&.pink {		border-color: @pinkAlertColor; 		box-shadow: 0 0 10px @pinkAlertColor, 0 -1px 0 white inset; }
-					&.dark {		border-color: @darkAlertColor; 		box-shadow: 0 0 10px @darkAlertColor, 0 -1px 0 white inset; }
+					&.purple {		border-color: @purpleAlertColor; 	box-shadow: 0 0 10px fade(@purpleAlertColor,30%), 0 -1px 0 white inset; }
+					&.orange {		border-color: @orangeAlertColor; 	box-shadow: 0 0 10px fade(@orangeAlertColor,30%), 0 -1px 0 white inset; }
+					&.pink {		border-color: @pinkAlertColor; 		box-shadow: 0 0 10px fade(@pinkAlertColor,30%), 0 -1px 0 white inset; }
+					&.dark {		border-color: @darkAlertColor; 		box-shadow: 0 0 10px fade(@darkAlertColor,30%), 0 -1px 0 white inset; }
 					
 					.icon { margin: 0 10px 10px 0; float: left; }
 		

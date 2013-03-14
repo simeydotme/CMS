@@ -32,6 +32,12 @@
 				</a>
 			</li>
 			
+			<li id="tab-site-maintenance">
+				<a href="#site-maintenance" data-toggle="tab">
+					<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/burn.png" class="icon"> Maintenance
+				</a>
+			</li>
+			
 		</ul>
 		
 		
@@ -51,13 +57,14 @@
 							
 						</div>
 					</div>
+					<br>
 					
 					<div class="formRow">
 						<div class="formQuestion">
 							<label>Website Name</label>
 						</div>
 						<div class="formAnswer">
-							<input id="txtSiteName" type="text" class="large">
+							<input id="txtSiteName" type="text" class="large" placeholder="Company Website">
 							<br><small class="text blue">This is the name of your website for admin purposes, it doesn't affect the actual website</small>
 						</div>
 					</div>
@@ -72,6 +79,7 @@
 							
 						</div>
 					</div>
+					<br>
 
 
 
@@ -84,7 +92,7 @@
 							<div class="formAnswer">
 								<div class="input-prepend">
 									<label class="add-on"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/mail-at-sign.png" class="icon"></label>
-									<input id="txtAdminEmail" type="text" class="medium" placeholder="someone@company.com">
+									<input id="txtAdminEmail" type="text" class="medium" placeholder="admin@company.com">
 								</div>
 								<br><small>Emails regarding security will go here</small>
 							</div>
@@ -97,7 +105,7 @@
 							<div class="formAnswer">
 								<div class="input-prepend">
 									<label class="add-on"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/mail-send-receive.png" class="icon"></label>
-									<input id="txtSupportEmail" type="text" class="medium" placeholder="someone@company.com">
+									<input id="txtSupportEmail" type="text" class="medium" placeholder="support@company.com">
 								</div>
 								<br><small>Emails regarding website support will go here</small>
 							</div>
@@ -159,6 +167,7 @@
 								
 							</div>
 						</div>
+						<br>
 						
 						<div class="formRow">
 							<div class="formQuestion">
@@ -265,6 +274,7 @@
 								<small>Get your analytics and tracking running</small></h4>
 							</div>
 						</div>
+						<br>
 						
 						<div class="formRow">
 							<div class="formQuestion">
@@ -309,7 +319,15 @@
 		
 				<form novalidate>
 				
-					<h3>Edit meta data</h3>
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<h4>Meta Data
+							<small>Meta Data is used to describe your website to search engines</small></h4>
+							
+						</div>
+					</div>
+					<br>
 					
 					<div class="formRow">
 						<div class="formQuestion">
@@ -386,7 +404,15 @@
 		
 				<form novalidate>
 				
-					<h3>Edit Background Image</h3>
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<h4>Background Image
+							<small>This image will be inherited by all pages unless overridden</small></h4>
+							
+						</div>
+					</div>
+					<br>
 					
 					<div class="formRow">
 						<div class="formQuestion">
@@ -432,6 +458,72 @@
 				</form>
 				
 			</div>
+			
+			
+			
+			
+			
+			
+			
+			<div class="tab-pane" id="site-maintenance">
+		
+				<form novalidate>
+				
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<h4>Meta Data
+							<small>Meta Data is used to describe your website to search engines</small></h4>
+							
+						</div>
+					</div>
+					<br>
+					
+					<div class="formRow">
+						<div class="formQuestion">
+							<label>Maintenance Mode</label>
+						</div>
+						<div class="formAnswer">
+						
+							<input type="checkbox" id="chkMaintenance">
+													
+						</div>
+					</div>
+					
+					<div class="formRow rowConfirm" style="display:none;">
+						<div class="formQuestion">
+							<label>Please confirm</label>
+						</div>
+						<div class="formAnswer">
+						
+							<input type="text" id="txtMaintenanceConfirm" placeholder="CONFIRM">
+							<br><small>please confirm your intentions by writing <strong>"CONFIRM"</strong> into the text field above</small>
+									
+						</div>
+					</div>
+					
+					
+					<br><br>
+					
+					
+					<div class="formRow buttonRow">
+						
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<button type="submit" href="#" class="new btn green" disabled id="btnMaintenanceSubmit">
+								<span>Save</span>
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="save">
+							</button>
+						</div>
+		
+					</div>
+
+					
+				</form>
+				
+			</div>
+			
+			
 
 		</div>
 		
