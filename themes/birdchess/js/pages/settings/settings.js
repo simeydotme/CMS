@@ -66,13 +66,7 @@
 	   ========================================================================== */
 
 		$('.background-image-preview').on('click', function() {
-			
-			if( !$(this).hasClass('open') ) {
-				$(this).addClass('open');
-			} else {
-				$(this).removeClass('open');	
-			}
-			
+			imageZoom( $(this) );
 		});
 
 

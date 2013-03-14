@@ -80,6 +80,7 @@
 		
 		<script src="<?php echo( $theme ) ?>/js/shell/nav.js"></script>
 		<script src="<?php echo( $theme ) ?>/js/shell/account-bar.js"></script>
+		<script src="<?php echo( $theme ) ?>/js/shell/image-zoom.js"></script>
 		
         <script src="<?php echo( $theme ) ?>/js/components/alerts.js"></script>
         <script src="<?php echo( $theme ) ?>/js/components/widgets.js"></script>		

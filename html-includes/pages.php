@@ -53,8 +53,7 @@
 								<tr class="section">
 									<td class="collapse"><a href="#" class="collapse tooltip" title="collapse this section"></a></td>
 									<th scope="row">{%=o[i].title%}</th>
-									<td><span class="badge">{%=o[i].subPages.length%}</span></td>
-									<td colspan="2"></td>
+									<td colspan="3"><span class="badge">{%=o[i].subPages.length%}</span></td>
 								</tr>
 								
 								<!-- Pages under section -->
@@ -89,7 +88,7 @@
 		
 						<li id="tab-page-content" class="active">
 							<a href="#page-content" data-toggle="tab">
-								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/document-text-image.png" class="icon"> Main Content
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/document-text-image.png" class="icon"> Content
 							</a>
 						</li>
 						
@@ -109,14 +108,75 @@
 					
 					
 					<div class="tab-content">
+						
+						
+						<div class="tab-pane active" id="page-content">
+							
+							<form novalidate>
+							
+								<div class="formRow">
+									<div class="formQuestion"></div>
+									<div class="formAnswer">
+										<h4>Content
+										<small>Edit the main content for this page</small></h4>
+										
+									</div>
+								</div>
+								<br>
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Content Heading</label>
+									</div>
+									<div class="formAnswer">
+										<input id="txtTitle" type="text" class="medium">
+									</div>
+								</div>
+								
+								
+								<div class="formRow">
+									<div class="formQuestion">
+										<label>Body</label>
+									</div>
+									<div class="formAnswer">
+										<textarea class="ckeditor" name="txtBody" id="txtBody"></textarea>
+									</div>
+								</div>	
+								
+								
+															
+								<div class="formRow buttonRow">
+									
+									<div class="formQuestion"></div>
+									<div class="formAnswer">
+										<button type="submit" class="new btn green">
+											<span>Save</span>
+											<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="edit">
+										</button>
+									</div>
 					
+								</div>
+								
+								
+							</form>
+							
+						</div>
+						
+						
+						
 						<div class="tab-pane" id="page-meta">
 					
 							<form novalidate>
-							
-								<h3>Edit meta data</h3>
-								<p>These options are inherited from the <a href="?settings">website settings</a> by default</p>
-								<hr>
+								
+								<div class="formRow">
+									<div class="formQuestion"></div>
+									<div class="formAnswer">
+										<h4>Page Meta Data
+										<small>The options are inherited from the <a href="?settings">website settings</a> by default</small></h4>
+										
+									</div>
+								</div>
+								<br>
 								
 								<div class="formRow">
 									<div class="formQuestion">
@@ -154,9 +214,14 @@
 									
 									<div class="formQuestion"></div>
 									<div class="formAnswer">
-										<button type="submit" href="#" class="new btn green">
+										<button type="submit" class="new btn green">
 											<span>Save</span>
 											<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="edit">
+										</button>
+										
+										<button type="reset" class="reset btn">
+											<span>Reset to default</span>
+											<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/eraser.png" class="icon" alt="save">
 										</button>
 									</div>
 					
@@ -167,9 +232,7 @@
 						</div>
 						
 						
-						<div class="tab-pane" id="page-content">
 						
-						</div>
 						
 						
 						
@@ -179,7 +242,15 @@
 		
 							<form novalidate>
 							
-								<h3>Edit Background Image</h3>
+								<div class="formRow">
+									<div class="formQuestion"></div>
+									<div class="formAnswer">
+										<h4>Page Background Image
+										<small>Background for this specific page, by default inherits from <a href="?settings">website settings</a></small></h4>
+										
+									</div>
+								</div>
+								<br>
 								
 								<div class="formRow">
 									<div class="formQuestion">
@@ -213,9 +284,14 @@
 									
 									<div class="formQuestion"></div>
 									<div class="formAnswer">
-										<button type="submit" href="#" class="new btn green">
+										<button type="submit" class="new btn green">
 											<span>Save</span>
 											<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="save">
+										</button>
+										
+										<button type="reset" class="reset btn">
+											<span>Reset to default</span>
+											<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/eraser.png" class="icon" alt="save">
 										</button>
 									</div>
 					
@@ -231,23 +307,14 @@
 			
 					</div>
 					
-					
-			
-			
+								
 			</div>
-			
-			
-			
-			
-			
 			
 			
 		</div>
 			
-			
-			
-			
-			
 		
-		
+		<div id="dialog-pages-reset" style="display:none;">
+			Are you sure you wish reset this to inherit from the main website settings?
+		</div>	
 		

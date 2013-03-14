@@ -298,7 +298,7 @@
 						
 						<div class="formQuestion"></div>
 						<div class="formAnswer">
-							<button type="submit" href="#" class="new btn green">
+							<button type="submit" class="new btn green">
 								<span>Save</span>
 								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="save">
 							</button>
@@ -388,7 +388,7 @@
 						
 						<div class="formQuestion"></div>
 						<div class="formAnswer">
-							<button type="submit" href="#" class="new btn green">
+							<button type="submit" class="new btn green">
 								<span>Save</span>
 								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="save">
 							</button>
@@ -446,7 +446,7 @@
 						
 						<div class="formQuestion"></div>
 						<div class="formAnswer">
-							<button type="submit" href="#" class="new btn green">
+							<button type="submit" class="new btn green">
 								<span>Save</span>
 								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="save">
 							</button>
@@ -510,7 +510,7 @@
 						
 						<div class="formQuestion"></div>
 						<div class="formAnswer">
-							<button type="submit" href="#" class="new btn green" disabled id="btnMaintenanceSubmit">
+							<button type="submit" class="new btn green" disabled id="btnMaintenanceSubmit">
 								<span>Save</span>
 								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon" alt="save">
 							</button>

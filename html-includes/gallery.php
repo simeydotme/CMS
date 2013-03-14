@@ -110,7 +110,7 @@
 						
 						<div class="formQuestion"></div>
 						<div class="formAnswer">
-							<button type="submit" href="#" class="new btn green">
+							<button type="submit" class="new btn green">
 								<span>Send it</span>
 								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/drive-upload.png" class="icon" alt="upload">
 							</button>
@@ -128,12 +128,12 @@
 				
 				<div class="form-actions above-table">
 					
-					<button id="button-saveorder" href="#" class="new btn blue" disabled>
+					<button id="button-saveorder" class="new btn blue" disabled>
 						<span>Save Changes</span>
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon">
 					</button>
 					
-					<button id="button-resetorder" href="#" class="new btn alt pull-right" disabled>
+					<button id="button-resetorder" class="new btn alt pull-right" disabled>
 						<span>Reset Changes</span>
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/arrow-circle-double.png" class="icon">
 					</button>

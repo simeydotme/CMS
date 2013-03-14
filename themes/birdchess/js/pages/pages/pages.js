@@ -43,14 +43,44 @@
 	   ========================================================================== */
 
 		$('.background-image-preview').on('click', function() {
-			
-			if( !$(this).hasClass('open') ) {
-				$(this).addClass('open');
-			} else {
-				$(this).removeClass('open');	
-			}
-			
+			imageZoom( $(this) );
 		});
+
+
+
+
+
+	/* ==========================================================================
+	   Reset to defaults (show dialog)
+	   ========================================================================== */
+
+
+		$('button.reset').on('click', function(e) {
+			
+			e.preventDefault();
+			var $confirm = $('#dialog-pages-reset');
+			
+			$confirm.dialog({
+				
+				modal: true,
+				buttons: {
+					
+					"ok": {
+					  text:'Yes', class:'btn alt',
+					  click: function() { $(this).animateDialogClose(); }
+					},
+					"cancel": {
+					  text:'Cancel', class:'btn',
+					  click: function() { $(this).animateDialogClose(); }
+					}
+				}
+				
+			}).dialog('widget').appendTo('.ui-dialog-perspective-wrapper');;
+			
+	
+		});
+
+
 
 
 

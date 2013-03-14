@@ -9,6 +9,49 @@
 		
 		
 		
+		
+		<section class="dashboard">
+		
+			<div class="row-fluid">
+			
+				<div class="span8">
+					
+					<div class="dash-graph" id="dash-visitors">
+						
+						
+						
+					</div>
+					
+				</div>
+				
+				<div class="span2">
+				
+					<div class="dash-visual" id="dash-users">
+						<a href="?users">
+							<span>Total Number of Users: </span>
+							<span class="data">5</span>
+						</a>
+					</div>
+				
+					<div class="dash-visual" id="dash-flagged-logs">
+						<a href="?logs#log-flagged">
+							<span>Number of flagged logs: </span>
+							<span class="data">15</span>
+						</a>
+					</div>
+				
+				</div>
+			
+			</div>
+		
+		</section>
+		
+		
+		
+		
+		
+		
+		
 		<section class="jump">
 		
 			<div class="row-fluid">
