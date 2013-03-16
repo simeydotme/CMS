@@ -472,8 +472,8 @@
 					<div class="formRow">
 						<div class="formQuestion"></div>
 						<div class="formAnswer">
-							<h4>Meta Data
-							<small>Meta Data is used to describe your website to search engines</small></h4>
+							<h4>Maintenance
+							<small>Replaces your website with a page saying that maintenance is being carried out</small></h4>
 							
 						</div>
 					</div>
