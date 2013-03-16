@@ -23,19 +23,7 @@
 		
 		<div class="tab-content">
 		
-			<div class="tab-pane active" id="user-list">
-		
-		
-				<div class="form-actions above-table">
-					
-					<a href="#user-new" class="new btn purple pull-right">
-						<span>New User</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/user-silhouette.png" class="icon">
-					</a>
-					
-				</div>
-				
-				
+			<div class="tab-pane active" id="user-list">				
 				
 				<table class="table table-striped table-hover" id="user-table">
 				
@@ -51,7 +39,7 @@
 					
 					<tbody>
 						<tr>
-							<th scope="row">Jim Podolski</th>
+							<th scope="row">Jimmzer McJimmykins</th>
 							<td><a href="#" class="tooltip" title="edit this user">Jimbob</a></td>
 							<td><a href="#" class="tooltip" title="send an email to this user">jimbob@hotmail.com</a></td>
 							<td>3 minutes ago</td>
@@ -108,7 +96,14 @@
 		
 				<form novalidate>
 				
-					<h3>New User</h3>
+					<div class="formRow">
+						<div class="formQuestion"></div>
+						<div class="formAnswer">
+							<h4>New User
+							<small>The user's password will be emailed to them</small></h4>
+						</div>
+					</div>
+					<br>
 					
 					<div class="formRow">
 						<div class="formQuestion">
@@ -133,7 +128,7 @@
 							<label>Email</label>
 						</div>
 						<div class="formAnswer">
-							<input type="email" required="required">
+							<input type="email">
 						</div>
 					</div>
 				
@@ -147,29 +142,16 @@
 					</div>
 					
 					<hr>
-				
+
 					<div class="formRow">
-						<div class="formQuestion">
-							<label>Password</label>
-						</div>
+						<div class="formQuestion"></div>
 						<div class="formAnswer">
-							<input type="password" class="medium">
+							<h4>Permissions
+							<small>Edit the level of access this user has</small></h4>
 						</div>
 					</div>
+					<br>
 					
-					<div class="formRow">
-						<div class="formQuestion">
-							<label>Confirm</label>
-						</div>
-						<div class="formAnswer">
-							<input type="password" class="medium">
-						</div>
-					</div>
-					
-
-
-				
-					<h3>Permissions</h3>
 					
 					<div class="formRow">
 						<div class="formQuestion">
@@ -177,38 +159,48 @@
 							<small><a href="#" class="show-more-permissions btn btn-small">Show more</a></small>
 						</div>
 						<div class="formAnswer">
-						
-							<div class="ui-slider"></div>
 							
-							<div class="permissionLevel">
+							<div class="row-fluid">
 							
-								<div class="level super text red">
-									<h5>Super Admin</h5>
-									<p>Access and control for entire website.</p>
+								<div class="span6">
+									<div class="ui-slider"></div>
 								</div>
-
-								<div class="level admin text purple">
-									<h5>Admin</h5>
-									<p>Control over all content and settings.</p>
+								
+								<div class="span6">
+							
+									<div class="permissionLevel">
+									
+										<div class="level super text purple">
+											<h5>Super Admin</h5>
+											<p>Access and control for entire website.</p>
+										</div>
+		
+										<div class="level admin text red">
+											<h5>Admin</h5>
+											<p>Control over all content and settings.</p>
+										</div>
+		
+										<div class="level creator text blue">
+											<h5>Content Admin</h5>
+											<p>Full control over content.</p>
+										</div>
+		
+										<div class="level editor text green">
+											<h5>Content Editor</h5>
+											<p>Ability to edit existing content.</p>
+										</div>
+		
+										<div class="level peon text dark">
+											<h5>Zero Permission</h5>
+											<p>No ability to edit anything.</p>
+										</div>
+		
+									</div>
+									
 								</div>
-
-								<div class="level creator text blue">
-									<h5>Content Admin</h5>
-									<p>Full control over content.</p>
-								</div>
-
-								<div class="level editor text green">
-									<h5>Content Editor</h5>
-									<p>Ability to edit existing content.</p>
-								</div>
-
-								<div class="level peon text dark">
-									<h5>Zero Permission</h5>
-									<p>No ability to edit anything.</p>
-								</div>
-
+								
 							</div>
-							
+									
 						</div>
 					</div>
 					

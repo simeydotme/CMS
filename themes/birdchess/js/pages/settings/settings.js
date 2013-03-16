@@ -17,7 +17,7 @@
 	   Maintenance confirmation hoops
 	   ========================================================================== */
 		
-		// when the heckbox is changed to on/off.
+		// when the checkbox is changed to on/off.
 			$('#chkMaintenance').on('change', function() {
 				if( $(this).is(':checked') ) { showConfirmRow(); } 
 				else { hideConfirmRow(); }
@@ -29,9 +29,8 @@
 				$('#btnMaintenanceSubmit').prop('disabled', conf );	
 			});
 		
-		
 		var showConfirmRow = function() {
-			$('.rowConfirm').slideDown();	
+			$('.rowConfirm').slideDown();
 		}
 
 		var hideConfirmRow = function() {

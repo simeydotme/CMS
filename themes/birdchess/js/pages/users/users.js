@@ -13,7 +13,7 @@
 
 
 		/* ==========================================================================
-		 	Generate a username based off user's first and last names.
+		 	Pretend to delete a user when we click on delete.
 		   ========================================================================== */
 
 
@@ -104,7 +104,6 @@
 			function sliderLabel( val ) { 
 				
 				var $slider = $('.ui-slider');
-				var colors = 'red blue green purple dark';
 				
 				$('.permissionLevel .level ').xhide();
 				
@@ -112,27 +111,22 @@
 						
 					case 4: 
 						$('.permissionLevel .super').xshow(); 
-						$slider.removeClass(colors).addClass('red'); 
 						break;
 						
 					case 3: 
 						$('.permissionLevel .admin').xshow(); 
-						$slider.removeClass(colors).addClass('purple'); 
 						break;
 					
 					case 2: 
-						$('.permissionLevel .creator').xshow(); 
-						$slider.removeClass(colors).addClass('blue'); 
+						$('.permissionLevel .creator').xshow();
 						break;
 					
 					case 1: 
-						$('.permissionLevel .editor').xshow(); 
-						$slider.removeClass(colors).addClass('green'); 
+						$('.permissionLevel .editor').xshow();
 						break;
 					
 					case 0: 
 						$('.permissionLevel .peon').xshow(); 
-						$slider.removeClass(colors).addClass('dark'); 
 						break;
 					
 				}
