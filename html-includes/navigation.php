@@ -51,6 +51,31 @@
 
 					</ul>
 				</li>
+				
+				<li class="item">
+					<a href="?blog">
+						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/balloon.png" class="icon" alt="">
+						<span class="text">Blog</span>
+					</a>
+					
+					<ul class="sub">
+					
+						<li class="subitem">
+							<a href="?blog#blog-new">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/balloon--plus.png" class="icon" alt="">
+								<span class="text">New Post</span>
+							</a>
+						</li>
+
+						<li class="subitem">
+							<a href="?blog">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/balloon--pencil.png" class="icon" alt="">
+								<span class="text">Manage</span>
+							</a>
+						</li>
+
+					</ul>
+				</li>
 								
 				<li class="item">
 				
@@ -140,7 +165,7 @@
 
 						<li class="subitem">
 							<a href="#">
-								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/balloon-box.png" class="icon" alt="">
+								<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/balloons-white.png" class="icon" alt="">
 								<span class="text">Comments</span>
 							</a>
 						</li>
