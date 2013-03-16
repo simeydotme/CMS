@@ -128,7 +128,7 @@
 				
 				<div class="form-actions above-table">
 					
-					<button id="button-saveorder" class="new btn blue" disabled>
+					<button id="button-savechanges" class="new btn blue" disabled>
 						<span>Save Changes</span>
 						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/disk-black.png" class="icon">
 					</button>
@@ -141,56 +141,23 @@
 				</div>
 				
 				<div class="gallery-wrapper">
+					
+					<!-- Template for the list of pages -->
+					<script type="text/x-tmpl" id="tmpl-gallery">
 				
-					<a class="thumbnail" href="#" data-id="image[1]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=1">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[2]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=2">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[3]">
-						<img src="http://placehold.it/200x350.png/efefef/333333/&text=3">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[4]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=4">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[5]">
-						<img src="http://placehold.it/400x150.png/efefef/333333/&text=5">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[dmilk]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=6">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[7]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=7">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[8]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=8">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[9]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=9">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
-				
-					<a class="thumbnail" href="#" data-id="image[aceofspades]">
-						<img src="http://placehold.it/200x150.png/efefef/333333/&text=10">
-						<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
-					</a>
+						{% for (var i=0; i<o.length; i++) { %}
+							{% if (!o[i].destroy) { %}	
+								<a class="gallery-image-link" href="#" data-image-id="{%=o[i].id%}">
+									<img class="gallery-image" src="{%=o[i].url%}">
+									<button class="btn small delete-image"><img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/cross.png"></button>
+								</a>
+							{% } %}
+						{% } %}
+						
+					</script>
+					
+					<div class="gallery-image-list"></div>
+					
 				
 				</div>
 				
@@ -205,7 +172,7 @@
 				<span class="red text">This action cannot be undone.</span>
 			</div>
 			
-			<div id="dialog-saveorder" style="display:none;">
+			<div id="dialog-savechanges" style="display:none;">
 				Are you sure you wish to save the state of gallery?<br>
 				<span class="red text">This action cannot be undone.</span>
 			</div>		

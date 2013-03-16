@@ -25,11 +25,11 @@
 		
 		.gallery-wrapper {
 			
-			.thumbnail,
+			.gallery-image-link,
 			.placeholder { 
 				
 				position: relative;
-				display: 		inline-block; *display: inline; *zoom:1;
+				display: inline-block; *display: inline; *zoom:1;
 				border-radius: 	0;
 				
 				padding: 		@thumbnailPadding;
@@ -54,6 +54,8 @@
 					box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 					z-index: -1;
 				}
+				
+				
 				
 			}
 			
@@ -88,8 +90,9 @@
 				
 			}
 			
-			.thumbnail img { max-height: @thumbnailHeight; max-width: @thumbnailWidth; }
-			.thumbnail button { position: absolute; top: 9px; right: 7px;  padding: 1px 1px 2px; }
+			.gallery-image-link .gallery-image { max-height: @thumbnailHeight; max-width: @thumbnailWidth; cursor: -webkit-zoom-in; cursor: -moz-zoom-in; .transition( all 0.3s ease ); }
+			.gallery-image-link.open .gallery-image { max-width: 300px; max-height: 300px; }
+			.gallery-image-link button { position: absolute; top: 9px; right: 7px;  padding: 1px 1px 2px; }
 			
 			
 			

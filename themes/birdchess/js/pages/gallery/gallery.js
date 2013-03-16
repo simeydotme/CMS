@@ -1,30 +1,50 @@
 
 
 	$(function() {
-		
+
+
+
+
+
+
+	/* ==========================================================================
+	   Create a global object for the gallery function.
+	   ========================================================================== */
+
 		window.gallery = {};
 		
 		
-		$('#gallery-table .edit').on('click',function() {
-			
-			$('#tab-gallery-edit a').enableTab().trigger('click');
-			
-		});
 		
-		
-		$('#button-upload').on('click', function(e) {
-
-			$('#tab-gallery-upload a').trigger('click');
+		$('.gallery-image-link').on('click', function(e) {
+			imageZoom( $(this) );
 			e.preventDefault();
+		});		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	/* ==========================================================================
+	   Enable the gallery edit tab when you've clicked edit.
+	   ========================================================================== */
+	   
+		$('#gallery-table .edit').on('click',function() {
+			$('#tab-gallery-edit a').enableTab().trigger('click');
 		});
 		
 		
 		
 		
 		
-		
-		
+	/* ==========================================================================
+	   Function for deleting a gallery from the table
+	   ========================================================================== */
 		
 		$('#gallery-table .delete').on('click', function() {
 			
@@ -37,7 +57,10 @@
 					
 					"ok": {
 					  text:'Ok', class:'btn red',
-					  click: function() { $galleryRow.fadeOut().attr('data-destroy','_destroy'); $(this).animateDialogClose(); }
+					  click: function() { 
+					  	$galleryRow.fadeOut();
+						$(this).animateDialogClose();
+					  }
 					},
 					"cancel": {
 					  text:'Cancel', class:'btn',
@@ -50,10 +73,20 @@
 			
 		});
 		
+		
+		
+		
+		
+		
+		
+		
+	/* ==========================================================================
+	   When a user clicks 'save order'.
+	   ========================================================================== */
 
-		$('#button-saveorder').on('click', function() {
+		$('#button-savechanges').on('click', function() {
 			
-			var $confirm = $('#dialog-saveorder');
+			var $confirm = $('#dialog-savechanges');
 			
 			$confirm.dialog({
 				
@@ -62,7 +95,14 @@
 					
 					"ok": {
 					  text:'Ok', class:'btn red',
-					  click: function() { gallery.sendGalleryState(); $(this).animateDialogClose(); }
+					  click: function() { 
+					  
+					  	gallery.saveState();
+						gallery.sendGalleryState(); 
+						
+						$(this).animateDialogClose(); 
+						
+					  }
 					},
 					"cancel": {
 					  text:'Cancel', class:'btn',
@@ -77,106 +117,136 @@
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		$('#button-resetorder').on('click', function() {
-			gallery.galleryReset();
-		});
-		
-		$('.btn.delete-image').on('click', function(e) {
-			$(this).parent('.thumbnail').attr('data-destroy','_destroy').fadeOut();
-			$('#button-saveorder, #button-resetorder').attr('disabled',false);
+	/* ==========================================================================
+	   When a user clicks 'reset order'.
+	   ========================================================================== */
+
+		$('#button-resetorder').on('click', function(e) {
+			gallery.resetState();
 			e.preventDefault();
 		});
 		
 		
 		
 		
-
 		
+		
+		
+	/* ==========================================================================
+	   When a user clicks 'delete image'.
+	   ========================================================================== */
 
-		// make the gallery sortable
+		$('.gallery-image-list').on('click', '.btn.delete-image', function(e) {
+			
+			var $_this = $(this).parents('.gallery-image-link');
+			var id = $_this.data('image-id');
+			
+			// find the item in the {galleryData} object using the data-image-id
+			for(i=0; i<galleryData.length; i++) {
+				if( galleryData[i].id == id ) {
+					// and destroy it.
+					galleryData[i].destroy = true;
+				}
+			}
+			
+			// remove the image
+			$_this.fadeOut( function() {
+				gallery.enableButtons();
+				$_this.remove();
+			});
+			
+			e.preventDefault();
+		});
+		
+		
+		
+		
+		
+		
+	/* ==========================================================================
+	   Make hte gallery draggable/sortable
+	   ========================================================================== */
+
 		gallery.makeSortable = function() {
 			
 			$('.gallery-wrapper').sortable({ 
 			
-				items: 			'.thumbnail',
+				items: 			'.gallery-image-link',
 				placeholder: 	'placeholder',
 				forcePlaceholderSize: true,
-				
-				stop: function() {
-				
-					$('#button-saveorder, #button-resetorder').attr('disabled',false);
-					
-				}
+				stop: function() { gallery.enableButtons(); }
 				
 			});
 		
 		};
 		gallery.makeSortable();
-
-		// this returns the order of the gallery items.
-
-		gallery.galleryState = function( set ) {
 		
-			var $gallery = $('.gallery-wrapper');
-			var stack = {};
+		
+		
+		
+
+	/* ==========================================================================
+	   Load the gallery from the object into it's placeholder.
+	   ========================================================================== */
+
+		gallery.loadState = function() { window.populateGallery(); };
+		
+	/* ==========================================================================
+	   Save the order of the gallery
+	   ========================================================================== */
+
+		gallery.saveState = function() { 
+		
+			$('.gallery-wrapper .gallery-image-link').each( function(k,v) {
 			
-			$gallery.find('.thumbnail').each( function() {
-			
-				var $_this = $(this);
-				var id = $_this.data('id');
+				var id = $(this).data('image-id');
 				
-				var position = $_this.attr('data-destroy') == '_destroy' ? '_destroy' : $_this.index()+1;
-				
-				stack[id] = position;
-			
-				if( set != "undefined" ) {
-					$(this).attr('data-order', position);	
+				// for every item in the object
+				for(i=0; i<galleryData.length; i++) {
+					if( galleryData[i].id == id ) {
+						// un-destroy it
+						galleryData[i].order = k;
+					}
 				}
-			
-			});
-			
-			return stack;
+				
+			});	
+								
+		};
 		
+	/* ==========================================================================
+	   Reset the gallery to it's page-load state.
+	   ========================================================================== */
+
+		gallery.resetState = function() {
+			
+			// for every item in the object
+			for(i=0; i<galleryData.length; i++) {
+				// un-destroy it
+				galleryData[i].destroy = false;
+			}
+			
+			// reload the images
+			gallery.loadState();
+			
 		};
 		
 		
-		gallery.galleryReset = function() {
-			
-			var howMany = $('.thumbnail').length;
-			
-			for( i=0; i<=howMany; i++ ) {
-				$('.gallery-wrapper').append( $('.gallery-wrapper .thumbnail[data-order="'+i+'"]').removeAttr('data-destroy').fadeIn() );
-			}	
-			
-		};
-		
-		//save original state of gallery
-		gallery.galleryState('set');
-		
-		
+	/* ==========================================================================
+	   Enable the save and reset buttons.
+	   ========================================================================== */
+
+		gallery.enableButtons = function() { $('#button-savechanges, #button-resetorder').attr('disabled',false); };
+	
+	
+	/* ==========================================================================
+	   Send the new state of hte gallery to the server
+	   ========================================================================== */
+
 		gallery.sendGalleryState = function() {
 			
-			$.ajax( 'html-includes/fakejax.php' , {
-				
-				type: 'POST',
-				data: gallery.galleryState(),
-				
-				success: function( response ) { console.log( response ); }
-				
-			});
-			
-			console.log('data posted, check network tab in console');
+			console.log('data posted back to server, check the new order and the destroyed status');
+			console.log('---------------------------------------');
+			console.log( window.galleryData );
 			
 		};
 		
