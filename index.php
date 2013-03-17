@@ -89,6 +89,7 @@
         <script src="<?php echo( $theme ) ?>/js/components/tabs.js"></script>		
         <script src="<?php echo( $theme ) ?>/js/components/spinners.js"></script>		
         <script src="<?php echo( $theme ) ?>/js/components/forms.js"></script>		
+        <script src="<?php echo( $theme ) ?>/js/components/preview-site.js"></script>		
 		
 		
 		<?php 
