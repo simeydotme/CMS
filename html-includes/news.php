@@ -28,21 +28,15 @@
 		
 				<div class="form-actions above-table">
 					
-					<div class="btn-group">
+					<div class="btn-group pull-right">
 						<a class="btn alt dropdown-toggle" id="ddl-filter" role="button" data-toggle="dropdown" data-target="#" href="news.php">Filter News <span class="caret"></span></a>
 						<ul class="dropdown-menu" id="menu-filter" role="menu" aria-labelledby="ddl-filter">
 						
 							<li><a href="#">by direct</a></li>
 							<li><a href="#">by twitter</a></li>
-							<li><a href="#">by blog</a></li>
 						
 						</ul>
 					</div>
-					
-					<a href="#" class="new btn purple pull-right">
-						<span>Add News</span>
-						<img src="<?php echo( $theme ) ?>/img/vendor/fugue/icons/newspaper--plus.png" class="icon">
-					</a>
 					
 				</div>
 				
@@ -60,7 +54,7 @@
 					
 					<tbody>
 						<tr>
-							<td>Blog</td>
+							<td>Direct</td>
 							<th scope="row"><a href="#">Once upon a time</a></th>
 							<td>3 minutes ago</td>
 							<td><a href="#">Jimbob</a></td>
