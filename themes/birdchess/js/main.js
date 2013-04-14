@@ -20,13 +20,8 @@
 				e.preventDefault();
 								
 				var tourdata = [
-				   {
-					  html: "Hello World"
-				   },{
-					  html: "Welcome to the Tour",
-					  live: 5000,
-					  delayIn: 500
-				   }
+				   { html: "Hello World" },
+				   { html: "Welcome to the Tour" }
 				];
 				var myTour = jTour(tourdata);
 				myTour.start();

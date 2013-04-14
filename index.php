@@ -64,16 +64,16 @@
 
         <script src="<?php echo( $theme ) ?>/js/vendor/jquery/1.9.1/jquery.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/jqueryui/1.10.0/jqueryui.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+		<!--<script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>-->
 		
 		<!-- load the js template file for current page -->
 		<?php  echo('<script src="' . $theme . '/js/pages/' . $page . '/tmpl-' . $page . '.js"></script>');  ?>
 
-		<script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.3.0/bootstrap.js"></script>
+		<script src="<?php echo( $theme ) ?>/js/vendor/bootstrap/2.3.1/bootstrap.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/qtip/2.0.1/qtip2.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/ckeditor/4.0.1/ckeditor.js"></script>
         <script src="<?php echo( $theme ) ?>/js/vendor/select2/3.4.0b/select2.js"></script>
-        <!--<script src="<?php echo( $theme ) ?>/js/vendor/jtour/1.2.0/jTour.js"></script>-->
+        <script src="<?php echo( $theme ) ?>/js/vendor/jtour/1.3.0/jTour.js"></script>
 
         <script src="<?php echo( $theme ) ?>/js/plugins.js"></script>
         <script src="<?php echo( $theme ) ?>/js/main.js"></script>
